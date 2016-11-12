@@ -1,0 +1,14 @@
+//////////////
+// TOAST //
+//////////////
+.toaster {
+  position: fixed;
+  top: 72px;
+  right: 12px;
+  min-width: 240px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: $greyscale-07;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+  z-index: 1001;
+}

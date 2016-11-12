@@ -1,0 +1,104 @@
+/////////////////
+// INFO BAR //
+/////////////////
+.infobar {
+  background-color: $greyscale-10;
+  color: $greyscale-06;
+  padding: 18px 24px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--active {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      right: 100%;
+      bottom: 12px;
+      margin: auto;
+      width: 3px;
+      background-color: $brand-primary;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  &__left, &__right {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__left {
+    flex: 1 0 500px;
+
+    .icon {
+      margin-right: 12px;
+    }
+  }
+
+  &__right {
+    flex: 0 0 auto;
+
+    & > div:not(:last-of-type) {
+      margin-right: 24px;
+      transform: scale(1);
+      transition: transform .2s linear;
+    }
+
+    &.is-active {
+      & > div:not(:last-of-type) {
+        transform: scale(0);
+      }
+    }
+  }
+
+  .metrics {
+    display: flex;
+    width: 120px;
+    min-height: 24px;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+
+    &__bar {
+      height: 4px;
+      background-color: $brand-primary;
+      border-radius: 2px;
+
+      &:nth-child(2) {
+        width: 20%;
+      }
+      &:nth-child(3) {
+        width: 59%;
+      }
+    }
+  }
+
+  .info-tools {
+    & > i.material-icons:not(:last-of-type) {
+      margin-right: 6px;
+    }
+  }
+
+  .info-nav {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    width: 0%;
+    overflow: hidden;
+    background-color: $greyscale-10;
+    display: flex;
+    justify-content: space-around;
+    transition: width .3s linear;
+
+    &.is-active {
+      width: 100%;
+      transition: width .3s linear;
+    }
+  }
+}

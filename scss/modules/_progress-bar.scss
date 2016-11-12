@@ -1,0 +1,67 @@
+// progress bars all included
+// we will set a modifier for animating but
+// progress defaults to your primary color
+// customize away my friends
+$progress-bg: gray; // set for prog background
+$prog-radius: 24px; // change to value wanted globally
+
+.progress {
+	margin: 32px 0;
+	border-radius: ($prog-radius);
+	background-color: $greyscale-10;
+	border: 2px solid $greyscale-10;
+
+	> div {
+		background-color: $primary;
+		min-height: 6px;
+		border-radius: ($prog-radius);
+	}
+
+	// data-title
+	&--title {
+		position: relative;
+		padding-left: 32px;
+
+		&:before {
+			content: attr(data-title);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			min-width: 24px;
+			min-height: 24px;
+			background-color: $brand-primary;
+			box-shadow: 0px 0px 0px 1px $greyscale-11, 0px 0px 0px 3px $brand-primary;
+			color: $greyscale-11;
+			font-size: .65rem;
+			font-weight: 800;
+			line-height: 2.5;
+			text-align: center;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+
+	// HTML5 progress bar, IE10 and up
+	progress[value] {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block; // progress is inline-block by nature
+		border: none;
+		width: 100%;
+		height: 6px;
+		// for IE 10
+		color: $primary;
+	}
+	progress[value]::-webkit-progress-bar {
+		background-color: transparent;
+	}
+	progress[value]::-webkit-progress-value {
+		background-color: $primary;
+		border-radius: ($prog-radius);
+	}
+	progress[value]::-moz-progress-bar {
+		background-color: $primary;
+		border-radius: ($prog-radius);
+	}
+}

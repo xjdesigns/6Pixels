@@ -1,0 +1,173 @@
+// ████████╗ ██████╗  ██████╗ ██╗  ████████╗██╗██████╗
+// ╚══██╔══╝██╔═══██╗██╔═══██╗██║  ╚══██╔══╝██║██╔══██╗
+//    ██║   ██║   ██║██║   ██║██║     ██║   ██║██████╔╝
+//    ██║   ██║   ██║██║   ██║██║     ██║   ██║██╔═══╝
+//    ██║   ╚██████╔╝╚██████╔╝███████╗██║   ██║██║
+//    ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚═╝   ╚═╝╚═╝
+$tipColor: $greyscale-04;
+$tipText: $greyscale-11;
+
+[data-tips][data-hover="true"] {
+  // disables the tooltip when clicked
+  &:active {
+    &:after, &:before {
+      opacity: 0;
+      transition: opacity .1s;
+    }
+  }
+}
+[data-tips] {
+  position: relative;
+
+  &:before, &:after {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+  }
+
+  &:after {
+    content: attr(data-tips);
+    left: -9999px;
+    z-index: -1;
+    padding: 6px 12px;
+    font-size: .75rem;
+    background-color: $tipColor;
+    color: $tipText;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0px 0px 6px rgba(0,0,0,.4);
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1001;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+      transition: opacity .5s ease 1s;
+    }
+    &:after {
+      left: 0;
+      opacity: 1;
+      z-index: 1;
+      transition: opacity .5s ease 1s;
+    }
+  }
+
+  &.data-tip-bottom {
+    &:hover:before {
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      border-color: transparent transparent $tipColor transparent;
+      border-width: 0 6px 6px 6px;
+    }
+    &:hover:after {
+      top: calc(100% + 15px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.data-tip-right {
+    &:hover:before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 10px);
+      border-color: transparent $tipColor transparent transparent;
+      border-width: 6px 6px 6px 0;
+    }
+    &:hover:after {
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% + 15px);
+    }
+  }
+
+  &.data-tip-top {
+    &:hover:before {
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      border-color: $tipColor transparent transparent transparent;
+      border-width:  6px 6px 0 6px;
+    }
+    &:hover:after {
+      bottom: calc(100% + 15px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.data-tip-left {
+    &:before {
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 10px);
+      border-color: transparent transparent transparent $tipColor;
+      border-width: 6px 0 6px 6px;
+    }
+    &:after {
+      left: 0;
+      top: 50%;
+      transform: translateX(calc(-100% - 15px)) translateY(-50%);
+    }
+  }
+
+  &.data-tip-wrap {
+    &:after {
+      width: 160px;
+      white-space: normal;
+      text-align: center;
+    }
+  }
+}
+
+
+
+//////////////////////////
+// ADVANCED TOOL TIP //
+//////////////////////////
+.adv-tip {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: -9999px;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    width: 130px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: .75rem;
+    background-color: $greyscale-04;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity .2s ease-in, left .1s .3s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: $greyscale-04 transparent transparent transparent;
+      border-width: 6px 6px 0 6px;
+    }
+  }
+
+  &:hover {
+    .adv-tip__content {
+      left: 50%;
+      opacity: 1;
+      transition: opacity .4s ease-out .2s;
+    }
+  }
+}

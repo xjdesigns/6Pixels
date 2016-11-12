@@ -1,0 +1,203 @@
+// ███████╗██╗     ███████╗██╗  ██╗     ██████╗ ██████╗ ██╗██████╗
+// ██╔════╝██║     ██╔════╝╚██╗██╔╝    ██╔════╝ ██╔══██╗██║██╔══██╗
+// █████╗  ██║     █████╗   ╚███╔╝     ██║  ███╗██████╔╝██║██║  ██║
+// ██╔══╝  ██║     ██╔══╝   ██╔██╗     ██║   ██║██╔══██╗██║██║  ██║
+// ██║     ███████╗███████╗██╔╝ ██╗    ╚██████╔╝██║  ██║██║██████╔╝
+// ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
+
+
+
+// ███████╗ ██████╗ ██████╗
+// ██╔════╝██╔════╝██╔═══██╗
+// █████╗  ██║     ██║   ██║
+// ██╔══╝  ██║     ██║   ██║
+// ███████╗╚██████╗╚██████╔╝
+// ╚══════╝ ╚═════╝ ╚═════╝
+.container {
+  max-width: $container;
+  margin-left: auto;
+  margin-right: auto;
+  &--fluid {
+    max-width: 100%;
+  }
+}
+
+
+
+// ██╗      █████╗ ██╗   ██╗ ██████╗ ██╗   ██╗████████╗
+// ██║     ██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║╚══██╔══╝
+// ██║     ███████║ ╚████╔╝ ██║   ██║██║   ██║   ██║
+// ██║     ██╔══██║  ╚██╔╝  ██║   ██║██║   ██║   ██║
+// ███████╗██║  ██║   ██║   ╚██████╔╝╚██████╔╝   ██║
+// ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝    ╚═╝
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+}
+@mixin flex-additional($bp) {
+  .flex {
+    &--#{$bp}-inline-flex {
+      display: inline-flex;
+    }
+    &--#{$bp}-flex-nowrap {
+      flex-wrap: nowrap;
+    }
+    &--#{$bp}-flex-wrap-rev {
+      flex-wrap: wrap-reverse;
+    }
+    &--#{$bp}-horizontal-rev {
+      flex-direction: column-reverse;
+    }
+    &--#{$bp}-vertical {
+      flex-direction: column;
+    }
+    &--#{$bp}-vertical-rev {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+
+
+// ███████╗██╗     ███████╗██╗  ██╗
+// ██╔════╝██║     ██╔════╝╚██╗██╔╝
+// █████╗  ██║     █████╗   ╚███╔╝
+// ██╔══╝  ██║     ██╔══╝   ██╔██╗
+// ██║     ███████╗███████╗██╔╝ ██╗
+// ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝
+@mixin flex-container($flex-col) {
+  @for $i from 1 through $flex-col {
+    .flex-#{$i} {
+      flex: $i;
+    }
+  }
+}
+
+
+
+//  █████╗ ██╗     ██╗ ██████╗ ███╗   ██╗███╗   ███╗███████╗███╗   ██╗████████╗
+// ██╔══██╗██║     ██║██╔════╝ ████╗  ██║████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+// ███████║██║     ██║██║  ███╗██╔██╗ ██║██╔████╔██║█████╗  ██╔██╗ ██║   ██║
+// ██╔══██║██║     ██║██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
+// ██║  ██║███████╗██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
+// ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
+@mixin flex-alignment($bp) {
+  .flex {
+    &--#{$bp}-start {
+      justify-content: flex-start;
+    }
+    &--#{$bp}-center {
+      justify-content: center;
+    }
+    &--#{$bp}-end {
+      justify-content: flex-end;
+    }
+    &--#{$bp}-around {
+      justify-content: space-around;
+    }
+    &--#{$bp}-between {
+      justify-content: space-between;
+    }
+    &--#{$bp}-top {
+      align-items: flex-start;
+    }
+    &--#{$bp}-middle {
+      align-items: center;
+    }
+    &--#{$bp}-bottom {
+      align-items: flex-end;
+    }
+  }
+}
+
+
+
+// ████████╗██╗  ██╗███████╗     ██████╗ ██████╗ ██╗██████╗
+// ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝ ██╔══██╗██║██╔══██╗
+//    ██║   ███████║█████╗      ██║  ███╗██████╔╝██║██║  ██║
+//    ██║   ██╔══██║██╔══╝      ██║   ██║██╔══██╗██║██║  ██║
+//    ██║   ██║  ██║███████╗    ╚██████╔╝██║  ██║██║██████╔╝
+//    ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
+[class*="flex__"] {
+  flex: 0 0 auto;
+  // prevent column from collapsing
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+
+@mixin flex-columns($bp, $columns:$base-columns) {
+  // NOTE: this uses an array which is defined in _var.scss
+  @for $i from 1 through length($columns) {
+    .flex--#{nth($columns, $i)} {
+      @for $j from 1 through nth($columns, $i) {
+        .flex__item--#{$bp}-#{$j} {
+          flex-basis: ((100% / nth($columns, $i))*$j);
+          max-width: ((100% / nth($columns, $i)*$j));
+        }
+      }
+      @for $j from 1 through nth($columns, $i) - 1 {
+        .flex__offset--#{$bp}-#{$j} {
+          margin-left: ((100% / nth($columns, $i))*$j);
+        }
+      }
+    }
+  }
+
+}
+
+
+
+// █████╗ ███████╗███████╗███████╗███╗   ███╗██████╗ ██╗     ███████╗
+// ██╔══██╗██╔════╝██╔════╝██╔════╝████╗ ████║██╔══██╗██║     ██╔════╝
+// ███████║███████╗███████╗█████╗  ██╔████╔██║██████╔╝██║     █████╗
+// ██╔══██║╚════██║╚════██║██╔══╝  ██║╚██╔╝██║██╔══██╗██║     ██╔══╝
+// ██║  ██║███████║███████║███████╗██║ ╚═╝ ██║██████╔╝███████╗███████╗
+// ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝╚═════╝ ╚══════╝╚══════╝
+// main mixin to be called for building the grid
+@mixin flex-grid($bp) {
+  @include flex-columns($bp);
+  @include flex-alignment($bp);
+  @include flex-additional($bp);
+}
+
+
+
+// ██████╗ ██╗   ██╗██╗██╗     ██████╗
+// ██╔══██╗██║   ██║██║██║     ██╔══██╗
+// ██████╔╝██║   ██║██║██║     ██║  ██║
+// ██╔══██╗██║   ██║██║██║     ██║  ██║
+// ██████╔╝╚██████╔╝██║███████╗██████╔╝
+// ╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝
+
+// breakpoint xs
+// base styling going mobile up
+@include flex-grid(xs);
+
+// breakpoint small
+// min-width default is 30em/480px
+@media (min-width: $break-sm) {
+  @include flex-grid(sm);
+}
+
+// breakpoint medium
+// min-width default is 48em/768px
+@media (min-width: $break-md) {
+  @include flex-grid(md);
+}
+
+// breakpoint large
+// min-width default is 64em/1024px
+@media (min-width: $break-lg) {
+  @include flex-grid(lg);
+}
+
+// breakpoint extra-large
+// min-width default is 80em/1280px
+@media (min-width: $break-xl) {
+  @include flex-grid(xl);
+}

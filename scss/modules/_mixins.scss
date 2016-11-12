@@ -1,0 +1,72 @@
+// mixin for breakpoints but lets move it somewhere globally
+// once we are done using it here and note it
+// ███╗   ███╗██╗██╗  ██╗██╗███╗   ██╗
+// ████╗ ████║██║╚██╗██╔╝██║████╗  ██║
+// ██╔████╔██║██║ ╚███╔╝ ██║██╔██╗ ██║
+// ██║╚██╔╝██║██║ ██╔██╗ ██║██║╚██╗██║
+// ██║ ╚═╝ ██║██║██╔╝ ██╗██║██║ ╚████║
+// ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
+
+////////////////////
+// BREAKPOINTS //
+////////////////////
+@mixin bp($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: $break-sm) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: $break-md) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: $break-lg) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+
+@mixin border-radius($radius: 5px) {
+	border-radius: $radius;
+}
+@mixin border-radius--all($top: 5px, $right: 5px, $bottom: 5px, $left: 5px) {
+  border-radius: $top $right $bottom $left;
+}
+
+@mixin transition($prop:all, $dur:.5s, $timing:ease, $delay:0s) {
+	transition: $prop $dur $timing $delay;
+}
+
+
+
+////////////////////
+// ABSOLUTE FIT //
+////////////////////
+%fit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/////////////////
+// CLEARFIX //
+////////////////
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

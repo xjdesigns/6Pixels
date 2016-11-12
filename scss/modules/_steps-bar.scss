@@ -1,0 +1,81 @@
+//////////////////
+// STEPS BAR //
+//////////////////
+.steps-bar {
+  counter-reset: stepbar;
+  display: flex;
+  align-items: center;
+  font-size: .625rem;
+
+  li {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+    counter-increment: stepbar;
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+
+    &:before {
+      content: counter(stepbar);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 24px;
+      height: 24px;
+      margin: auto;
+      border-radius: 50%;
+      font-size: .75rem;
+      text-align: center;
+      line-height: 2;
+      background-color: $brand-primary;
+      color: $greyscale-11;
+    }
+
+    &:last-child:after {
+      content: '';
+      flex: 0 0 auto;
+    }
+
+    &:not(:last-child):after {
+      content: '';
+      flex: 1 1 auto;
+      margin-left: 24px;
+      height: 2px;
+      background-color: $brand-primary;
+    }
+  }
+
+  &--required {
+    li {
+      color: $greyscale-10;
+      cursor: not-allowed;
+
+      &:before {
+        background-color: $greyscale-10;
+        color: $greyscale-11;
+      }
+      &:not(:last-child):after {
+        background-color: $greyscale-10;
+      }
+
+      &.is-active {
+        color: $greyscale-01;
+        cursor: pointer;
+
+        &:before {
+          background-color: $brand-primary;
+          color: $greyscale-11;
+        }
+        &:not(:last-child):after {
+          background-color: $brand-primary;
+        }
+      }
+    }
+  }
+}

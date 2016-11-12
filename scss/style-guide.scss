@@ -1,0 +1,333 @@
+@import 'base/var';
+@import 'modules/mixins';
+// TODO: Shame file
+// strongly consider making a shame file for the quick fixes and go back to clean
+// up after to keep it modular, example _shame.scss
+
+// lets style the page a bit so we can be better and awesome
+body.hidden {
+	// applies to body when elements do not want scrolling of body
+	overflow: hidden;
+}
+header.st-header:not(.main-header) {
+	background-color: $primary;
+	color: white;
+	padding: 2em;
+	font-size: 1.8rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+
+	&.sticky-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		padding: 0;
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+		animation: autoHeight .3s linear;
+	}
+}
+@keyframes autoHeight {
+	0% {
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+footer.st-footer {
+	background-color: rgba(0,0,0,0.9);
+	color: white;
+	padding: 1em 4em;
+	font-size: .875rem;
+	font-weight: 300;
+	text-align: right;
+	text-transform: uppercase;
+}
+.st-container {
+	margin: 24px auto 0;
+	padding-bottom: 48px;
+	// border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.st-p {
+	margin: 24px 0;
+	font-weight: 300;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-of-type {
+		padding-bottom: 48px;
+		border-bottom: 1px solid $greyscale-10;
+	}
+}
+.st-img {
+	width: 100%;
+	max-width: 100%;
+}
+
+
+section.st-section {
+	margin: 50px auto;
+	padding: 70px 20px;
+}
+.main {
+	transition: max-width 2s;
+	&--responsive{
+		max-width: 320px;
+		transition: max-width 2s;
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	width: 200px;
+	font-weight: 300;
+	color: $greyscale-11;
+	background-color: $greyscale-02;
+	transform: translateX(-100%);
+	transition: transform .3s;
+	&.active {
+		transform: translateX(0);
+	}
+	&__inner {
+		position: absolute;
+		top: 64px;
+		left: 100%;
+		padding: 12px 0;
+		min-width: 200px;
+		min-height: 100vh;
+		background-color: $greyscale-03;
+		transform: translateX(calc(-100% + -100%));
+		transition: transform .5s ease-in-out;
+		&.active {
+			transform: translateX(0);
+		}
+		li {
+			padding: 12px 24px;
+			font-size: .675rem;
+			position: relative;
+			z-index: 1;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				z-index: -1;
+				width: 0%;
+				background-color: $brand-primary;
+				transition: width .3s ease-in-out;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+.menu-btn {
+	width: calc(100% + 70px);
+	position: relative;
+	text-align: right;
+	color: white;
+	background-color: $greyscale-02;
+	padding: 2em;
+	cursor: pointer;
+	&:before {
+		transform: translateY(-5px);
+	}
+	&:after {
+		transform: translateY(5px);
+	}
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 25px;
+		width: 25px;
+		height: 3px;
+		background: white;
+		transition: transform .3s, background .2s;
+	}
+	&.active {
+		&:hover {
+			&:before, &:after {
+				background: $brand-error;
+			}
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+.nav-menu {
+	list-style: none;
+	cursor: pointer;
+	border-right: 5px solid $greyscale-02;
+	transform: translateY(100vh);
+	transition: transform .3s .3s;
+	&.active {
+		transform: translateY(0);
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	li {
+		padding: 1em 2em;
+		color: white;
+		font-size: 14px;
+		font-weight: 300;
+		transition: background-color .3s ease;
+		&:hover {
+			background-color: $primary;
+		}
+	}
+}
+
+.section {
+	&.section-tflex {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		background: $greyscale-10;
+		overflow: auto;
+		transform: translateX(-100%);
+		transition: transform .3s;
+		&.active {
+			transform: translateX(0);
+		}
+	}
+}
+
+
+h1.st-headline {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 20px 0 10px;
+}
+#output {
+	background-color: $greyscale-04;
+	color: $greyscale-09;
+	font-size: 12px;
+	font-family: monospace;
+	line-height: 1.7;
+	margin: 40px 0;
+	padding: 10px 24px 15px;
+	border: 1px solid $greyscale-04;
+	box-shadow: 2px 2px 1px rgba(0,0,0,.5);
+	text-shadow: 1px 1px 0px $greyscale-03;
+	overflow: auto;
+	word-wrap: break-word;
+	@include border-radius(12px);
+}
+
+.flex-test {
+	min-width: 5px;
+	min-height: 20px;
+	margin: 1em;
+	background: $primary;
+	border-radius: 12px;
+}
+
+.st-buttons {
+	margin: 24px 0;
+}
+
+.st-pill {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: .75rem;
+	font-weight: 700;
+	padding: 1px 12px;
+	background-color: $brand-primary;
+	color: $greyscale-11;
+	border-radius: 12px;
+
+	&--warning {
+		background-color: $brand-warning;
+	}
+}
+
+.st-steps-bar {
+	margin: 48px 0;
+}
+
+/////////////////////////
+// SASS MAPS COLORS //
+////////////////////////
+.st-color-set {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.st-color {
+	flex: 0 0 100px;
+	height: 100px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+	position: relative;
+
+	&:after {
+		content: attr(data-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: auto;
+		height: 20px;
+		font-size: 10px;
+		line-height: 2;
+		text-align: center;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
+		color: $greyscale-10;
+		margin: auto;
+		background-color: rgba(30,30,30,.8);
+	}
+}
+// then lets loop the list
+$colors: (
+	primary: $brand-primary,
+	secondary: $brand-secondary,
+	tertiary: $brand-tertiary,
+	info: $brand-info,
+	success: $brand-success,
+	warning: $brand-warning,
+	error: $brand-error
+);
+
+@each $color, $bgcolor in $colors {
+	.st-color--#{$color} {
+		background-color: $bgcolor;
+	}
+}
+
+
+//////////////////////////////////
+// RETURN OF THE STYLE GUIDE //
+//////////////////////////////////
+.st-data-tips {
+	& > span {
+		background-color: $brand-primary;
+		display: inline-block;
+		min-width: 120px;
+		padding: 3px 6px;
+		color: $greyscale-11;
+	}
+}

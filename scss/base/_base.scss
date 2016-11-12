@@ -1,0 +1,42 @@
+// this is the base style sheet
+// where all the base belong to us
+// set these for a global level
+// ██████╗  █████╗ ███████╗███████╗
+// ██╔══██╗██╔══██╗██╔════╝██╔════╝
+// ██████╔╝███████║███████╗█████╗
+// ██╔══██╗██╔══██║╚════██║██╔══╝
+// ██████╔╝██║  ██║███████║███████╗
+// ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+// Reset the box-sizing
+// Credit: shttp://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// this makes jason feel better
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	font-size: $font-size-root;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+  max-height: 100vh;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); // bootstrap 4.0 credit
+}

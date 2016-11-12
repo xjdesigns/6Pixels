@@ -1,0 +1,78 @@
+ // ██████╗  █████╗ ███████╗███████╗
+ // ██╔══██╗██╔══██╗██╔════╝██╔════╝
+ // ██████╔╝███████║███████╗█████╗
+ // ██╔══██╗██╔══██║╚════██║██╔══╝
+ // ██████╔╝██║  ██║███████║███████╗
+ // ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+
+////////////////////
+// BASE SIZING //
+////////////////////
+$font-size-root: 16px;
+$font-size-base: $font-size-root;
+$line-height-base: 1.1;
+$font-family-base: 'Roboto', helvetica, arial, sans-serif;
+$font-family-headline: 'Titillium Web', sans-serif;
+
+
+/////////////
+// MAIN //
+/////////////
+$container: 1140px; // our max width
+$gutter: 24px; // gutters do get cut in half
+$base-columns: 12; // columns
+
+
+////////////////////
+// BREAKPOINTS //
+////////////////////
+//breakpoints based off 16px base size
+$break-xl: 80em; // 1280
+$break-lg: 64em; // 1024
+$break-md: 48em; // 768
+$break-sm: 20em; // 320
+
+
+/////////////////////
+// BRAND COLORS //
+/////////////////////
+$brand-primary: #1fa2ed;
+$brand-secondary: #2555de;
+$brand-tertiary: #e4ec0e;
+$brand-info: #04a3ff;
+$brand-success: green;
+$brand-warning: gold;
+$brand-error: red;
+
+// here we add just base color names
+// this is so we can have brand colors
+// along with project colors if needed
+// we ref these as brand with intent to change per project
+$primary: $brand-primary; // main blue
+$secondary: $brand-secondary; // main purple
+$tertiary: $brand-tertiary;
+$info: $brand-info;
+$success: $brand-success;
+$warning: $brand-warning;
+$error: $brand-error;
+
+//////////////////
+// GREYSCALE //
+//////////////////
+$greyscale-01: #000;
+$greyscale-02: #1a1a1a;
+$greyscale-03: #333;
+$greyscale-04: #4d4d4d;
+$greyscale-05: #666;
+$greyscale-06: #808080;
+$greyscale-07: #999;
+$greyscale-08: #b3b3b3;
+$greyscale-09: #ccc;
+$greyscale-10: #e5e5e5;
+$greyscale-11: #fff;
+
+//////////////////////////
+// LIGATURES -- ICONS //
+//////////////////////////
+$liga-font-family: 'Material Icons';
+$icon-font-family: 'FontAwesome'; // TODO: if needed??
