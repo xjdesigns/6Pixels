@@ -8,11 +8,16 @@ import { Router } from  '@angular/router';
 })
 
 export class AppComponent {
+  appMenuOpen: boolean = true;
 
   constructor(private router: Router) {}
 
   goToRoute(route) {
     this.router.navigate([`${route}`]);
+  }
+
+  toggleMenu() {
+    this.appMenuOpen = !this.appMenuOpen;
   }
 
   // title = 'Tour of Heroes';

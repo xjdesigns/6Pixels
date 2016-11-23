@@ -8,36 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var router_1 = require("@angular/router");
-var forms_1 = require("@angular/forms");
-var app_component_1 = require("./app.component");
-var welcome_component_1 = require("./components/welcome/welcome.component");
-var elements_component_1 = require("./components/elements/elements.component");
+var core_1 = require('@angular/core');
+var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
+var forms_1 = require('@angular/forms');
+var app_component_1 = require('./app.component');
+var welcome_component_1 = require('./components/welcome/welcome.component');
+var elements_component_1 = require('./components/elements/elements.component');
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+                    { path: 'elements', component: elements_component_1.ElementsComponent },
+                    { path: '', component: welcome_component_1.WelcomeComponent }
+                ])
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                welcome_component_1.WelcomeComponent,
+                elements_component_1.ElementsComponent
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
-            router_1.RouterModule.forRoot([
-                { path: 'welcome', component: welcome_component_1.WelcomeComponent },
-                { path: 'elements', component: elements_component_1.ElementsComponent },
-                { path: '', component: welcome_component_1.WelcomeComponent }
-            ])
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            welcome_component_1.WelcomeComponent,
-            elements_component_1.ElementsComponent
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    }),
-    __metadata("design:paramtypes", [])
-], AppModule);
 exports.AppModule = AppModule;

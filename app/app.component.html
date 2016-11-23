@@ -13,7 +13,10 @@
 
   </header>
 
-  <div class="app-sidebar">
+  <div class="app-sidebar" [class.is-open]="appMenuOpen">
+    <div (click)="toggleMenu()" class="app-sidebar__open" [class.is-open]="appMenuOpen">
+      <i class="material-icons">add</i>
+    </div>
     <nav class="app-sidebar__nav">
       <ul class="app-nav">
         <li (click)="goToRoute('/welcome')">Home</li>
