@@ -1,0 +1,32 @@
+<div class="app">
+
+  <header class="app-header">
+
+    <div class="app-header__logo">
+      6PIXELS
+    </div>
+    <div class="app-header__links">
+      <a routerLink="/welcome" routerLinkActive="active" class="link">Welcome</a>
+      <a routerLink="/heroes" routerLinkActive="active" class="link">Heroes</a>
+      <span (click)="goToRoute('/welcome')">by: Jason Jacobson</span>
+    </div>
+
+  </header>
+
+  <div class="app-sidebar">
+    <nav class="app-sidebar__nav">
+      <ul class="app-nav">
+        <li (click)="goToRoute('/welcome')">Home</li>
+        <li (click)="goToRoute('/elements')">Elements</li>
+        <li (click)="goToRoute('/welcome')">Objects</li>
+        <li (click)="goToRoute('/welcome')">Components</li>
+        <li (click)="goToRoute('/welcome')">Credit</li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="app-view">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
