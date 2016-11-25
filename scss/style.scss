@@ -1,8 +1,7 @@
 // created by Jason Jacobson
 // THE NEW GENERATION OF CSS FRAMEWORKS
-// USING THE BEST OF CSS TO CREATE A POWERFUL
-// FRAMEWORK THAT CAN EXTEND AND SCALE WITH EASE
-// CODE NAMED: Indominus Flex 0.1 BETA
+// 6PIXELS
+
 
 ///////////////////////////
 // IMPORT STYLESHEETS //
@@ -12,8 +11,9 @@
 @import "base/images"; // base image
 @import "base/icons"; // base icons
 @import "base/typography"; // base typography
+@import "base/flexgrid"; // base flexgrid
 
-@import "modules/flexgrid"; // the flexgrid
+// @import "modules/flexgrid"; // the flexgrid
 @import "modules/button"; // buttons
 @import "modules/mixins"; // mixins for writing dry code
 @import "modules/progress-bar"; // Progress Bar styling
@@ -34,7 +34,4 @@
 // @import "modules/loading/loading";
 
 // all other styling is in the SHAME FILE!!
-// Read a great article on creating one to help write better code
-// this is where all the junk lives that needs to be converted
-// to Atomic OOBEMITSCSS
 @import "shame";

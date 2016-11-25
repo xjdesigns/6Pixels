@@ -1,9 +1,12 @@
- // ██████╗  █████╗ ███████╗███████╗
- // ██╔══██╗██╔══██╗██╔════╝██╔════╝
- // ██████╔╝███████║███████╗█████╗
- // ██╔══██╗██╔══██║╚════██║██╔══╝
- // ██████╔╝██║  ██║███████║███████╗
- // ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+////////////////////////
+// 6PIXELS VARIABLES //
+////////////////////////
+
+////////////////
+// NAMESPACE //
+////////////////
+$ns: 'spx-';
+
 
 ////////////////////
 // BASE SIZING //
@@ -15,12 +18,13 @@ $font-family-base: 'Roboto', helvetica, arial, sans-serif;
 $font-family-headline: 'Titillium Web', sans-serif;
 
 
-/////////////
-// MAIN //
-/////////////
+////////////////
+// BASE GRID //
+////////////////
 $container: 1140px; // our max width
-$gutter: 24px; // gutters do get cut in half
-$base-columns: 12; // columns
+$gutter: 24px; // gutters = 1/2 width
+$base-columns: default; // columns
+$base-columns-default: 12;
 
 
 ////////////////////
