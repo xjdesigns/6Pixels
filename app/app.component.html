@@ -6,8 +6,6 @@
       6PIXELS
     </div>
     <div class="app-header__links">
-      <a routerLink="/welcome" routerLinkActive="active" class="link">Welcome</a>
-      <a routerLink="/heroes" routerLinkActive="active" class="link">Heroes</a>
       <span (click)="goToRoute('/welcome')">by: Jason Jacobson</span>
     </div>
 
@@ -20,13 +18,28 @@
     <nav class="app-sidebar__nav">
       <ul class="app-nav">
         <li (click)="goToRoute('/welcome')">Home</li>
-        <li (click)="goToRoute('/elements')">Vars</li>
+        <li (click)="goToRoute('/variable')">Vars</li>
         <li (click)="goToRoute('/elements')">Elements</li>
         <li (click)="goToRoute('/welcome')">Components</li>
         <li (click)="goToRoute('/elements')">Helpers</li>
         <li (click)="goToRoute('/welcome')">Credit</li>
       </ul>
     </nav>
+  </div>
+
+  <div class="sg-hero">
+    <div class="sg-hero__elem">
+      <div class="sg-pixel"></div>
+    </div>
+  </div>
+
+  <div class="app-menu-nav">
+    <div>button</div>
+    <div>button</div>
+    <div>button</div>
+    <div>button</div>
+    <div>button</div>
+    <div>button</div>
   </div>
 
   <div class="app-view">

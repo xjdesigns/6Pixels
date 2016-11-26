@@ -11,6 +11,7 @@ $header: 72px;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 
   display: flex;
   align-items: center;
@@ -92,5 +93,15 @@ $header: 72px;
       margin: 12px 0;
       cursor: pointer;
     }
+  }
+}
+
+.app-menu-nav {
+  display: flex;
+  margin: auto;
+  width: 70vw;
+
+  > div {
+    flex: 1;
   }
 }

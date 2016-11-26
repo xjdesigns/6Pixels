@@ -2,6 +2,7 @@
 $nssg: 'sg-';
 
 @import "styleguide/supports";
+@import "base/var";
 
 
 code {
@@ -11,4 +12,84 @@ code {
   font-size: 14px;
   line-height: 1.4;
   color: white;
+}
+
+code.#{$nssg}code-block {
+	background-color: blue;
+  display: block;
+	color: white;
+	font-size: 12px;
+	font-family: monospace;
+	line-height: 1.7;
+	margin: 40px 0;
+	padding: 12px;
+	border: 1px solid blue;
+	box-shadow: 2px 2px 1px rgba(0,0,0,.5);
+	text-shadow: 1px 1px 0px gray;
+	overflow: auto;
+	word-wrap: break-word;
+  white-space: pre;
+}
+
+
+// HERO
+.#{$nssg}hero {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  background: lightgray;
+  margin-top: 72px;
+  overflow: hidden;
+
+  &__elem {
+    flex: 1;
+    text-align: center;
+  }
+
+  .#{$nssg}pixel {
+    width: 16px;
+    height: 16px;
+    background: blue;
+    margin: 24px auto;
+    box-shadow: -25px 0px 0px blue, -50px 0px 0px blue, -75px 0px 0px blue, 25px 0px 0px blue, 50px 0px 0px blue;
+  }
+}
+
+
+// COLOR PALETTE
+$coloring: (
+  pr: $brand-primary,
+  sd: $brand-secondary,
+  tr: $brand-tertiary,
+  g1: $greyscale-01,
+  g2: $greyscale-03,
+  g3: $greyscale-05
+);
+
+.#{$nssg}color-palette {
+  .#{$nssg}color-tile {
+    display: inline-block;
+    vertical-align: middle;
+    width: 31%;
+    margin-right: 24px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 60px;
+      height: 60px;
+      margin: 0 0 12px 12px;
+      border-radius: 50%;
+    }
+  }
+}
+@each $vr, $cr in $coloring {
+  .#{$nssg}color-palette {
+    .#{$nssg}color-tile--#{$vr} {
+      &::before {
+        background: $cr;
+      }
+    }
+  }
 }

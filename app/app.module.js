@@ -15,6 +15,8 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
 var elements_component_1 = require('./components/elements/elements.component');
+var var_component_1 = require('./components/variables/var.component');
+var code_display_directive_1 = require('./shared/code-display.directive');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,13 +28,16 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                     { path: 'elements', component: elements_component_1.ElementsComponent },
+                    { path: 'variable', component: var_component_1.VarComponent },
                     { path: '', component: welcome_component_1.WelcomeComponent }
                 ])
             ],
             declarations: [
                 app_component_1.AppComponent,
                 welcome_component_1.WelcomeComponent,
-                elements_component_1.ElementsComponent
+                elements_component_1.ElementsComponent,
+                var_component_1.VarComponent,
+                code_display_directive_1.CodeDisplayDirective
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
