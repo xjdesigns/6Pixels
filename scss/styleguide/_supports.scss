@@ -31,7 +31,16 @@
   display: none;
 }
 @supports (display: grid) {
-  .#{$nssg}rule-all-initial {
+  .#{$nssg}rule-display-grid {
+    display: inline-block;
+  }
+}
+// FILTER TEST
+.#{$nssg}rule-filter {
+  display: none;
+}
+@supports (filter: blur()) {
+  .#{$nssg}rule-filter {
     display: inline-block;
   }
 }

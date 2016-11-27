@@ -37,8 +37,9 @@ $header: 72px;
 
 .app-view {
   max-width: 70vw;
-  height: calc(100vh - 10vh - #{$header});
+  // height: calc(100vh - 10vh - #{$header});
   margin: calc(5vh + #{$header}) auto 5vh;
+  padding-bottom: 48px;
 }
 
 .app-sidebar {
@@ -104,4 +105,9 @@ $header: 72px;
   > div {
     flex: 1;
   }
+}
+
+.app-menu-title {
+  margin: 24px 0 56px;
+  border-bottom: 1px solid gray;
 }

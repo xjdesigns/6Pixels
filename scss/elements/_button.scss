@@ -14,7 +14,7 @@ $btn-padding: 12px; // we math with this number below
 ///////////////
 // BUTTON //
 //////////////
-.btn {
+.#{$ns}btn {
 	display: inline-block;
 	vertical-align: middle;
 	min-width: 160px;
@@ -42,12 +42,12 @@ $btn-padding: 12px; // we math with this number below
 ////////////////////////
 // BUTTON MATERIAL //
 ///////////////////////
-.btn {
+.#{$ns}btn {
 	&--material, &--icon {
 		position: relative;
 		overflow: hidden;
 
-		&:after {
+		&::before {
 			content: attr(data-icon);
 			position: absolute;
 			top: 0;
@@ -72,7 +72,7 @@ $btn-padding: 12px; // we math with this number below
 		padding-left: $btn-padding*2;
 		padding-right: $btn-padding*2;
 
-		&:after {
+		&::before {
 			transform: translateX(calc(100% + 24px));
 		}
 
@@ -80,7 +80,7 @@ $btn-padding: 12px; // we math with this number below
 			padding-left: $btn-padding;
 			padding-right: $btn-padding*3;
 
-			&:after {
+			&::before {
 				transform: translateX(0);
 			}
 		}
@@ -90,7 +90,7 @@ $btn-padding: 12px; // we math with this number below
 //////////////////////
 // BUTTON CIRCLE //
 /////////////////////
-.btn {
+.#{$ns}btn {
 	&--circle {
 		display: flex;
 		align-items: center;
@@ -111,7 +111,7 @@ $btn-padding: 12px; // we math with this number below
 ////////////////////
 // BUTTON GROUP //
 ////////////////////
-.btn-group {
+.#{$ns}btn-group {
 	display: flex;
 	align-items: center;
 	min-width: 120px;
@@ -150,7 +150,7 @@ $btn-map: (
 );
 
 @each $button, $btn in $btn-map {
-	.btn {
+	.#{$ns}btn {
 		&--#{$button} {
 			background-color: $btn;
 			border-color: $btn;
@@ -170,7 +170,7 @@ $btn-map: (
 			}
 		}
 	}
-	.btn-group {
+	.#{$ns}btn-group {
 		&--#{$button} {
 			border-color: $btn;
 

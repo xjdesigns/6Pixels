@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 
 export class ElementsComponent {
-
+  elements = [{
+    name: 'buttons'
+  }, {
+    name: 'forms'
+  }, {
+    name: 'tips'
+  }, {
+    name: 'progress bar'
+  }, {
+    name: 'pills'
+  }];
 }

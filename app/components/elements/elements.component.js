@@ -11,6 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ElementsComponent = (function () {
     function ElementsComponent() {
+        this.elements = [{
+                name: 'buttons'
+            }, {
+                name: 'forms'
+            }, {
+                name: 'tips'
+            }, {
+                name: 'progress bar'
+            }, {
+                name: 'pills'
+            }];
     }
     ElementsComponent = __decorate([
         core_1.Component({

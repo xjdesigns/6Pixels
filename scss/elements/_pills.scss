@@ -1,0 +1,28 @@
+// PILLS
+.#{$ns}pill {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 12px;
+  min-height: 12px;
+  padding: 3px 6px;
+  font-size: .75rem;
+  border-radius: 12px;
+  background-color: $greyscale-02;
+  color: white;
+}
+
+
+// COLORING
+$coloring: (
+  pr: $brand-primary,
+  sd: $brand-secondary,
+  tr: $brand-tertiary,
+  g1: $greyscale-01,
+  g2: $greyscale-03,
+  g3: $greyscale-05
+);
+@each $vr, $cr in $coloring {
+  .#{$ns}pill--#{$vr} {
+    background-color: $cr;
+  }
+}
