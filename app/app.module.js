@@ -19,6 +19,7 @@ var button_component_1 = require('./components/elements/button.component');
 var var_component_1 = require('./components/variables/var.component');
 var components_component_1 = require('./components/components/components.component');
 var tooltip_component_1 = require('./components/components/tooltip.component');
+var media_obj_component_1 = require('./components/components/media-obj.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var AppModule = (function () {
     function AppModule() {
@@ -41,6 +42,7 @@ var AppModule = (function () {
                 welcome_component_1.WelcomeComponent,
                 elements_component_1.ElementsComponent,
                 components_component_1.ComponentsComponent,
+                media_obj_component_1.MediaObjComponent,
                 button_component_1.ButtonComponent,
                 tooltip_component_1.TooltipComponent,
                 var_component_1.VarComponent,

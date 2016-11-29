@@ -4,6 +4,11 @@ $nssg: 'sg-';
 @import "styleguide/supports";
 @import "base/var";
 
+.#{$nssg}divider {
+  margin: 52px 0px;
+  height: 1px;
+  background: gray;
+}
 
 code {
   background-color: blue;

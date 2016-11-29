@@ -1,41 +1,10 @@
-// this is old school
+///////////////////
+// MEDIA OBJECT //
+///////////////////
 // credit: Nicole Sullivan
 
-// ███╗   ███╗███████╗██████╗ ██╗ █████╗      ██████╗ ██████╗      ██╗
-// ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ██╔═══██╗██╔══██╗     ██║
-// ██╔████╔██║█████╗  ██║  ██║██║███████║    ██║   ██║██████╔╝     ██║
-// ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║   ██║██╔══██╗██   ██║
-// ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ╚██████╔╝██████╔╝╚█████╔╝
-// ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝  ╚════╝
-.media-obj {
-	margin: 10px;
-
-	.image {
-		float: left;
-	}
-	.image img {
-		display: block;
-	}
-	// reverse the flow
-	.imageRev {
-		float: right;
-		margin-left: 10px;
-	}
-}
-.media-obj, .bd {
-	// another way to clear floats
-	overflow: hidden;
-}
-
-// ███████╗██╗     ███████╗██╗  ██╗     ██████╗ ██████╗      ██╗
-// ██╔════╝██║     ██╔════╝╚██╗██╔╝    ██╔═══██╗██╔══██╗     ██║
-// █████╗  ██║     █████╗   ╚███╔╝     ██║   ██║██████╔╝     ██║
-// ██╔══╝  ██║     ██╔══╝   ██╔██╗     ██║   ██║██╔══██╗██   ██║
-// ██║     ███████╗███████╗██╔╝ ██╗    ╚██████╔╝██████╔╝╚█████╔╝
-// ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝  ╚════╝
-// this is new school now
 // using flexbox to solve our issues
-.media {
+.#{$ns}media {
 	display: flex;
 	align-items: flex-start;
 
@@ -50,12 +19,12 @@
 	&--rev {
 		text-align: right;
 
-		.media__element {
+		.#{$ns}media__element {
 			margin-right: 0em;
 			margin-left: 1em;
 			order: 2;
 		}
-		.media__body {
+		.#{$ns}media__body {
 			order: 1;
 		}
 	}
@@ -64,15 +33,3 @@
 		align-items: center;
 	}
 }
-// .media__figure {
-// 	margin-right: 1em;
-// }
-// .media__body {
-// 	flex: 1;
-// }
-// .media-figure--rev {
-// 	order: 2;
-// }
-// .media-body--rev {
-// 	order: 1;
-// }
