@@ -16,8 +16,9 @@ var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
 var elements_component_1 = require('./components/elements/elements.component');
 var button_component_1 = require('./components/elements/button.component');
-var tooltip_component_1 = require('./components/elements/tooltip.component');
 var var_component_1 = require('./components/variables/var.component');
+var components_component_1 = require('./components/components/components.component');
+var tooltip_component_1 = require('./components/components/tooltip.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var AppModule = (function () {
     function AppModule() {
@@ -30,6 +31,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                     { path: 'elements', component: elements_component_1.ElementsComponent },
+                    { path: 'components', component: components_component_1.ComponentsComponent },
                     { path: 'variable', component: var_component_1.VarComponent },
                     { path: '', component: welcome_component_1.WelcomeComponent }
                 ])
@@ -38,6 +40,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 welcome_component_1.WelcomeComponent,
                 elements_component_1.ElementsComponent,
+                components_component_1.ComponentsComponent,
                 button_component_1.ButtonComponent,
                 tooltip_component_1.TooltipComponent,
                 var_component_1.VarComponent,
