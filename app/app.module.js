@@ -15,6 +15,8 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
 var elements_component_1 = require('./components/elements/elements.component');
+var button_component_1 = require('./components/elements/button.component');
+var tooltip_component_1 = require('./components/elements/tooltip.component');
 var var_component_1 = require('./components/variables/var.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var AppModule = (function () {
@@ -36,6 +38,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 welcome_component_1.WelcomeComponent,
                 elements_component_1.ElementsComponent,
+                button_component_1.ButtonComponent,
+                tooltip_component_1.TooltipComponent,
                 var_component_1.VarComponent,
                 code_display_directive_1.CodeDisplayDirective
             ],
