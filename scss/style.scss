@@ -13,6 +13,7 @@
 @import "base/images"; // base image
 @import "base/icons"; // base icons
 @import "base/typography"; // base typography
+@import "base/forms"; // base typography
 @import "base/flexgrid"; // base flexgrid
 
 // MIXIN
@@ -25,6 +26,9 @@
 @import "elements/tab-nav"; // tabbed navigation
 @import "elements/steps-bar"; // steps bar
 @import "elements/form"; // form elements
+@import "elements/range-slider"; // range slider
+@import "elements/radio"; // radio button
+@import "elements/checkbox"; // checkboxes
 
 // COMPONENTS
 @import "components/data-tips"; // css only data tips

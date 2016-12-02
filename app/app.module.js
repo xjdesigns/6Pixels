@@ -16,6 +16,10 @@ var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
 var elements_component_1 = require('./components/elements/elements.component');
 var button_component_1 = require('./components/elements/button.component');
+var progress_bar_component_1 = require('./components/elements/progress-bar.component');
+var range_slider_component_1 = require('./components/elements/range-slider.component');
+var radio_component_1 = require('./components/elements/radio.component');
+var checkbox_component_1 = require('./components/elements/checkbox.component');
 var var_component_1 = require('./components/variables/var.component');
 var components_component_1 = require('./components/components/components.component');
 var tooltip_component_1 = require('./components/components/tooltip.component');
@@ -44,6 +48,10 @@ var AppModule = (function () {
                 components_component_1.ComponentsComponent,
                 media_obj_component_1.MediaObjComponent,
                 button_component_1.ButtonComponent,
+                range_slider_component_1.RangeSliderComponent,
+                radio_component_1.RadioComponent,
+                checkbox_component_1.CheckboxComponent,
+                progress_bar_component_1.ProgressBarComponent,
                 tooltip_component_1.TooltipComponent,
                 var_component_1.VarComponent,
                 code_display_directive_1.CodeDisplayDirective

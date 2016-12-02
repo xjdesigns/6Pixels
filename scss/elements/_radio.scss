@@ -1,0 +1,66 @@
+// RADIO BUTTONS
+// CHECKBOX/RADIO //
+.#{$ns}radio {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 18px;
+  font-size: .875rem;
+  line-height: 1.2;
+  margin-right: 12px;
+  color: $greyscale-07;
+  cursor: pointer;
+
+  // RADIO
+  input[type="radio"] {
+    display: none;
+
+    &:checked + .#{$ns}radio__dot {
+      &:after {
+        background-color: $greyscale-07;
+        transform: scale(1);
+        transition: transform .3s;
+      }
+      &:before {
+        background-color: $primary;
+        transform: scale(.5);
+        z-index: 2;
+        transition: transform .3s;
+      }
+    }
+  }
+  .#{$ns}radio__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $greyscale-07;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    margin: auto;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 1;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform .3s;
+    }
+  }
+
+  &:hover {
+    .#{$ns}radio__dot:before {
+      background-color: $primary;
+      transform: scale(.5);
+      transition: transform .3s;
+    }
+  }
+}

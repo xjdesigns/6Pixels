@@ -1,15 +1,8 @@
-// this is the base style sheet
-// where all the base belong to us
-// set these for a global level
-// ██████╗  █████╗ ███████╗███████╗
-// ██╔══██╗██╔══██╗██╔════╝██╔════╝
-// ██████╔╝███████║███████╗█████╗
-// ██╔══██╗██╔══██║╚════██║██╔══╝
-// ██████╔╝██║  ██║███████║███████╗
-// ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+///////////
+// BASE //
+///////////
 
-// Reset the box-sizing
-// Credit: shttp://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// Reset the box-sizing credit: shttp://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
 }

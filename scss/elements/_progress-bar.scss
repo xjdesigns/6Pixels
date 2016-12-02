@@ -5,7 +5,7 @@
 $progress-bg: gray; // set for prog background
 $prog-radius: 24px; // change to value wanted globally
 
-.progress {
+.#{$ns}progress {
 	margin: 32px 0;
 	border-radius: ($prog-radius);
 	background-color: $greyscale-10;
@@ -44,8 +44,6 @@ $prog-radius: 24px; // change to value wanted globally
 
 	// HTML5 progress bar, IE10 and up
 	progress[value] {
-		-webkit-appearance: none;
-		appearance: none;
 		display: block; // progress is inline-block by nature
 		border: none;
 		width: 100%;

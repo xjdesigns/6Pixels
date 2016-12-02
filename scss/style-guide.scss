@@ -48,13 +48,28 @@ code.#{$nssg}code-block {
     flex: 1;
     text-align: center;
   }
+}
 
-  .#{$nssg}pixel {
-    width: 16px;
-    height: 16px;
-    background: blue;
-    margin: 24px auto;
-    box-shadow: -25px 0px 0px blue, -50px 0px 0px blue, -75px 0px 0px blue, 25px 0px 0px blue, 50px 0px 0px blue;
+.#{$nssg}pixel-parent {
+  perspective: 50em;
+}
+.#{$nssg}pixel {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: blue;
+  margin: 6px;
+
+  // animation: liftOff 4s infinite ease-in-out;
+}
+
+@keyframes liftOff {
+  0%, 100% {
+    transform: translateZ(0px);
+  }
+  50% {
+    transform: translateZ(200px);
   }
 }
 
