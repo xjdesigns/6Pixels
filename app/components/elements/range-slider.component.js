@@ -9,26 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(router) {
-        this.router = router;
-        this.appMenuOpen = false;
+var RangeSliderComponent = (function () {
+    function RangeSliderComponent() {
     }
-    AppComponent.prototype.goToRoute = function (route) {
-        this.router.navigate([("" + route)]);
-    };
-    AppComponent.prototype.toggleMenu = function () {
-        this.appMenuOpen = !this.appMenuOpen;
-    };
-    AppComponent = __decorate([
+    RangeSliderComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html'
+            selector: 'app-range-slider',
+            templateUrl: 'range-slider.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], RangeSliderComponent);
+    return RangeSliderComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.RangeSliderComponent = RangeSliderComponent;

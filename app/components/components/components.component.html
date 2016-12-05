@@ -1,0 +1,14 @@
+<div class="app-menu-nav">
+  <div
+    *ngFor="let elem of elements"
+    data-id="spx-{{ elem.name }}"
+  >{{ elem.name }}</div>
+</div>
+
+<div class="app-menu-title">
+  <h1>Elements</h1>
+</div>
+
+<app-tooltip></app-tooltip>
+<div class="sg-divider"></div>
+<app-media-obj></app-media-obj>

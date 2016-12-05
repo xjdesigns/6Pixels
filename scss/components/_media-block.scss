@@ -1,0 +1,35 @@
+///////////////////
+// MEDIA OBJECT //
+///////////////////
+// credit: Nicole Sullivan
+
+// using flexbox to solve our issues
+.#{$ns}media {
+	display: flex;
+	align-items: flex-start;
+
+	&__element {
+		margin-right: 1em;
+	}
+
+	&__body {
+		flex: 1;
+	}
+
+	&--rev {
+		text-align: right;
+
+		.#{$ns}media__element {
+			margin-right: 0em;
+			margin-left: 1em;
+			order: 2;
+		}
+		.#{$ns}media__body {
+			order: 1;
+		}
+	}
+
+	&--middle {
+		align-items: center;
+	}
+}

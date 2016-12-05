@@ -1,40 +1,40 @@
 // created by Jason Jacobson
 // THE NEW GENERATION OF CSS FRAMEWORKS
-// USING THE BEST OF CSS TO CREATE A POWERFUL
-// FRAMEWORK THAT CAN EXTEND AND SCALE WITH EASE
-// CODE NAMED: Indominus Flex 0.1 BETA
+// 6PIXELS
+
 
 ///////////////////////////
 // IMPORT STYLESHEETS //
 ///////////////////////////
+
+// BASE
 @import "base/var"; // all global variables should live here
 @import "base/base"; // base styling goes here
 @import "base/images"; // base image
 @import "base/icons"; // base icons
 @import "base/typography"; // base typography
+@import "base/forms"; // base typography
+@import "base/flexgrid"; // base flexgrid
 
-@import "modules/flexgrid"; // the flexgrid
-@import "modules/button"; // buttons
-@import "modules/mixins"; // mixins for writing dry code
-@import "modules/progress-bar"; // Progress Bar styling
-@import "modules/tab-nav"; // tabbed navigation
-@import "modules/steps-bar"; // steps bar
-@import "modules/info-bar"; // info bar and all it can do
-@import "modules/header"; // the header my friend
-@import "modules/hero-data"; // the hero data unit
-@import "modules/data-tips"; // css only data tips
-@import "modules/toast"; // toasts
-@import "modules/form"; // form elements
-@import "modules/media-block"; // Nicole Sullivans Media Object
+// MIXIN
+@import "mixin/mixins"; // mixins for writing dry code
 
+// ELEMENTS
+@import "elements/button"; // buttons
+@import "elements/progress-bar"; // Progress Bar styling
+@import "elements/pills"; // Progress Bar styling
+@import "elements/tab-nav"; // tabbed navigation
+@import "elements/steps-bar"; // steps bar
+@import "elements/form"; // form elements
+@import "elements/range-slider"; // range slider
+@import "elements/radio"; // radio button
+@import "elements/checkbox"; // checkboxes
 
-// these are possible additions I can make but well see
-// @import "modules/ranges/range.global.scss";
-// // LOADING SEEMS TO BE CAUSING ISSUES
-// @import "modules/loading/loading";
+// COMPONENTS
+@import "components/data-tips"; // css only data tips
+@import "components/toast"; // toasts
+@import "components/media-block"; // Nicole Sullivans Media Object
 
+// TRUMPS
 // all other styling is in the SHAME FILE!!
-// Read a great article on creating one to help write better code
-// this is where all the junk lives that needs to be converted
-// to Atomic OOBEMITSCSS
 @import "shame";

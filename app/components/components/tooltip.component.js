@@ -9,26 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(router) {
-        this.router = router;
-        this.appMenuOpen = false;
+var TooltipComponent = (function () {
+    function TooltipComponent() {
     }
-    AppComponent.prototype.goToRoute = function (route) {
-        this.router.navigate([("" + route)]);
-    };
-    AppComponent.prototype.toggleMenu = function () {
-        this.appMenuOpen = !this.appMenuOpen;
-    };
-    AppComponent = __decorate([
+    TooltipComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html'
+            selector: 'app-tooltip',
+            templateUrl: 'tooltip.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], TooltipComponent);
+    return TooltipComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.TooltipComponent = TooltipComponent;

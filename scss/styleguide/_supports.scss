@@ -1,0 +1,46 @@
+// SUPPORTS RULE
+// IF YOU WRITE AM @SUPPORTS RULE PLEASE
+// DECALRE A BLOCK TO SHOW THIS STATUS
+// INSIDE THE STATUS PAGE
+
+// THIS IS YOUR BASE FOR VISUAL
+.#{$nssg}i-support {
+  margin: 24px 0px;
+
+  [class*="sg-rule-"] {
+    margin: 24px 12px;
+    padding: 24px 12px;
+    vertical-align: middle;
+    background-color: gray;
+    color: white;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+// ALL: INITIAL
+.#{$nssg}rule-all-initial {
+  display: none;
+}
+@supports (all: initial) {
+  .#{$nssg}rule-all-initial {
+    display: inline-block;
+  }
+}
+// DISPLAY GRID
+.#{$nssg}rule-display-grid {
+  display: none;
+}
+@supports (display: grid) {
+  .#{$nssg}rule-display-grid {
+    display: inline-block;
+  }
+}
+// FILTER TEST
+.#{$nssg}rule-filter {
+  display: none;
+}
+@supports (filter: blur()) {
+  .#{$nssg}rule-filter {
+    display: inline-block;
+  }
+}

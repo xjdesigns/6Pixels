@@ -1,0 +1,97 @@
+////////////////////
+// RANGE SLIDERS //
+////////////////////
+
+// Below are global settings
+$thumbSize: 18px;
+$trackSize: 2px;
+$thumbColor: $greyscale-03;
+$trackColor: $greyscale-10;
+
+.#{$ns}range-slider {
+  input[type=range] {
+    margin: 18px 0;
+    width: 100%;
+    border: 0;
+
+  	&:focus {
+  		outline: 0;
+  	}
+  }
+  // you are not able to use sass on pesudo attr elements
+  input[type=range] {
+    //CHROME/SAFARI
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: $trackSize;
+      cursor: pointer;
+      background: $trackColor;
+    }
+    &::-webkit-slider-thumb {
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: 50%;
+      background: $thumbColor;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7px;
+      transition: all .3s;
+      position: relative;
+    }
+    //FIREFOX
+    &::-moz-range-track {
+      width: 100%;
+      height: $trackSize;
+      cursor: pointer;
+      background: $trackColor;
+    }
+    &::-moz-range-thumb {
+      border: 0px solid transparent;
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: 50%;
+      background: $thumbColor;
+      cursor: pointer;
+      transition: box-shadow .3s ease;
+    }
+    &::-moz-focus-outer {
+      border: 0;
+    }
+    // MS
+    &::-ms-track {
+      width: 100%;
+      height: $trackSize;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      border-width: 0;
+      color: transparent;
+    }
+    &::-ms-fill-lower {
+      background: $trackColor;
+      border: 0.2px solid $trackColor;
+      border-radius: $trackSize;
+    }
+    &::-ms-fill-upper {
+      background: $trackColor;
+      border: 0.2px solid $trackColor;
+      border-radius: $trackSize;
+    }
+    &::-ms-thumb {
+      border: 1px solid $thumbColor;
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: 50%;
+      background: $thumbColor;
+      cursor: pointer;
+    }
+    &:focus {
+      &::-ms-fill-lower {
+        background: $trackColor;
+      }
+      &::-ms-fill-upper {
+        background: $trackColor;
+      }
+    }
+  }
+}

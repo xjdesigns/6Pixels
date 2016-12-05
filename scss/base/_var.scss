@@ -1,9 +1,12 @@
- // ██████╗  █████╗ ███████╗███████╗
- // ██╔══██╗██╔══██╗██╔════╝██╔════╝
- // ██████╔╝███████║███████╗█████╗
- // ██╔══██╗██╔══██║╚════██║██╔══╝
- // ██████╔╝██║  ██║███████║███████╗
- // ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
+////////////////////////
+// 6PIXELS VARIABLES //
+////////////////////////
+
+////////////////
+// NAMESPACE //
+////////////////
+$ns: 'spx-';
+
 
 ////////////////////
 // BASE SIZING //
@@ -15,12 +18,13 @@ $font-family-base: 'Roboto', helvetica, arial, sans-serif;
 $font-family-headline: 'Titillium Web', sans-serif;
 
 
-/////////////
-// MAIN //
-/////////////
+////////////////
+// BASE GRID //
+////////////////
 $container: 1140px; // our max width
-$gutter: 24px; // gutters do get cut in half
-$base-columns: 12; // columns
+$gutter: 24px; // gutters = 1/2 width
+$base-columns: default; // columns
+$base-columns-default: 12;
 
 
 ////////////////////
@@ -36,9 +40,9 @@ $break-sm: 20em; // 320
 /////////////////////
 // BRAND COLORS //
 /////////////////////
-$brand-primary: #1fa2ed;
-$brand-secondary: #2555de;
-$brand-tertiary: #e4ec0e;
+$brand-primary: blue;
+$brand-secondary: darkblue;
+$brand-tertiary: lightblue;
 $brand-info: #04a3ff;
 $brand-success: green;
 $brand-warning: gold;

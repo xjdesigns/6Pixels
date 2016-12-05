@@ -1,0 +1,44 @@
+//////////////////////////
+// ADVANCED TOOL TIP //
+//////////////////////////
+.#{$ns}adv-tip {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: -9999px;
+    transform: translateX(-50%) scale(0);
+    padding: 12px 18px;
+    width: 220px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: .75rem;
+    line-height: 1.4;
+    background-color: white;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity .2s ease-in .2s, left .1s .6s, transform .4s ease-in .2s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $primary;
+      border: 1px solid white;
+    }
+  }
+
+  &:hover {
+    .#{$ns}adv-tip__content {
+      left: 50%;
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      transition: opacity .4s ease-out .2s, transform .4s ease-out .4s;
+    }
+  }
+}

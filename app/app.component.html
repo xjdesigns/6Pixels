@@ -1,0 +1,47 @@
+<div class="app">
+
+  <header class="app-header">
+
+    <div class="app-header__logo">
+      SIX PIXELS
+    </div>
+    <div class="app-header__links">
+      <span (click)="goToRoute('/welcome')">v1:ALPHA</span>
+    </div>
+
+  </header>
+
+  <div class="app-sidebar" [class.is-open]="appMenuOpen">
+    <div (click)="toggleMenu()" class="app-sidebar__open" [class.is-open]="appMenuOpen">
+      <i class="material-icons">add</i>
+    </div>
+    <nav class="app-sidebar__nav">
+      <ul class="app-nav">
+        <li (click)="goToRoute('/welcome')">Home</li>
+        <li (click)="goToRoute('/variable')">Vars</li>
+        <li (click)="goToRoute('/elements')">Elements</li>
+        <li (click)="goToRoute('/components')">Components</li>
+        <li (click)="goToRoute('/elements')">Helpers</li>
+        <li (click)="goToRoute('/welcome')">Credit</li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="sg-hero">
+    <div class="sg-hero__elem">
+      <div class="sg-pixel-parent">
+        <div class="sg-pixel sg-pixel--01"></div>
+        <div class="sg-pixel sg-pixel--02"></div>
+        <div class="sg-pixel sg-pixel--03"></div>
+        <div class="sg-pixel sg-pixel--04"></div>
+        <div class="sg-pixel sg-pixel--05"></div>
+        <div class="sg-pixel sg-pixel--06"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-view">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

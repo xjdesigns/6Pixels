@@ -1,0 +1,54 @@
+// CHECKBOX
+.#{$ns}checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 24px;
+  font-size: .875rem;
+  line-height: 1.2;
+  margin-right: 12px;
+  color: $greyscale-07;
+  cursor: pointer;
+
+  // CHECKBOX
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + .#{$ns}checkbox__box {
+      &:before {
+        transform: scale(0.8);
+        color: white;
+      }
+      &:after {
+        border-color: $primary;
+        background-color: $primary;
+      }
+    }
+  }
+  .#{$ns}checkbox__box {
+    &:before, &:after {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 0;
+      transition: transform .4s, border-color .4s;
+    }
+    &:before {
+      content: attr(data-icon);
+      font-size: 1.125rem;
+      transform: scale(0);
+      text-align: center;
+      height: 1em;
+      z-index: 1;
+    }
+    &:after {
+      border: 2px solid $greyscale-07;
+    }
+  }
+}

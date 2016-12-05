@@ -1,0 +1,133 @@
+// 6PIXEL APP CODE
+$header: 72px;
+
+.app {
+  width: 100%;
+  background: white;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: $header;
+  padding: 12px 24px;
+  background: white;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+
+  &__logo {
+    flex: 1;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: black;
+  }
+
+  &__links {
+    color: black;
+  }
+}
+
+.app-view {
+  max-width: 70vw;
+  // height: calc(100vh - 10vh - #{$header});
+  margin: calc(24px + #{$header}) auto 48px;
+  padding-bottom: 48px;
+}
+
+.app-sidebar {
+  position: fixed;
+  top: $header;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 240px;
+  padding: 24px;
+  background: rgba(0,0,0,0.8);
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+
+  &.is-open {
+    transform: translateX(0%);
+  }
+
+  // OPEN
+  &__open {
+    background: blue;
+    color: white;
+    max-width: 36px;
+    max-height: 36px;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+    cursor: pointer;
+
+    position: absolute;
+    top: 12px;
+    right: -48px;
+
+    transform: rotate(0deg);
+    transition: right .3s ease, box-shadow .3s ease, transform .3s ease;
+
+    &:hover {
+      box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+    }
+
+    &.is-open {
+      right: -18px;
+      transform: rotate(45deg);
+    }
+  }
+
+  // NAV
+  &__nav {
+    color: white;
+
+    li {
+      margin: 12px 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.app-menu-nav {
+  display: flex;
+  margin: auto;
+  width: 70vw;
+
+  > div {
+    flex: 1;
+  }
+}
+
+.app-menu-title {
+  margin: 24px 0 56px;
+  border-bottom: 1px solid gray;
+}
+
+
+// CARDS
+.app-card-comp {
+  width: 100%;
+  height: 200px;
+  padding: 24px;
+  box-shadow: 1px 8px 6px -4px rgba(0,0,0,0.3);
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 48px;
+
+  .material-icons {
+    font-size: 4rem;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    margin-bottom: 24px;
+  }
+}

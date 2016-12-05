@@ -9,26 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent(router) {
-        this.router = router;
-        this.appMenuOpen = false;
+var ComponentsComponent = (function () {
+    function ComponentsComponent() {
+        this.elements = [{
+                name: 'tips'
+            }, {
+                name: 'media object'
+            }];
     }
-    AppComponent.prototype.goToRoute = function (route) {
-        this.router.navigate([("" + route)]);
-    };
-    AppComponent.prototype.toggleMenu = function () {
-        this.appMenuOpen = !this.appMenuOpen;
-    };
-    AppComponent = __decorate([
+    ComponentsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html'
+            selector: 'app-components',
+            templateUrl: 'components.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], ComponentsComponent);
+    return ComponentsComponent;
 }());
-exports.AppComponent = AppComponent;
+exports.ComponentsComponent = ComponentsComponent;
