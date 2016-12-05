@@ -40,7 +40,7 @@ code.#{$nssg}code-block {
   display: flex;
   align-items: center;
   height: 200px;
-  background: lightgray;
+  background: blue;
   margin-top: 72px;
   overflow: hidden;
 
@@ -58,7 +58,7 @@ code.#{$nssg}code-block {
   vertical-align: middle;
   width: 16px;
   height: 16px;
-  background: blue;
+  background: lightgray;
   margin: 6px;
 
   // animation: liftOff 4s infinite ease-in-out;
