@@ -16,6 +16,8 @@ import { CheckboxComponent } from './components/elements/checkbox.component';
 
 import { VarComponent } from './components/variables/var.component';
 
+import { HelpersComponent } from './components/helpers/helpers.component';
+
 import { ComponentsComponent } from './components/components/components.component';
 import { TooltipComponent } from './components/components/tooltip.component';
 import { MediaObjComponent } from './components/components/media-obj.component';
@@ -31,6 +33,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
       { path: 'elements', component: ElementsComponent },
       { path: 'components', component: ComponentsComponent },
       { path: 'variable', component: VarComponent },
+      { path: 'helpers', component: HelpersComponent },
       { path: '', component: WelcomeComponent }
     ])
   ],
@@ -39,6 +42,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     WelcomeComponent,
     ElementsComponent,
     ComponentsComponent,
+    HelpersComponent,
     MediaObjComponent,
     ButtonComponent,
     RangeSliderComponent,

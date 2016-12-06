@@ -21,6 +21,7 @@ var range_slider_component_1 = require('./components/elements/range-slider.compo
 var radio_component_1 = require('./components/elements/radio.component');
 var checkbox_component_1 = require('./components/elements/checkbox.component');
 var var_component_1 = require('./components/variables/var.component');
+var helpers_component_1 = require('./components/helpers/helpers.component');
 var components_component_1 = require('./components/components/components.component');
 var tooltip_component_1 = require('./components/components/tooltip.component');
 var media_obj_component_1 = require('./components/components/media-obj.component');
@@ -38,6 +39,7 @@ var AppModule = (function () {
                     { path: 'elements', component: elements_component_1.ElementsComponent },
                     { path: 'components', component: components_component_1.ComponentsComponent },
                     { path: 'variable', component: var_component_1.VarComponent },
+                    { path: 'helpers', component: helpers_component_1.HelpersComponent },
                     { path: '', component: welcome_component_1.WelcomeComponent }
                 ])
             ],
@@ -46,6 +48,7 @@ var AppModule = (function () {
                 welcome_component_1.WelcomeComponent,
                 elements_component_1.ElementsComponent,
                 components_component_1.ComponentsComponent,
+                helpers_component_1.HelpersComponent,
                 media_obj_component_1.MediaObjComponent,
                 button_component_1.ButtonComponent,
                 range_slider_component_1.RangeSliderComponent,
