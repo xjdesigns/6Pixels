@@ -1,0 +1,15 @@
+This serves as the master doc for what six pixels is and what can be added.
+
+• Look into conditional boolean for manual builds
+
+** ELEMENTS
+• Forms
+• Select Boxes
+• Text Elements (ie.block quotes, paragragh, aside, al lof those)
+• toggle
+• breadcrumbs
+• images
+
+** COMPONENTS
+• Header
+• Menu/Nav

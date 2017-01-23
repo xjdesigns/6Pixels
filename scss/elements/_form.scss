@@ -244,9 +244,9 @@
   user-select: none;
 }
 .tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  content: "";
   position: relative;
   display: block;
-  content: "";
   width: 50%;
   height: 100%;
 }
