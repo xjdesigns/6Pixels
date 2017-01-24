@@ -1,0 +1,32 @@
+// IMAGES
+.#{$ns}img  {
+  display: inline-block;
+  vertical-align: middle;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &--sm {
+    max-width: 48px;
+    min-width: 24px;
+    max-height: 48px;
+    max-height: 24px;
+  }
+
+  &--md {
+    max-width: 96px;
+    min-width: 48px;
+    max-height: 96px;
+    max-height: 48px;
+  }
+
+  &--lg {
+    max-width: 192px;
+    min-width: 96px;
+    max-height: 192px;
+    max-height: 96px;
+  }
+}

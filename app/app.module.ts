@@ -13,6 +13,9 @@ import { ProgressBarComponent } from './components/elements/progress-bar.compone
 import { RangeSliderComponent } from './components/elements/range-slider.component';
 import { RadioComponent } from './components/elements/radio.component';
 import { CheckboxComponent } from './components/elements/checkbox.component';
+import { ToggleComponent } from './components/elements/toggle.component';
+import { ImageComponent } from './components/elements/image.component';\
+import { VideoComponent } from './components/elements/video.component';
 
 import { VarComponent } from './components/variables/var.component';
 
@@ -48,6 +51,9 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     RangeSliderComponent,
     RadioComponent,
     CheckboxComponent,
+    ToggleComponent,
+    VideoComponent,
+    ImageComponent,
     ProgressBarComponent,
     TooltipComponent,
     VarComponent,
