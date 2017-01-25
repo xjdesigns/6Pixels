@@ -1,8 +1,8 @@
 // FORMS
 .#{$ns}form {
-
   input, textarea, label {
     width: 100%;
+    font-size: .75rem;
 
     &:focus:not(label), &:active:not(label) {
       outline: 0;
@@ -23,5 +23,25 @@
     font-size: .75rem;
     margin-bottom: 3px;
     color: $greyscale-08;
+  }
+
+  // INPUT
+  .#{$ns}input,
+  .#{$ns}textarea {
+    // ERROR STATE
+    &.has-error {
+      border-color: $error;
+      color: $error;
+    }
+  }
+
+  // search
+  .#{$ns}search {
+    .#{$ns}input {
+      &[type=search] {
+        width: 87%;
+        margin-right: 6px;
+      }
+    }
   }
 }

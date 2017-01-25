@@ -24,6 +24,8 @@ var checkbox_component_1 = require('./components/elements/checkbox.component');
 var toggle_component_1 = require('./components/elements/toggle.component');
 var image_component_1 = require('./components/elements/image.component');
 var video_component_1 = require('./components/elements/video.component');
+var pills_component_1 = require('./components/elements/pills.component');
+var select_component_1 = require('./components/elements/select.component');
 var var_component_1 = require('./components/variables/var.component');
 var helpers_component_1 = require('./components/helpers/helpers.component');
 var components_component_1 = require('./components/components/components.component');
@@ -61,7 +63,9 @@ var AppModule = (function () {
                 checkbox_component_1.CheckboxComponent,
                 toggle_component_1.ToggleComponent,
                 video_component_1.VideoComponent,
+                pills_component_1.PillsComponent,
                 image_component_1.ImageComponent,
+                select_component_1.SelectComponent,
                 progress_bar_component_1.ProgressBarComponent,
                 tooltip_component_1.TooltipComponent,
                 var_component_1.VarComponent,

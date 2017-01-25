@@ -17,6 +17,8 @@ import { CheckboxComponent } from './components/elements/checkbox.component';
 import { ToggleComponent } from './components/elements/toggle.component';
 import { ImageComponent } from './components/elements/image.component';
 import { VideoComponent } from './components/elements/video.component';
+import { PillsComponent } from './components/elements/pills.component';
+import { SelectComponent } from './components/elements/select.component';
 
 import { VarComponent } from './components/variables/var.component';
 
@@ -55,7 +57,9 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     CheckboxComponent,
     ToggleComponent,
     VideoComponent,
+    PillsComponent,
     ImageComponent,
+    SelectComponent,
     ProgressBarComponent,
     TooltipComponent,
     VarComponent,

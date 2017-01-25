@@ -1,0 +1,38 @@
+<div class="flex">
+  <div class="flex__i--xs-6">
+    <form class="spx-form">
+      <div class="flex">
+        <div class="flex__i--xs-12">
+          <label for="jason" class="spx-label">Select Label</label>
+          <div class="spx-select">
+            <select id="jason">
+              <option *ngFor="let s of selection" [value]="s.value">{{ s.name }}</option>
+            </select>
+            <select id="jason" multiple>
+              <option *ngFor="let s of selection" [value]="s.value">{{ s.name }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+<pre>
+  <code code-display>
+    <form class="spx-form">
+      <select>
+        <option value="value">Option Text</option>
+      </select>
+      <select multiple>
+        <option value="value">Option Text</option>
+      </select>
+    </form>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Selectbox</h2>
+    <p>
+      <span class="spx-pill spx-pill--sd">Working</span>
+    </p>
+    <p>Selectboxes are used in forms for selecting options. Adding the attribute multiple allows for more selections.</p>
+  </div>
+</div>
