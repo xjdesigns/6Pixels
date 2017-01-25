@@ -131,3 +131,19 @@ $header: 72px;
     margin-bottom: 24px;
   }
 }
+
+// FOOTER
+.app-footer {
+  padding: 48px;
+  background: rgba(0,0,0,1);
+  color: white;
+  text-align: center;
+
+  p {
+    font-size: .75rem;
+  }
+
+  .material-icons {
+    vertical-align: middle;
+  }
+}

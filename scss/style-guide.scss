@@ -10,6 +10,16 @@ $nssg: 'sg-';
   background: gray;
 }
 
+.#{$nssg}grid {
+  padding: 12px;
+  background: $brand-primary;
+  margin: 12px 0;
+
+  &--h100 {
+    height: 100px;
+  }
+}
+
 code {
   background-color: blue;
   padding: 3px 6px;

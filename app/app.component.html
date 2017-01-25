@@ -19,6 +19,7 @@
       <ul class="app-nav">
         <li (click)="goToRoute('/welcome')">Home</li>
         <li (click)="goToRoute('/variable')">Vars / Base</li>
+        <li (click)="goToRoute('/grid')">Grid</li>
         <li (click)="goToRoute('/elements')">Elements</li>
         <li (click)="goToRoute('/components')">Components</li>
         <li (click)="goToRoute('/helpers')">Helpers</li>
@@ -43,5 +44,10 @@
   <div class="app-view">
     <router-outlet></router-outlet>
   </div>
+
+  <footer class="app-footer">
+    <p>SIX PIXELS 2017</p>
+    <p>Created and maintained by Jason Jacobson</p>
+  </footer>
 
 </div>

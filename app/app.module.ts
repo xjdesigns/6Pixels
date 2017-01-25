@@ -20,6 +20,8 @@ import { VideoComponent } from './components/elements/video.component';
 import { PillsComponent } from './components/elements/pills.component';
 import { SelectComponent } from './components/elements/select.component';
 
+import { GridComponent } from './components/grid/grid.component';
+
 import { VarComponent } from './components/variables/var.component';
 
 import { HelpersComponent } from './components/helpers/helpers.component';
@@ -37,6 +39,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'elements', component: ElementsComponent },
+      { path: 'grid', component: GridComponent },
       { path: 'components', component: ComponentsComponent },
       { path: 'variable', component: VarComponent },
       { path: 'helpers', component: HelpersComponent },
@@ -47,6 +50,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     AppComponent,
     WelcomeComponent,
     ElementsComponent,
+    GridComponent,
     ComponentsComponent,
     HelpersComponent,
     FormsComponent,

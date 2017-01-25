@@ -26,6 +26,7 @@ var image_component_1 = require('./components/elements/image.component');
 var video_component_1 = require('./components/elements/video.component');
 var pills_component_1 = require('./components/elements/pills.component');
 var select_component_1 = require('./components/elements/select.component');
+var grid_component_1 = require('./components/grid/grid.component');
 var var_component_1 = require('./components/variables/var.component');
 var helpers_component_1 = require('./components/helpers/helpers.component');
 var components_component_1 = require('./components/components/components.component');
@@ -43,6 +44,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                     { path: 'elements', component: elements_component_1.ElementsComponent },
+                    { path: 'grid', component: grid_component_1.GridComponent },
                     { path: 'components', component: components_component_1.ComponentsComponent },
                     { path: 'variable', component: var_component_1.VarComponent },
                     { path: 'helpers', component: helpers_component_1.HelpersComponent },
@@ -53,6 +55,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 welcome_component_1.WelcomeComponent,
                 elements_component_1.ElementsComponent,
+                grid_component_1.GridComponent,
                 components_component_1.ComponentsComponent,
                 helpers_component_1.HelpersComponent,
                 forms_component_1.FormsComponent,
