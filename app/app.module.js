@@ -15,6 +15,7 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
 var elements_component_1 = require('./components/elements/elements.component');
+var forms_component_1 = require('./components/elements/forms.component');
 var button_component_1 = require('./components/elements/button.component');
 var progress_bar_component_1 = require('./components/elements/progress-bar.component');
 var range_slider_component_1 = require('./components/elements/range-slider.component');
@@ -52,6 +53,7 @@ var AppModule = (function () {
                 elements_component_1.ElementsComponent,
                 components_component_1.ComponentsComponent,
                 helpers_component_1.HelpersComponent,
+                forms_component_1.FormsComponent,
                 media_obj_component_1.MediaObjComponent,
                 button_component_1.ButtonComponent,
                 range_slider_component_1.RangeSliderComponent,

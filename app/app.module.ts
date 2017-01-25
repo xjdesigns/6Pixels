@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
 import { ElementsComponent } from './components/elements/elements.component';
+import { FormsComponent } from './components/elements/forms.component';
 import { ButtonComponent } from './components/elements/button.component';
 import { ProgressBarComponent } from './components/elements/progress-bar.component';
 import { RangeSliderComponent } from './components/elements/range-slider.component';
 import { RadioComponent } from './components/elements/radio.component';
 import { CheckboxComponent } from './components/elements/checkbox.component';
 import { ToggleComponent } from './components/elements/toggle.component';
-import { ImageComponent } from './components/elements/image.component';\
+import { ImageComponent } from './components/elements/image.component';
 import { VideoComponent } from './components/elements/video.component';
 
 import { VarComponent } from './components/variables/var.component';
@@ -46,6 +47,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     ElementsComponent,
     ComponentsComponent,
     HelpersComponent,
+    FormsComponent,
     MediaObjComponent,
     ButtonComponent,
     RangeSliderComponent,
