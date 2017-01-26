@@ -31,6 +31,7 @@ import { TooltipComponent } from './components/components/tooltip.component';
 import { MediaObjComponent } from './components/components/media-obj.component';
 
 import { CodeDisplayDirective } from './shared/code-display.directive';
+import { CodeTableComponent } from './shared/code-table.component';
 
 @NgModule({
   imports:      [
@@ -67,7 +68,8 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
     ProgressBarComponent,
     TooltipComponent,
     VarComponent,
-    CodeDisplayDirective
+    CodeDisplayDirective,
+    CodeTableComponent
   ],
   bootstrap:    [ AppComponent ]
 })

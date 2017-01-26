@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: 'forms.component.html'
 })
 
-export class FormsComponent {}
+export class FormsComponent {
+  description = [{
+    add: 'has-error',
+    desc: 'Error state applied to inputs or textarea.'
+  }];
+}

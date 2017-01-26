@@ -11,6 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var FormsComponent = (function () {
     function FormsComponent() {
+        this.description = [{
+                add: 'has-error',
+                desc: 'Error state applied to inputs or textarea.'
+            }];
     }
     FormsComponent = __decorate([
         core_1.Component({

@@ -7,15 +7,14 @@ import { Component } from '@angular/core';
 })
 
 export class HelpersComponent {
-  // elements = [{
-  //   name: 'buttons'
-  // }, {
-  //   name: 'forms'
-  // }, {
-  //   name: 'tips'
-  // }, {
-  //   name: 'progress bar'
-  // }, {
-  //   name: 'pills'
-  // }];
+  description = [{
+    add: 'spx-all-reset',
+    desc: 'Assigns all:inital to element, resetting rules.'
+  }, {
+    add: 'spx-display-none',
+    desc: 'Sets the element to display:none'
+  }, {
+    add: 'spx-is-disabled',
+    desc: 'Disables element with pointer-events:none, and opacity at .4.'
+  }];
 }

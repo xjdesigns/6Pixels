@@ -20,6 +20,10 @@ $nssg: 'sg-';
   }
 }
 
+.#{$nssg}view-row {
+  margin: 12px 0px 0px;
+}
+
 code {
   background-color: blue;
   padding: 3px 6px;

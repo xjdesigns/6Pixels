@@ -10,7 +10,7 @@ $btn-padding: 12px; // we math with this number below
   vertical-align: middle;
   min-width: 160px;
   font-size: .875rem;
-  padding: $btn-padding $btn-padding*2;
+  padding: $btn-padding $btn-padding * 2;
   border-radius: $btn-radius;
   border: 1px solid $greyscale-11;
   background-color: transparent;
@@ -25,6 +25,19 @@ $btn-padding: 12px; // we math with this number below
 
   &:not(:last-child) {
     margin-right: 12px; // TODO: needed??
+  }
+
+  // SIZING
+  &--sm {
+    padding: $btn-padding / 2 $btn-padding;
+    min-width: 90px;
+    font-size: .7rem;
+  }
+
+  // FULL WIDTH
+  &--block {
+    display: block;
+    min-width: 100%;
   }
 }
 
@@ -89,38 +102,6 @@ $btn-padding: 12px; // we math with this number below
       content: attr(data-icon);
       font-size: 1rem;
       line-height: 1.5;
-    }
-  }
-}
-
-////////////////////
-// BUTTON GROUP //
-////////////////////
-.#{$ns}btn-group {
-  display: flex;
-  align-items: center;
-  min-width: 120px;
-  border: 1px solid transparent;
-  border-radius: 7px;
-
-  &__btn {
-    flex: 1 1 45px;
-    padding: 6px;
-    color: $greyscale-11;
-    transition: all .3s ease;
-
-    &:first-child {
-      border-radius: 6px 0 0 6px;
-    }
-    &:last-child {
-      border-radius: 0 6px 6px 0;
-    }
-    &:not(:last-child) {
-      border-right: 1px solid $greyscale-11;
-    }
-
-    > i {
-      font-size: 1rem;
     }
   }
 }

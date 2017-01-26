@@ -15,6 +15,15 @@ export class SelectComponent {
   }, {
     name: 'option 3',
     value: 3
+  }, {
+    name: 'option 4',
+    value: 4
+  }, {
+    name: 'option 5',
+    value: 5
+  }, {
+    name: 'option 6',
+    value: 6
   }];
 }
 

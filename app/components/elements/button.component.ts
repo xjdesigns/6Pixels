@@ -11,6 +11,9 @@ export class ButtonComponent {
     add: 'spx-btn',
     desc: 'Base class'
   }, {
+    add: 'spx-btn--sm',
+    desc: 'Creates a small button'
+  }, {
     add: 'spx-btn--material',
     desc: 'Creates a material button'
   }, {
@@ -22,5 +25,5 @@ export class ButtonComponent {
   }, {
     add: '[ATTR]: data-icon',
     desc: 'Injects ligature icon into ::before. Use with material or icon modifiers'
-  }]
+  }];
 }

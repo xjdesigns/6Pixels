@@ -11,6 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var HelpersComponent = (function () {
     function HelpersComponent() {
+        this.description = [{
+                add: 'spx-all-reset',
+                desc: 'Assigns all:inital to element, resetting rules.'
+            }, {
+                add: 'spx-display-none',
+                desc: 'Sets the element to display:none'
+            }, {
+                add: 'spx-is-disabled',
+                desc: 'Disables element with pointer-events:none, and opacity at .4.'
+            }];
     }
     HelpersComponent = __decorate([
         core_1.Component({

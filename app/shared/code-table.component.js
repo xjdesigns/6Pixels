@@ -9,36 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SelectComponent = (function () {
-    function SelectComponent() {
-        this.selection = [{
-                name: 'option 1',
-                value: 1
-            }, {
-                name: 'option 2',
-                value: 2
-            }, {
-                name: 'option 3',
-                value: 3
-            }, {
-                name: 'option 4',
-                value: 4
-            }, {
-                name: 'option 5',
-                value: 5
-            }, {
-                name: 'option 6',
-                value: 6
-            }];
+var CodeTableComponent = (function () {
+    function CodeTableComponent() {
+        this.description = [];
+        this.isOpen = false;
     }
-    SelectComponent = __decorate([
+    CodeTableComponent.prototype.ngOnInit = function () {
+        this.description = this.DataCode;
+    };
+    CodeTableComponent.prototype.toggleTable = function () {
+        this.isOpen = !this.isOpen;
+    };
+    __decorate([
+        core_1.Input('data'), 
+        __metadata('design:type', Object)
+    ], CodeTableComponent.prototype, "DataCode", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], CodeTableComponent.prototype, "isOpen", void 0);
+    CodeTableComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'app-select',
-            templateUrl: 'select.component.html'
+            selector: 'app-code-table',
+            templateUrl: 'code-table.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], SelectComponent);
-    return SelectComponent;
+    ], CodeTableComponent);
+    return CodeTableComponent;
 }());
-exports.SelectComponent = SelectComponent;
+exports.CodeTableComponent = CodeTableComponent;
