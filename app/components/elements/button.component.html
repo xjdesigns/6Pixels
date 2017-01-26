@@ -1,12 +1,15 @@
 <div class="flex">
   <div class="flex__i--xs-6">
     <button class="spx-btn spx-btn--primary">I am button</button>
+    <button class="spx-btn spx-btn--primary spx-btn--icon" data-icon="check">Material</button>
     <button class="spx-btn spx-btn--primary spx-btn--material" data-icon="check">Material</button>
     <button class="spx-btn spx-btn--primary spx-btn--circle" data-icon="check"></button>
 <pre>
   <code code-display>
     <button class="spx-btn spx-btn--primary">I am button</button>
+    <button class="spx-btn spx-btn--primary spx-btn--icon" data-icon="check">Material</button>
     <button class="spx-btn spx-btn--primary spx-btn--material" data-icon="check">Material</button>
+    <button class="spx-btn spx-btn--primary spx-btn--circle" data-icon="check"></button>
   </code>
 </pre>
   </div>
@@ -16,14 +19,14 @@
       <span class="spx-pill spx-pill--pr">Stable</span>
     </p>
     <p>Buttons add easy understanding to your page for elements a user should interact with. Whether it takes them to a new route or location, maybe toggles something on the page a user always knows a button is something of use.</p>
-    <table>
+    <table class="app-table">
       <tr>
-        <th>Class</th>
+        <th>Class/Attr</th>
         <th>Description</th>
       </tr>
-      <tr>
-        <td>spx-btn--circle</td>
-        <td>Creates a circular button</td>
+      <tr *ngFor="let d of description">
+        <td>{{ d.add }}</td>
+        <td>{{ d.desc }}</td>
       </tr>
     </table>
   </div>

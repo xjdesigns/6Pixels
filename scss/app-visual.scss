@@ -132,6 +132,27 @@ $header: 72px;
   }
 }
 
+// TABLE DOCUMENTS
+.app-table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 12px 0;
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.3);
+
+  th,
+  td {
+    padding: 12px;
+    font-size: 12px;
+    border: 1px solid rgba(0,0,0,0.3);
+  }
+
+  th {
+    background: rgba(0,0,0,0.5);
+    color: white;
+  }
+}
+
 // FOOTER
 .app-footer {
   padding: 48px;

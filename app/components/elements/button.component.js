@@ -8,18 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var ButtonComponent = (function () {
     function ButtonComponent() {
+        this.description = [{
+                add: 'spx-btn',
+                desc: 'Base class'
+            }, {
+                add: 'spx-btn--material',
+                desc: 'Creates a material button'
+            }, {
+                add: 'spx-btn--icon',
+                desc: 'Creates a icon button'
+            }, {
+                add: 'spx-btn--circle',
+                desc: 'Creates a circular button'
+            }, {
+                add: '[ATTR]: data-icon',
+                desc: 'Injects ligature icon into ::before. Use with material or icon modifiers'
+            }];
     }
-    ButtonComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'app-button',
-            templateUrl: 'button.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ButtonComponent);
     return ButtonComponent;
 }());
+ButtonComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-button',
+        templateUrl: 'button.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], ButtonComponent);
 exports.ButtonComponent = ButtonComponent;
