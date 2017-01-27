@@ -12,8 +12,20 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var AppComponent = (function () {
     function AppComponent(router) {
+        var _this = this;
         this.router = router;
         this.appMenuOpen = false;
+        this.heroWelcome = true;
+        this.router.events.subscribe(function (e) {
+            if (e instanceof router_1.NavigationStart) {
+                if (e.url === '/welcome') {
+                    _this.heroWelcome = true;
+                }
+                else {
+                    _this.heroWelcome = false;
+                }
+            }
+        });
     }
     AppComponent.prototype.goToRoute = function (route) {
         this.router.navigate([("" + route)]);

@@ -64,6 +64,28 @@ code.#{$nssg}code-block {
   }
 }
 
+// WELCOME HERO
+.#{$nssg}hero-welcome {
+  margin-top: 72px;
+  padding: 40vh 0;
+  text-align: center;
+  color: white;
+
+  background: $brand-primary url('https://images.unsplash.com/photo-1429516387459-9891b7b96c78?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
+  background-attachment: fixed;
+
+  &--01 {
+    background: $brand-primary url('https://images.unsplash.com/photo-1445965860339-a61271f3578e?dpr=2&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
+    background-attachment: fixed;
+
+  }
+
+  &--02 {
+    background: $brand-primary url('https://images.unsplash.com/photo-1456532078044-0eada87ed0df?dpr=2&auto=format&fit=crop&w=1199&h=801&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
+    background-attachment: fixed;
+  }
+}
+
 .#{$nssg}pixel-parent {
   perspective: 50em;
 }

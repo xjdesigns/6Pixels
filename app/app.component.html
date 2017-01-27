@@ -28,7 +28,21 @@
     </nav>
   </div>
 
-  <div class="sg-hero">
+  <div *ngIf="heroWelcome">
+    <div class="sg-hero-welcome">
+      <h1>Welcome to SIX PIXELS</h1>
+    </div>
+
+    <div class="sg-hero-welcome sg-hero-welcome--01">
+      <h1>A small CSS framework built for Evergreen support.</h1>
+    </div>
+
+    <div class="sg-hero-welcome sg-hero-welcome--02">
+      <h1>Start writing now and enjoy more time outside</h1>
+    </div>
+  </div>
+
+  <div *ngIf="!heroWelcome" class="sg-hero">
     <div class="sg-hero__elem">
       <div class="sg-pixel-parent">
         <div class="sg-pixel sg-pixel--01"></div>
