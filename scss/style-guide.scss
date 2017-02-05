@@ -71,6 +71,10 @@ code.#{$nssg}code-block {
   text-align: center;
   color: white;
 
+  h1 {
+    text-shadow: 1px 1px 3px black;
+  }
+
   background: $brand-primary url('https://images.unsplash.com/photo-1429516387459-9891b7b96c78?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
   background-attachment: fixed;
 
