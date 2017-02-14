@@ -9,17 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var unsplash_service_1 = require('../../services/unsplash.service');
 var ImageComponent = (function () {
-    function ImageComponent() {
+    function ImageComponent(unsplash) {
+        this.unsplash = unsplash;
+        this.photos = [];
         this.img01 = 'https://images.unsplash.com/photo-1475727946784-2890c8fdb9c8?dpr=2&auto=format&fit=crop&w=1500&h=985&q=80&cs=tinysrgb&crop=';
     }
+    ImageComponent.prototype.ngOnInit = function () {
+        this.getPhotos();
+    };
+    ImageComponent.prototype.getPhotos = function () {
+        var _this = this;
+        this.unsplash
+            .getPhotos()
+            .then(function (photos) {
+            console.warn('photos::', photos);
+            _this.photos = photos;
+        });
+    };
     ImageComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'app-image',
-            templateUrl: 'image.component.html'
+            templateUrl: 'image.component.html',
+            providers: [unsplash_service_1.UnsplashService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [unsplash_service_1.UnsplashService])
     ], ImageComponent);
     return ImageComponent;
 }());

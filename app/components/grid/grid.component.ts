@@ -10,10 +10,10 @@ export class GridComponent {
     add: 'flex',
     desc: 'Base class'
   }, {
-    add: 'flex__i--{size}',
+    add: 'flex__i--{size}-{col}',
     desc: 'Flex item'
   }, {
-    add: 'flex__o--{size}',
+    add: 'flex__o--{size}-{col}',
     desc: 'Flex offset'
   }, {
     add: 'flex--{size}-start',

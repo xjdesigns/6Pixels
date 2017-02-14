@@ -1,3 +1,105 @@
+<div class="stacked">
+
+  <div class="flex">
+    <div class="flex__i--xs-10">
+
+      <div plane>
+        <div stage="front" class="flex" [class.front-active]="frontActive">
+          <div lift="20" class="flex__i--xs-12">
+            <div class="spx-vid">
+              <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/zw47_q9wbBE" width="560"></iframe>
+            </div>
+          </div>
+          <div lift="20" class="flex__i--xs-12" [class.lift-active]="buttonActive">
+            <button class="spx-btn spx-btn--primary place-btn">Test</button>
+          </div>
+          <div lift="20" class="flex__i--xs-3">
+            <div class="spx-progress">
+              <div style="width: 30%;"></div>
+            </div>
+          </div>
+          <div lift="20" class="flex__i--xs-9">
+            <form class="spx-form">
+              <div class="flex">
+                <div class="flex__i--xs-12">
+                  <label class="spx-label">Input Label</label>
+                  <input class="spx-input" type="text" value="Input Value">
+                </div>
+                <div class="flex__i--xs-12">
+                  <label class="spx-label">Textarea Label</label>
+                  <textarea class="spx-textarea" cols="30" rows="10"></textarea>
+                </div>
+                <div class="flex__i--xs-12">
+                  <label class="spx-label">Search Label</label>
+                  <div class="spx-search">
+                    <input class="spx-input" type="search" value="search me">
+                    <button class="spx-btn spx-btn--primary spx-btn--circle" data-icon="search"></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div lift="20" class="flex__i--xs-4">
+            <div class="sg-grid"></div>
+          </div>
+          <div lift="20" class="flex__i--xs-4">
+            <div class="sg-grid"></div>
+          </div>
+          <div lift="20" class="flex__i--xs-4">
+            <div class="sg-grid"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="flex__i--xs-2">
+      <button (click)="activate('button')" class="spx-btn spx-btn--sm spx-btn--primary spx-btn--icon" data-icon="pageview">Button</button>
+      <button (click)="activate('form')" class="spx-btn spx-btn--sm spx-btn--primary spx-btn--icon" data-icon="pageview">Form</button>
+    </div>
+  </div>
+
+
+  <!-- <div class="plane">
+
+    <div class="set-container">
+      <div class="set set--01"></div>
+      <div class="set set--02"></div>
+      <div class="set set--03"></div>
+
+      <div class="plane-btn">
+        <button class="spx-btn spx-btn--primary place-btn">Test</button>
+      </div>
+
+      <div class="plane-form">
+        <form class="spx-form">
+          <div class="flex">
+            <div class="flex__i--xs-12">
+              <label class="spx-label">Input Label</label>
+              <input class="spx-input" type="text" value="Input Value">
+            </div>
+            <div class="flex__i--xs-12">
+              <label class="spx-label">Textarea Label</label>
+              <textarea class="spx-textarea" cols="30" rows="10"></textarea>
+            </div>
+            <div class="flex__i--xs-12">
+              <label class="spx-label">Search Label</label>
+              <div class="spx-search">
+                <input class="spx-input" type="search" value="search me">
+                <button class="spx-btn spx-btn--primary spx-btn--circle" data-icon="search"></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+
+  </div> -->
+
+</div>
+
+
 <div class="app-menu-nav">
   <div
     *ngFor="let elem of elements"
@@ -8,7 +110,6 @@
 <div class="app-menu-title">
   <h1>Elements</h1>
 </div>
-
 
 <app-button></app-button>
 <div class="sg-divider"></div>

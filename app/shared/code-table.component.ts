@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CodeTableComponent implements OnInit {
   description = [];
-  @Input('data') DataCode: CodeData;
+  @Input('data') DataCode: CodeData[];
   @Input() isOpen: boolean = false;
 
   ngOnInit() {

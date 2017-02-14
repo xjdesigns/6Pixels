@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from  '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { FormsModule } from '@angular/forms';
 
@@ -37,6 +38,7 @@ import { CodeTableComponent } from './shared/code-table.component';
   imports:      [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: 'elements', component: ElementsComponent },

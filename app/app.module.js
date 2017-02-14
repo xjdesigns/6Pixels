@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var welcome_component_1 = require('./components/welcome/welcome.component');
@@ -42,6 +43,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 router_1.RouterModule.forRoot([
                     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                     { path: 'elements', component: elements_component_1.ElementsComponent },

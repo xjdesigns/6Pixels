@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ElementsComponent = (function () {
     function ElementsComponent() {
+        this.frontActive = false;
+        this.buttonActive = false;
         this.elements = [{
                 name: 'buttons'
             }, {
@@ -23,6 +25,30 @@ var ElementsComponent = (function () {
                 name: 'pills'
             }];
     }
+    ElementsComponent.prototype.onDocScroll = function (ev) {
+        var point = ev.target.body.scrollTop;
+        if (point >= 10 && point <= 600) {
+            this.frontActive = true;
+        }
+        else {
+            this.frontActive = false;
+        }
+    };
+    ElementsComponent.prototype.activate = function (arg) {
+        switch (arg) {
+            case 'button':
+                this.buttonActive = true;
+                break;
+            default:
+                this.buttonActive = false;
+        }
+    };
+    __decorate([
+        core_1.HostListener('window:scroll', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], ElementsComponent.prototype, "onDocScroll", null);
     ElementsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

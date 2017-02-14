@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  HostListener
+} from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -7,6 +10,18 @@ import { Component } from '@angular/core';
 })
 
 export class ElementsComponent {
+  frontActive: boolean = false;
+  buttonActive: boolean = false;
+
+  @HostListener('window:scroll', ['$event']) onDocScroll(ev) {
+    let point = ev.target.body.scrollTop;
+    if (point >= 10 && point <= 600) {
+      this.frontActive = true;
+    } else {
+      this.frontActive = false;
+    }
+  }
+
   elements = [{
     name: 'buttons'
   }, {
@@ -18,4 +33,14 @@ export class ElementsComponent {
   }, {
     name: 'pills'
   }];
+
+  activate(arg) {
+    switch(arg) {
+      case 'button':
+        this.buttonActive = true;
+        break;
+      default:
+        this.buttonActive = false;
+    }
+  }
 }

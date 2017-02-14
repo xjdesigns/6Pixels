@@ -5,17 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var core_1 = require("@angular/core");
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
 var GridComponent = (function () {
     function GridComponent() {
         this.description = [{
                 add: 'flex',
                 desc: 'Base class'
             }, {
-                add: 'flex__i--{size}',
+                add: 'flex__i--{size}-{col}',
                 desc: 'Flex item'
             }, {
-                add: 'flex__o--{size}',
+                add: 'flex__o--{size}-{col}',
                 desc: 'Flex offset'
             }, {
                 add: 'flex--{size}-start',
@@ -43,13 +46,14 @@ var GridComponent = (function () {
                 desc: 'Aligns using align-items:flex-end'
             }];
     }
+    GridComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'app-grid',
+            templateUrl: 'grid.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], GridComponent);
     return GridComponent;
 }());
-GridComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'app-grid',
-        templateUrl: 'grid.component.html'
-    })
-], GridComponent);
 exports.GridComponent = GridComponent;

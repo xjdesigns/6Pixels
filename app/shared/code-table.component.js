@@ -22,7 +22,7 @@ var CodeTableComponent = (function () {
     };
     __decorate([
         core_1.Input('data'), 
-        __metadata('design:type', Object)
+        __metadata('design:type', Array)
     ], CodeTableComponent.prototype, "DataCode", void 0);
     __decorate([
         core_1.Input(), 
