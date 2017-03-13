@@ -1,0 +1,55 @@
+///////////////////
+// TYPOGRAPHY //
+///////////////////
+
+
+////////////////////////
+// ANCHORS/BUTTONS //
+///////////////////////
+a {
+  &.#{$ns}link {
+    color: $brand-primary;
+    text-decoration: underline;
+    transition: color .3s ease;
+  }
+}
+
+
+//////////////
+// LISTS //
+//////////////
+.#{$ns}list {
+  li {
+    position: relative;
+    padding-left: 12px;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+
+
+////////////////////
+// BLOCKQUOTES //
+////////////////////
+.#{$ns}blockq {
+  position: relative;
+  border-left: none;
+
+  &--quotation {
+    &:before {
+      content: '\201c';
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+  }
+}

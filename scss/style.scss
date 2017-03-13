@@ -21,19 +21,28 @@
 
 // ELEMENTS
 @import "elements/button"; // buttons
+@import "elements/typography"; // typography
+@import "elements/image"; // images
+@import "elements/video"; // videos
 @import "elements/progress-bar"; // Progress Bar styling
 @import "elements/pills"; // Progress Bar styling
 @import "elements/tab-nav"; // tabbed navigation
 @import "elements/steps-bar"; // steps bar
 @import "elements/form"; // form elements
+@import "elements/select"; // selectboxes
 @import "elements/range-slider"; // range slider
 @import "elements/radio"; // radio button
 @import "elements/checkbox"; // checkboxes
+@import "elements/toggle"; // toggle switch
 
 // COMPONENTS
 @import "components/data-tips"; // css only data tips
 @import "components/toast"; // toasts
 @import "components/media-block"; // Nicole Sullivans Media Object
+@import "components/breadcrumb";
+
+// HELPERS
+@import "helpers/helpers"; // Helper snippets
 
 // TRUMPS
 // all other styling is in the SHAME FILE!!

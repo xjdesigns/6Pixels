@@ -1,0 +1,33 @@
+// BREADCRUMBS
+.#{$ns}bcrumb {
+  .#{$ns}trail {
+    position: relative;
+    margin-right: 12px;
+    padding: 3px 6px;
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid $greyscale-05;
+    transition: border .3s ease, color .3s ease;
+
+    &:hover {
+      color: $primary;
+      border-top: 1px solid $primary;
+      border-bottom: 1px solid $primary;
+    }
+
+    &::after {
+      content: '/';
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 6px);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

@@ -11,6 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ButtonComponent = (function () {
     function ButtonComponent() {
+        this.description = [{
+                add: 'spx-btn',
+                desc: 'Base class'
+            }, {
+                add: 'spx-btn--sm',
+                desc: 'Creates a small button'
+            }, {
+                add: 'spx-btn--material',
+                desc: 'Creates a material button'
+            }, {
+                add: 'spx-btn--icon',
+                desc: 'Creates a icon button'
+            }, {
+                add: 'spx-btn--circle',
+                desc: 'Creates a circular button'
+            }, {
+                add: '[ATTR]: data-icon',
+                desc: 'Injects ligature icon into ::before. Use with material or icon modifiers'
+            }];
     }
     ButtonComponent = __decorate([
         core_1.Component({

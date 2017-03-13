@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from  '@angular/router';
+import { Router, NavigationStart } from  '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -9,8 +9,19 @@ import { Router } from  '@angular/router';
 
 export class AppComponent {
   appMenuOpen: boolean = false;
+  heroWelcome: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.router.events.subscribe(e => {
+      if (e instanceof NavigationStart) {
+        if (e.url === '/welcome') {
+          this.heroWelcome = true;
+        } else {
+          this.heroWelcome = false;
+        }
+      }
+    });
+  }
 
   goToRoute(route) {
     this.router.navigate([`${route}`]);

@@ -1,53 +1,55 @@
 // TOGGLE BUTTON
 .#{$ns}tgl {
-	display: none;
+  .#{$ns}tgl-input {
+    display: none;
 
-	+ .#{$ns}tgl-btn {
-		outline: 0;
-	  display: block;
-	  width: 48px;
-	  height: 24px;
-	  position: relative;
-	  cursor: pointer;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  user-select: none;
+    + .#{$ns}tgl-btn {
+      outline: 0;
+      display: block;
+      width: 48px;
+      height: 24px;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
-		background: $brand-shade-01;
-	  border-radius: 2em;
-	  padding: 2px;
-	  transition: all .4s ease;
+      background: $greyscale-02;
+      border-radius: 2em;
+      padding: 2px;
+      transition: all .4s ease;
 
-		&::before,
-		&::after {
-			content: "";
-		  position: relative;
-		  display: block;
-		  width: 50%;
-		  height: 100%;
-		}
+      &::before,
+      &::after {
+        content: '';
+        position: relative;
+        display: block;
+        width: 50%;
+        height: 100%;
+      }
 
-		&::before {
-			display: none;
-		}
+      &::before {
+        display: none;
+      }
 
-		&::after {
-			left: 0;
+      &::after {
+        left: 0;
 
-			border-radius: 50%;
-		  background: white;
-		  transition: all .2s ease;
-		}
-	}
+        border-radius: 50%;
+        background: white;
+        transition: all .2s ease;
+      }
+    }
 
-	&:checked {
-		+ .#{$ns}tgl-btn {
-			background: $brand-primary;
+    &:checked {
+      + .#{$ns}tgl-btn {
+        background: $brand-primary;
 
-			&::after {
-				left: 50%;
-			}
-		}
-	}
+        &::after {
+          left: 50%;
+        }
+      }
+    }
+  }
 }

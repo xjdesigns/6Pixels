@@ -18,16 +18,31 @@
     <nav class="app-sidebar__nav">
       <ul class="app-nav">
         <li (click)="goToRoute('/welcome')">Home</li>
-        <li (click)="goToRoute('/variable')">Vars</li>
+        <li (click)="goToRoute('/variable')">Vars / Base</li>
+        <li (click)="goToRoute('/grid')">Grid</li>
         <li (click)="goToRoute('/elements')">Elements</li>
         <li (click)="goToRoute('/components')">Components</li>
-        <li (click)="goToRoute('/elements')">Helpers</li>
+        <li (click)="goToRoute('/helpers')">Helpers</li>
         <li (click)="goToRoute('/welcome')">Credit</li>
       </ul>
     </nav>
   </div>
 
-  <div class="sg-hero">
+  <div *ngIf="heroWelcome">
+    <div class="sg-hero-welcome">
+      <h1>Welcome to SIX PIXELS</h1>
+    </div>
+
+    <div class="sg-hero-welcome sg-hero-welcome--01">
+      <h1>A small CSS framework built for Evergreen support.</h1>
+    </div>
+
+    <div class="sg-hero-welcome sg-hero-welcome--02">
+      <h1>Start writing now and enjoy more time outside</h1>
+    </div>
+  </div>
+
+  <div *ngIf="!heroWelcome" class="sg-hero">
     <div class="sg-hero__elem">
       <div class="sg-pixel-parent">
         <div class="sg-pixel sg-pixel--01"></div>
@@ -43,5 +58,10 @@
   <div class="app-view">
     <router-outlet></router-outlet>
   </div>
+
+  <footer class="app-footer">
+    <p>SIX PIXELS 2017</p>
+    <p>Created and maintained by Jason Jacobson</p>
+  </footer>
 
 </div>

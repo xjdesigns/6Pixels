@@ -11,7 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var WelcomeComponent = (function () {
     function WelcomeComponent() {
+        this.switchDate = '2017-03-03';
+        this.timeRemaining = {
+            total: 0,
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+        this.initializeClock(this.switchDate);
     }
+    WelcomeComponent.prototype.initializeClock = function (endTime) {
+        var _this = this;
+        var timeInterval = setInterval(function () {
+            _this.timeRemaining = calcRemainingTime(endTime);
+            if (_this.timeRemaining.total <= 0) {
+                clearInterval(timeInterval);
+            }
+        }, 1000);
+    };
     WelcomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -23,3 +41,17 @@ var WelcomeComponent = (function () {
     return WelcomeComponent;
 }());
 exports.WelcomeComponent = WelcomeComponent;
+function calcRemainingTime(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date().toString());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}

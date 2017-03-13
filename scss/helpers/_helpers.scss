@@ -1,0 +1,16 @@
+//////////////
+// HELPERS //
+//////////////
+
+.#{$ns}all-reset {
+  all: initial;
+}
+
+.#{$ns}display-none {
+  display: none;
+}
+
+.#{$ns}is-disabled {
+  pointer-events: none;
+  opacity: .4;
+}

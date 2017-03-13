@@ -1,30 +1,34 @@
-<div class="flex">
-  <div class="flex__i--xs-4">
-    <div class="app-card-comp">
-      <i class="material-icons">developer_board</i>
-      <p>Basic elements, easily editable to meet your project needs.</p>
-    </div>
+<div class="sg-countdown">
+  <div>
+    <p>{{ timeRemaining.days }}</p>
+    <p>days</p>
   </div>
-  <div class="flex__i--xs-4">
-    <div class="app-card-comp">
-      <i class="material-icons">device_hub</i>
-      <p>Components built in for easy use with default styling.</p>
-    </div>
+  <div>
+    <p>{{ timeRemaining.hours }}</p>
+    <p>hours</p>
   </div>
-  <div class="flex__i--xs-4">
-    <div class="app-card-comp">
-      <i class="material-icons">devices_other</i>
-      <p>Built on the principle<br>Atomic BEMOOITSCSS</p>
-    </div>
+  <div>
+    <p>{{ timeRemaining.minutes }}</p>
+    <p>minutes</p>
+  </div>
+  <div>
+    <p>{{ timeRemaining.seconds }}</p>
+    <p>seconds</p>
   </div>
 </div>
-
 <div>
-  <h1>The Idea</h1>
-  <p>SIX PIXELS was created with the idea in mind, that every project is different and can be treated different but should not affect the use of a framework. Removing the idea of trumping other frameworks to create a custom feel. Out of the box solution for rapid prototyping but SIX PIXELS leaves your structure out of the code so when you update your styles, your overall layout should be intact.</p>
+  <h2>Current filesize minified: 28kb</h2>
+</div>
+<div class="sg-divider"></div>
+<div>
+  <h1>Local Development</h1>
+  <p>SIX PIXELS is built using Angular 2. Make sure you have gulp installed globally, then run <code>npm install</code>. Once installed running <code>npm start</code> will serve up the dev app on localhost:3000</p>
   <div class="sg-divider"></div>
   <h2>TODO:</h2>
   <p>Current status of 6 pixels: I grabbed all my files from the Indominus Flex project when it was the basis of the framework. This needs a ground up approach for writing. All classes need namespacing. Namespace will be 'spx-'.</p>
+  <p>*** Finish objects, review the code for cleanup</p>
+  <p>*** Determine/Start components, review the code for cleanup</p>
+  <p>*** Geting started page</p>
   <p>Feel free to contribute to the project anytime with a PR.</p>
   <div class="sg-divider"></div>
   <h2>Guidelines</h2>
@@ -69,30 +73,5 @@
     <div class="sg-rule-display-grid"><code>display: grid;</code></div>
     <div class="sg-rule-filter"><code>filter: "all rules";</code></div>
 
-  </div>
-  <div class="sg-divider"></div>
-  <h2>Base HTML</h2>
-  <div>
-<pre>
-  <code code-display>
-    &lt;!DOCTYPE html>
-    &lt;html lang="en">
-      &lt;head>
-        &lt;title>TITLE&lt;/title>
-        &lt;meta charset="UTF-8">
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1">
-        &lt;link rel="stylesheet" href="css/em-reset.css">
-
-        &lt;link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
-        &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        &lt;link rel="stylesheet" href="css/style.css">
-
-      &lt;/head>
-      &lt;body>
-      &lt;/body>
-    &lt;/html>
-  </code>
-</pre>
   </div>
 </div>

@@ -1,0 +1,16 @@
+// SELECTBOXES
+.#{$ns}select {
+  select {
+    width: 100%;
+    font-size: .75rem;
+    border: 1px solid $greyscale-10;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+
+    &:focus:not(label), &:active:not(label) {
+      outline: 0;
+      border: 1px solid $brand-primary;
+    }
+  }
+}

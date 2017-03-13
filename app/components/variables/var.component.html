@@ -1,8 +1,71 @@
-<h1>Variables</h1>
+<h1>Variables and Base</h1>
+<p>SIX PIXELS uses a single variable file for custom configurations.</p>
+
+<div class="sg-divider"></div>
+<h2>Base HTML</h2>
+<pre>
+  <code code-display>
+    &lt;!DOCTYPE html>
+    &lt;html lang="en">
+      &lt;head>
+        &lt;title>TITLE&lt;/title>
+        &lt;meta charset="UTF-8">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+        &lt;link rel="stylesheet" href="css/em-reset.css">
+        &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        &lt;link rel="stylesheet" href="path/to/css">
+
+      &lt;/head>
+      &lt;body>
+      &lt;/body>
+    &lt;/html>
+  </code>
+</pre>
+
+<div class="sg-divider"></div>
 <div class="sg-color-palette">
 
   <div *ngFor="let color of coloring" class="sg-color-tile sg-color-tile--{{ color.class }}">
     {{ color.name }} = {{ color.color }}
   </div>
 
+</div>
+<div class="sg-divider"></div>
+<div class="flex">
+  <div class="flex__i--xs-6">
+<pre>
+  <code code-display>
+    <h1>Headline 1</h1>
+    <h2>Headline 2</h2>
+    <h3>Headline 3</h3>
+    <h4>Headline 4</h4>
+    <h5>Headline 5</h5>
+    <h6>Headline 6</h6>
+    <p>Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque dolorum excepturi repellat totam perferendis voluptatibus doloribus tempore maiores aliquid!</p>
+    <blockquote>Quote me I dare you!</blockquote>
+    <ul class="spx-list">
+      <li>01</li>
+      <li>02</li>
+      <li>03</li>
+    </ul>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h1>Headline 1</h1>
+    <h2>Headline 2</h2>
+    <h3>Headline 3</h3>
+    <h4>Headline 4</h4>
+    <h5>Headline 5</h5>
+    <h6>Headline 6</h6>
+    <a href="#" class="spx-link">Anchor Link</a>
+    <p>Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque dolorum excepturi repellat totam perferendis voluptatibus doloribus tempore maiores aliquid!</p>
+    <blockquote>Base blockquote, additional classes available</blockquote>
+    <ul class="spx-list">
+      <li>01</li>
+      <li>02</li>
+      <li>03</li>
+    </ul>
+  </div>
 </div>

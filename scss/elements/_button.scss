@@ -1,143 +1,109 @@
-// ██████╗ ██╗   ██╗████████╗████████╗ ██████╗ ███╗   ██╗
-// ██╔══██╗██║   ██║╚══██╔══╝╚══██╔══╝██╔═══██╗████╗  ██║
-// ██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔██╗ ██║
-// ██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╗██║
-// ██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚████║
-// ╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
-
 ////////////////
 // DEFAULT //
 ///////////////
 $btn-radius: 24px;
 $btn-padding: 12px; // we math with this number below
 
-///////////////
-// BUTTON //
-//////////////
+// BUTTON
 .#{$ns}btn {
-	display: inline-block;
-	vertical-align: middle;
-	min-width: 160px;
-	font-size: .875rem;
-	padding: $btn-padding $btn-padding*2;
-	border-radius: $btn-radius;
-	border: 1px solid $greyscale-11;
-	background-color: transparent;
-	color: $greyscale-11;
-	text-align: center;
-	text-decoration: none;
-	transition: all .3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 160px;
+  font-size: .875rem;
+  padding: $btn-padding $btn-padding * 2;
+  border-radius: $btn-radius;
+  border: 1px solid $greyscale-11;
+  background-color: transparent;
+  color: $greyscale-11;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s ease;
 
-	&:hover {
-		color: $greyscale-11;
-	}
+  &:hover {
+    color: $greyscale-11;
+  }
 
-	&:not(:last-child) {
-		margin-right: 12px; // TODO: needed??
-	}
+  &:not(:last-child) {
+    margin-right: 12px; // TODO: needed??
+  }
+
+  // SIZING
+  &--sm {
+    padding: $btn-padding / 2 $btn-padding;
+    min-width: 90px;
+    font-size: .7rem;
+  }
+
+  // FULL WIDTH
+  &--block {
+    display: block;
+    min-width: 100%;
+  }
 }
 
-
-
-////////////////////////
-// BUTTON MATERIAL //
-///////////////////////
+// BUTTON MATERIAL
 .#{$ns}btn {
-	&--material, &--icon {
-		position: relative;
-		overflow: hidden;
+  &--material, &--icon {
+    position: relative;
+    overflow: hidden;
 
-		&::before {
-			content: attr(data-icon);
-			position: absolute;
-			top: 0;
-			right: 12px;
-			bottom: 0;
-			margin: auto;
-			font-size: inherit;
-			transition: transform .3s ease;
-		}
+    &::before {
+      content: attr(data-icon);
+      position: absolute;
+      top: 0;
+      right: 12px;
+      bottom: 0;
+      margin: auto;
+      font-size: inherit;
+      transition: transform .3s ease;
+    }
 
-		& > i {
-			font-size: inherit;
-			vertical-align: middle;
-		}
-	}
+    & > i {
+      font-size: inherit;
+      vertical-align: middle;
+    }
+  }
 
-	&--icon {
-		padding-right: 36px;
-	}
+  &--icon {
+    padding-right: 36px;
+  }
 
-	&--material {
-		padding-left: $btn-padding*2;
-		padding-right: $btn-padding*2;
+  &--material {
+    padding-left: $btn-padding*2;
+    padding-right: $btn-padding*2;
 
-		&::before {
-			transform: translateX(calc(100% + 24px));
-		}
+    &::before {
+      transform: translateX(calc(100% + 24px));
+    }
 
-		&:hover {
-			padding-left: $btn-padding;
-			padding-right: $btn-padding*3;
+    &:hover {
+      padding-left: $btn-padding;
+      padding-right: $btn-padding*3;
 
-			&::before {
-				transform: translateX(0);
-			}
-		}
-	}
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
 }
 
 //////////////////////
 // BUTTON CIRCLE //
 /////////////////////
 .#{$ns}btn {
-	&--circle {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-width: 48px;
-		width: 48px;
-		height: 48px;
-		padding: 0;
-		border-radius: 50%;
-		position: relative;
+  &--circle {
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    position: relative;
 
-		> i {
-			flex: 0 0 auto;
-		}
-	}
-}
-
-////////////////////
-// BUTTON GROUP //
-////////////////////
-.#{$ns}btn-group {
-	display: flex;
-	align-items: center;
-	min-width: 120px;
-	border: 1px solid transparent;
-	border-radius: 7px;
-
-	&__btn {
-		flex: 1 1 45px;
-		padding: 6px;
-		color: $greyscale-11;
-		transition: all .3s ease;
-
-		&:first-child {
-			border-radius: 6px 0 0 6px;
-		}
-		&:last-child {
-			border-radius: 0 6px 6px 0;
-		}
-		&:not(:last-child) {
-			border-right: 1px solid $greyscale-11;
-		}
-
-		> i {
-			font-size: 1rem;
-		}
-	}
+    &::before {
+      content: attr(data-icon);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
 }
 
 
@@ -145,43 +111,43 @@ $btn-padding: 12px; // we math with this number below
 // BUTTON MAP //
 ///////////////////
 $btn-map: (
-	primary: $brand-primary,
-	secondary: $brand-secondary
+primary: $brand-primary,
+secondary: $brand-secondary
 );
 
 @each $button, $btn in $btn-map {
-	.#{$ns}btn {
-		&--#{$button} {
-			background-color: $btn;
-			border-color: $btn;
+  .#{$ns}btn {
+    &--#{$button} {
+      background-color: $btn;
+      border-color: $btn;
 
-			&:hover {
-				background-color: transparent;
-				color: $btn;
-			}
-		}
-		&--#{$button}--inverted {
-			background-color: transparent;
-			color: $btn;
-			border-color: $btn;
+      &:hover {
+        background-color: transparent;
+        color: $btn;
+      }
+    }
+    &--#{$button}--inverted {
+      background-color: transparent;
+      color: $btn;
+      border-color: $btn;
 
-			&:hover {
-				background-color: $btn;
-			}
-		}
-	}
-	.#{$ns}btn-group {
-		&--#{$button} {
-			border-color: $btn;
+      &:hover {
+        background-color: $btn;
+      }
+    }
+  }
+  .#{$ns}btn-group {
+    &--#{$button} {
+      border-color: $btn;
 
-			.btn-group__btn {
-				background-color: $btn;
+      .btn-group__btn {
+        background-color: $btn;
 
-				&:hover {
-					background-color: transparent;
-					color: $btn;
-				}
-			}
-		}
-	}
+        &:hover {
+          background-color: transparent;
+          color: $btn;
+        }
+      }
+    }
+  }
 }
