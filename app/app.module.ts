@@ -30,6 +30,7 @@ import { HelpersComponent } from './components/helpers/helpers.component';
 import { ComponentsComponent } from './components/components/components.component';
 import { TooltipComponent } from './components/components/tooltip.component';
 import { MediaObjComponent } from './components/components/media-obj.component';
+import { BreadcrumbComponent } from './components/components/breadcrumb.component';
 
 import { CodeDisplayDirective } from './shared/code-display.directive';
 import { CodeTableComponent } from './shared/code-table.component';
@@ -69,6 +70,7 @@ import { CodeTableComponent } from './shared/code-table.component';
     SelectComponent,
     ProgressBarComponent,
     TooltipComponent,
+    BreadcrumbComponent,
     VarComponent,
     CodeDisplayDirective,
     CodeTableComponent
