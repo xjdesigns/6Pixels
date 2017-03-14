@@ -9,7 +9,8 @@
     border-bottom: 1px solid $greyscale-05;
     transition: border .3s ease, color .3s ease;
 
-    &:hover {
+    &:hover,
+    &.is-active {
       color: $primary;
       border-top: 1px solid $primary;
       border-bottom: 1px solid $primary;
