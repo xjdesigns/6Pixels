@@ -1,0 +1,52 @@
+<div
+  class="spx-selectlist"
+  [class.ink-selectlist--multiple]="multiple"
+>
+
+  <div
+    class="spx-listing-display"
+    data-icon="arrow_drop_down"
+    (click)="toggleList()"
+    *ngIf="!multiple"
+  >{{ selectedID }}</div>
+  <div
+    class="spx-selectlist__listing"
+    [class.is-open]="isOpen || (!isOpen && multiple)"
+  >
+    <div *ngIf="search" class="spx-form">
+      <div class="spx-search">
+        <input
+          class="spx-input"
+          type="search"
+          (keyup)="searchTerm($event)"
+        >
+        <button
+          class="spx-btn spx-btn--primary spx-btn--circle"
+          data-icon="search"
+        ></button>
+      </div>
+    </div>
+
+    <!-- USE THE LIST FOR SELECTING, AND ADD AN ATTRIBUTE FLAG FOR SELECTING MULTIPLE -->
+    <!-- USE THE SEARCH TO FILTER THE LIST -->
+    <!-- TODO:: ALSO ADD IN AN ATTRIBUTE FOR ADDING OBJECTS, WHICH IN TURN SETS TAB SELECTIONS -->
+    <!-- VALUES TO BE USED AT ARIA LABELS -->
+    <ul
+      class="spx-list-select"
+      aria-role="listbox"
+    >
+      <li
+        (click)="selectElement('none')"
+        [attr.aria-label]="None"
+      >None</li>
+      <li
+        *ngFor="let l of list"
+        (click)="selectElement(l[valueProp])"
+        [attr.aria-label]="l[nameProp]"
+        [class.is-selected]="l.selected"
+      >{{ l[nameProp] }}</li>
+    </ul>
+
+  </div>
+
+</div>

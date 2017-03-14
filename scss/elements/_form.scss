@@ -39,7 +39,7 @@
   .#{$ns}search {
     .#{$ns}input {
       &[type=search] {
-        width: 87%;
+        width: calc(100% - 62px);
         margin-right: 6px;
       }
     }

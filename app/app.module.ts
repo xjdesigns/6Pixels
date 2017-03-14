@@ -35,6 +35,11 @@ import { BreadcrumbComponent } from './components/components/breadcrumb.componen
 import { CodeDisplayDirective } from './shared/code-display.directive';
 import { CodeTableComponent } from './shared/code-table.component';
 
+import { Ng2Component } from './NG2/ng2.component';
+import { CountdownComponent } from './NG2/countdown.component';
+import { SelectlistDisplayComponent } from './NG2/selectListDisplay.component';
+import { SelectlistComponent } from './NG2/selectlist.component';
+
 @NgModule({
   imports:      [
     BrowserModule,
@@ -47,6 +52,7 @@ import { CodeTableComponent } from './shared/code-table.component';
       { path: 'components', component: ComponentsComponent },
       { path: 'variable', component: VarComponent },
       { path: 'helpers', component: HelpersComponent },
+      { path: 'ng2', component: Ng2Component},
       { path: '', component: WelcomeComponent }
     ])
   ],
@@ -73,7 +79,11 @@ import { CodeTableComponent } from './shared/code-table.component';
     BreadcrumbComponent,
     VarComponent,
     CodeDisplayDirective,
-    CodeTableComponent
+    CodeTableComponent,
+    Ng2Component,
+    CountdownComponent,
+    SelectlistDisplayComponent,
+    SelectlistComponent
   ],
   bootstrap:    [ AppComponent ]
 })
