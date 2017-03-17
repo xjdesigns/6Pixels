@@ -74,7 +74,7 @@ export class VarComponent {
   }];
 
   mouseOverColor(e, i) {
-    this.hoveredColor = `${e} | ${i}`;
+    this.hoveredColor = `Sass Var: ${e} | Hexidecimal: ${i}`;
   }
   mouseOutColor() {
     this.hoveredColor = 'Hover a color for information';

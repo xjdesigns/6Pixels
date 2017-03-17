@@ -77,7 +77,7 @@ var VarComponent = (function () {
             }];
     }
     VarComponent.prototype.mouseOverColor = function (e, i) {
-        this.hoveredColor = e + " | " + i;
+        this.hoveredColor = "Sass Var: " + e + " | Hexidecimal: " + i;
     };
     VarComponent.prototype.mouseOutColor = function () {
         this.hoveredColor = 'Hover a color for information';

@@ -15,7 +15,7 @@ export class ImageComponent {
   constructor(private unsplash: UnsplashService) {}
 
   ngOnInit() {
-    this.getPhotos();
+    // this.getPhotos();
   }
 
   getPhotos() {
