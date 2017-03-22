@@ -35,6 +35,7 @@ var tooltip_component_1 = require('./components/components/tooltip.component');
 var media_obj_component_1 = require('./components/components/media-obj.component');
 var breadcrumb_component_1 = require('./components/components/breadcrumb.component');
 var pagination_component_1 = require('./components/components/pagination.component');
+var toast_component_1 = require('./components/components/toast.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var code_table_component_1 = require('./shared/code-table.component');
 var ng2_component_1 = require('./NG2/ng2.component');
@@ -83,6 +84,7 @@ var AppModule = (function () {
                 tooltip_component_1.TooltipComponent,
                 breadcrumb_component_1.BreadcrumbComponent,
                 pagination_component_1.PaginationComponent,
+                toast_component_1.ToastComponent,
                 var_component_1.VarComponent,
                 code_display_directive_1.CodeDisplayDirective,
                 code_table_component_1.CodeTableComponent,

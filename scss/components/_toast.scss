@@ -1,14 +1,58 @@
-//////////////
-// TOAST //
-//////////////
-.toaster {
+// TOASTS
+.#{$ns}toaster {
   position: fixed;
   top: 72px;
   right: 12px;
   min-width: 240px;
-  padding: 24px;
-  border-radius: 12px;
-  background-color: $greyscale-07;
-  box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
   z-index: 1001;
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.#{$ns}toast {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 12px;
+  color: white;
+  background: transparentize(black, 0.3);
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+
+  &::before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 6px);
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    background: transparentize(black, 0.3);
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+    border-radius: 50%;
+  }
+
+  &.is-success {
+    border: 1px solid $brand-success;
+
+    &::before {
+      background: $brand-success;
+      border: 1px solid $brand-success;
+    }
+  }
+
+  &.is-error {
+    border: 1px solid $brand-error;
+
+    &::before {
+      background: $brand-error;
+      border: 1px solid $brand-error;
+    }
+  }
+
+  & > p {
+    font-size: .875rem;
+  }
 }
