@@ -22,7 +22,9 @@ var UnsplashService = (function () {
         params.set('per_page', "60");
         return this.http.get(this.unsplashUrl, { search: params })
             .toPromise()
-            .then(function (response) { return response.json(); })
+            .then(function (response) {
+            return response.json();
+        })
             .catch(function () {
             alert('Oops, I shit my pants');
         });

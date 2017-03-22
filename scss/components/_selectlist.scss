@@ -1,0 +1,63 @@
+// SELECT LIST
+// SELECTLIST
+.#{$ns}selectlist {
+  .#{$ns}listing-display {
+    cursor: pointer;
+    position: relative;
+    padding: 12px;
+    border: 1px solid $greyscale-09;
+    border-radius: 2px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+    &::before {
+      content: attr(data-icon);
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__listing {
+    display: none;
+    margin-top: -1px;
+    border: 1px solid $greyscale-09;
+
+    // OPEN STATE
+    &.is-open {
+      display: block;
+      padding: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      cursor: pointer;
+      width: 100%;
+      padding: 6px;
+
+      &:hover {
+        background: $greyscale-08;
+      }
+    }
+  }
+}
+.#{$ns}list-select {
+  max-height: 180px;
+  overflow-y: auto;
+  border-top: 1px solid $greyscale-08;
+  border-bottom: 1px solid $greyscale-08;
+
+  li {
+    &.is-selected {
+      background-color: $brand-primary;
+      color: white;
+    }
+  }
+}

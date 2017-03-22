@@ -25,6 +25,9 @@
     }
 
     &:last-child {
+      color: $primary;
+      border-bottom: 1px solid $primary;
+
       &::after {
         content: none;
       }

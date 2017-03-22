@@ -34,8 +34,13 @@ var components_component_1 = require('./components/components/components.compone
 var tooltip_component_1 = require('./components/components/tooltip.component');
 var media_obj_component_1 = require('./components/components/media-obj.component');
 var breadcrumb_component_1 = require('./components/components/breadcrumb.component');
+var pagination_component_1 = require('./components/components/pagination.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var code_table_component_1 = require('./shared/code-table.component');
+var ng2_component_1 = require('./NG2/ng2.component');
+var countdown_component_1 = require('./NG2/countdown.component');
+var selectListDisplay_component_1 = require('./NG2/selectListDisplay.component');
+var selectlist_component_1 = require('./NG2/selectlist.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -52,6 +57,7 @@ var AppModule = (function () {
                     { path: 'components', component: components_component_1.ComponentsComponent },
                     { path: 'variable', component: var_component_1.VarComponent },
                     { path: 'helpers', component: helpers_component_1.HelpersComponent },
+                    { path: 'ng2', component: ng2_component_1.Ng2Component },
                     { path: '', component: welcome_component_1.WelcomeComponent }
                 ])
             ],
@@ -76,9 +82,14 @@ var AppModule = (function () {
                 progress_bar_component_1.ProgressBarComponent,
                 tooltip_component_1.TooltipComponent,
                 breadcrumb_component_1.BreadcrumbComponent,
+                pagination_component_1.PaginationComponent,
                 var_component_1.VarComponent,
                 code_display_directive_1.CodeDisplayDirective,
-                code_table_component_1.CodeTableComponent
+                code_table_component_1.CodeTableComponent,
+                ng2_component_1.Ng2Component,
+                countdown_component_1.CountdownComponent,
+                selectListDisplay_component_1.SelectlistDisplayComponent,
+                selectlist_component_1.SelectlistComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

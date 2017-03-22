@@ -1,0 +1,38 @@
+<div class="flex">
+  <div class="flex__i--xs-6">
+    <div class="sg-countdown">
+      <div>
+        <p>{{ timeRemaining.days }}</p>
+        <p>days</p>
+      </div>
+      <div>
+        <p>{{ timeRemaining.hours }}</p>
+        <p>hours</p>
+      </div>
+      <div>
+        <p>{{ timeRemaining.minutes }}</p>
+        <p>minutes</p>
+      </div>
+      <div>
+        <p>{{ timeRemaining.seconds }}</p>
+        <p>seconds</p>
+      </div>
+    </div>
+<pre>
+  <code code-display>
+    &lt;app-countdown [date]="'string'">&lt;/app-countdown>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Countdown Timer(NG2)</h2>
+    <p>
+      <span class="spx-pill spx-pill--g3">Angular 2</span>
+      <span class="spx-pill spx-pill--sd">Working</span>
+    </p>
+    <p>Countdown timers are an excellent UI pattern to display a visual representation of a timed matter.</p>
+    <p>Original code was grabbed from <a href="https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/">Sitepoint</a> and can except the ISO dates, short format or long format.</p>
+    <p>use the <code>app-countdown</code> tag and provide the string to the <code>[date]</code> attribute.</p>
+    <p><code>NOTE:</code> Styling is currently not supplied</p>
+  </div>
+</div>

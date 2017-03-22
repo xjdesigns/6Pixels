@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var VarComponent = (function () {
     function VarComponent() {
+        this.hoveredColor = 'Hover a color for information';
         this.coloring = [{
                 name: '$brand-primary',
                 class: 'pr',
@@ -24,19 +25,63 @@ var VarComponent = (function () {
                 class: 'tr',
                 color: '#e4ec0e'
             }, {
-                name: '$brand-grey1',
+                name: '$brand-info',
                 class: 'g1',
+                color: '#04a3ff'
+            }, {
+                name: '$brand-success',
+                class: 'g2',
+                color: 'green'
+            }, {
+                name: '$brand-warning',
+                class: 'g3',
+                color: 'gold'
+            }, {
+                name: '$brand-error',
+                class: 'g3',
+                color: 'red'
+            }];
+        this.greyscale = [{
+                name: '$greyscale-01',
                 color: '#000'
             }, {
-                name: '$brand-grey2',
-                class: 'g2',
+                name: '$greyscale-02',
+                color: '#1a1a1a'
+            }, {
+                name: '$greyscale-03',
                 color: '#333'
             }, {
-                name: '$brand-grey3',
-                class: 'g3',
+                name: '$greyscale-04',
+                color: '#4d4d4d'
+            }, {
+                name: '$greyscale-05',
                 color: '#666'
+            }, {
+                name: '$greyscale-06',
+                color: '#808080'
+            }, {
+                name: '$greyscale-07',
+                color: '#999'
+            }, {
+                name: '$greyscale-08',
+                color: '#b3b3b3'
+            }, {
+                name: '$greyscale-09',
+                color: '#ccc'
+            }, {
+                name: '$greyscale-10',
+                color: '#e5e5e5'
+            }, {
+                name: '$greyscale-11',
+                color: '#fff'
             }];
     }
+    VarComponent.prototype.mouseOverColor = function (e, i) {
+        this.hoveredColor = "Sass Var: " + e + " | Hexidecimal: " + i;
+    };
+    VarComponent.prototype.mouseOutColor = function () {
+        this.hoveredColor = 'Hover a color for information';
+    };
     VarComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

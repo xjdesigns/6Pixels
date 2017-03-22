@@ -30,10 +30,18 @@ gulp.task('sass', function () {
     // .pipe(sourcemaps.init())
     .pipe(sass(settings))
     // .pipe(sourcemaps.write())
-    .pipe(autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'] }))
+    .pipe(autoprefixer({ browsers: ['> 1%', 'last 4 versions', 'Firefox ESR', 'Opera 12.1'] }))
     .pipe(size({
       showFiles: true
     }))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('prod', function() {
+  return gulp.src('./scss/style.{sass,scss}')
+    .pipe(plumber(plumberSettings))
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(autoprefixer({ browsers: ['> 1%', 'last 4 versions', 'Firefox ESR', 'Opera 12.1'] }))
+    .pipe(gulp.dest('./SIXPIXELS'))
 });

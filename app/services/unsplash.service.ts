@@ -14,7 +14,9 @@ export class UnsplashService {
     params.set('per_page', "60");
     return this.http.get(this.unsplashUrl, { search: params })
               .toPromise()
-              .then(response => response.json() )
+              .then(response => {
+                return response.json()
+              })
               .catch(() => {
                 alert('Oops, I shit my pants');
               });

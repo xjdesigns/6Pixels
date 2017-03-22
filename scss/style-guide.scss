@@ -67,7 +67,7 @@ code.#{$nssg}code-block {
 // WELCOME HERO
 .#{$nssg}hero-welcome {
   margin-top: 72px;
-  padding: 40vh 0;
+  padding: 10vh 0;
   text-align: center;
   color: white;
 
@@ -130,6 +130,27 @@ code.#{$nssg}code-block {
   }
 }
 
+.#{$nssg}color-presentation {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap row;
+  margin: 24px 0;
+
+  .#{$nssg}color-drop {
+    flex: 0 0 46px;
+    height: 46px;
+    margin-right: 12px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+
+    &:hover {
+      box-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    }
+  }
+}
+.#{$nssg}color-information {
+  margin-top: 12px;
+}
 
 // COLOR PALETTE
 $coloring: (

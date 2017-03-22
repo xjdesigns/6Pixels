@@ -13,9 +13,7 @@
         &lt;meta name="viewport" content="width=device-width, initial-scale=1">
         &lt;link rel="stylesheet" href="css/em-reset.css">
         &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
         &lt;link rel="stylesheet" href="path/to/css">
-
       &lt;/head>
       &lt;body>
       &lt;/body>
@@ -24,14 +22,36 @@
 </pre>
 
 <div class="sg-divider"></div>
-<div class="sg-color-palette">
+<h2>Color Palette</h2>
+<div class="sg-color-presentation">
 
-  <div *ngFor="let color of coloring" class="sg-color-tile sg-color-tile--{{ color.class }}">
-    {{ color.name }} = {{ color.color }}
+  <div
+    *ngFor="let grey of coloring"
+    [style.backgroundColor]="grey.color"
+    (mouseover)="mouseOverColor(grey.name, grey.color)"
+    (mouseout)="mouseOutColor()"
+    class="sg-color-drop"
+  >
   </div>
 
 </div>
+<div class="sg-color-presentation">
+
+  <div
+    *ngFor="let grey of greyscale"
+    [style.backgroundColor]="grey.color"
+    (mouseover)="mouseOverColor(grey.name, grey.color)"
+    (mouseout)="mouseOutColor()"
+    class="sg-color-drop"
+  >
+  </div>
+
+</div>
+<div class="sg-color-information">
+  {{ hoveredColor }}
+</div>
 <div class="sg-divider"></div>
+
 <div class="flex">
   <div class="flex__i--xs-6">
 <pre>

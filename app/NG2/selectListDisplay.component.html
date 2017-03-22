@@ -1,0 +1,55 @@
+<div class="flex">
+  <div class="flex__i--xs-6">
+    <app-selectlist
+      *ngIf="list"
+      [data]="list"
+      [multiple]=false
+      [search]=true
+      [valueProp]="'uuid'"
+      [nameProp]="'name'"
+      [outputType]="'string'"
+      [currentSelection]="selectedListString"
+      (onChange)="selectList($event)"
+    ></app-selectlist>
+    <br>
+    <br>
+    <app-selectlist
+      *ngIf="list"
+      [data]="list"
+      [multiple]=true
+      [search]=true
+      [valueProp]="'uuid'"
+      [nameProp]="'name'"
+      [outputType]="'string'"
+      [currentSelection]="selectedListArray"
+      (onChange)="selectList($event)"
+    ></app-selectlist>
+<pre>
+  <code code-display>
+    &lt;app-selectlist
+      *ngIf="conditional check"
+      [data]="[array]"
+      [multiple]=true or false
+      [search]=true or false
+      [valueProp]="'value property'"
+      [nameProp]="'name property'"
+      [outputType]="'array or string'"
+      [currentSelection]="if multiple must be an array with matching props, if not a string"
+      (onChange)="methodName($event)"
+    >&lt;/app-selectlist>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Selectlist w/ Search(NG2)</h2>
+    <p>
+      <span class="spx-pill spx-pill--g3">Angular 2</span>
+      <span class="spx-pill spx-pill--sd">Working</span>
+    </p>
+    <p>Selectlists are custom components that allow for use of a custom select with search capabilites.</p>
+    <p>There are specific requirements for its use so refer to the element table for details.</p>
+    <p><code>ARIA-LABEL</code> Aria is set using the name property for accessibility.</p>
+    <p>When using the custom component if you flag multiple as <code>true</code> you <strong>MUST</strong> pass an array of objects with matching properties you specify to <code>currentSelection</code>. If you set multiple to <code>false</code> your <code>currentSelection</code> is a string.</p>
+    <app-code-table [data]='description'></app-code-table>
+  </div>
+</div>
