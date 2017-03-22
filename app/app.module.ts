@@ -31,6 +31,7 @@ import { ComponentsComponent } from './components/components/components.componen
 import { TooltipComponent } from './components/components/tooltip.component';
 import { MediaObjComponent } from './components/components/media-obj.component';
 import { BreadcrumbComponent } from './components/components/breadcrumb.component';
+import { PaginationComponent } from './components/components/pagination.component';
 
 import { CodeDisplayDirective } from './shared/code-display.directive';
 import { CodeTableComponent } from './shared/code-table.component';
@@ -77,6 +78,7 @@ import { SelectlistComponent } from './NG2/selectlist.component';
     ProgressBarComponent,
     TooltipComponent,
     BreadcrumbComponent,
+    PaginationComponent,
     VarComponent,
     CodeDisplayDirective,
     CodeTableComponent,

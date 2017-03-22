@@ -9,8 +9,7 @@
     border-bottom: 1px solid $greyscale-05;
     transition: border .3s ease, color .3s ease;
 
-    &:hover,
-    &.is-active {
+    &:hover {
       color: $primary;
       border-top: 1px solid $primary;
       border-bottom: 1px solid $primary;
@@ -26,6 +25,9 @@
     }
 
     &:last-child {
+      color: $primary;
+      border-bottom: 1px solid $primary;
+
       &::after {
         content: none;
       }

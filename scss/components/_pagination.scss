@@ -1,0 +1,21 @@
+// PAGINATOR
+.#{$ns}pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  &__btn {
+    flex: 1 0 36px;
+    padding: 6px 12px;
+    font-size: .875rem;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background: $primary;
+      color: white;
+    }
+  }
+}
