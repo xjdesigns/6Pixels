@@ -1,0 +1,82 @@
+<div class="flex">
+  <div class="flex__i--xs-6">
+    <div class="spx-img-carousel" data-id="product-carousel">
+      <div class="spx-img-carousel__view">
+        <div aria-live="polite" class="spx-img" data-id="product-image">
+          <img src="{{currentImg}}" alt="Product Image">
+        </div>
+      </div>
+      <div (click)="openZoomModal()" class="spx-img-carousel__zoom">
+        <div class="spx-zoom-img" data-icon="add"></div>
+        <p class="spx-zoom-text">view larger</p>
+      </div>
+      <div class="spx-img-carousel__picker">
+        <button
+          (click)="previousImage()"
+          *ngIf="length > 3"
+          class="spx-btn spx-btn--circle spx-btn--primary"
+          data-icon="navigate_before"
+          aria-label="previous"
+          data-id="previous"
+        ></button>
+        <div class="spx-picker-wrap">
+          <div [ngStyle]="{'margin-left': '-' + offset + 'px'}" class="spx-picker" data-id="picker">
+            <div
+              (click)="selectImage(i)"
+              *ngFor="let img of altImgs; let i = index"
+              [class.is-selected]="i === currentSlide"
+              class="spx-picker__images"
+              data-id="picker-images"
+            >
+              <div class="spx-img">
+                <img src="{{img.image}}" alt="{{'altImg' + i}}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          (click)="nextImage()"
+          *ngIf="length > 3"
+          class="spx-btn spx-btn--circle spx-btn--primary"
+          data-icon="navigate_next"
+          aria-label="next"
+          data-id="next"
+        ></button>
+      </div>
+    </div>
+    <div
+      (click)="closeModal()"
+      [class.is-open]="isOpen"
+      class="spx-click-shield"
+      aria-live="polite"
+      [attr.aria-hidden]="!isOpen"
+      ></div>
+    <div [class.is-open]="isOpen" [attr.aria-hidden]="!isOpen" class="spx-modal-img">
+      <div class="spx-modal-img__close">
+        <button
+          aria-label="close image modal"
+          (click)="closeModal()"
+          class="spx-btn spx-btn--circle spx-btn--primary spx-btn--secondary"
+          data-icon="close"
+        ></button>
+      </div>
+      <div aria-live="polite" class="spx-img">
+        <img src="{{currentImg}}" alt="Product Image 01">
+      </div>
+    </div>
+<pre>
+  <code code-display>
+    &lt;app-carousel [images]="[]">&lt;/app-carousel>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Image Carousel(NG2)</h2>
+    <p>
+      <span class="spx-pill spx-pill--g3">Angular 2</span>
+      <span class="spx-pill spx-pill--sd">Working</span>
+    </p>
+    <p>The image carousel has been around since the dawn of modern web, and is not going anywhere. So lets make it work with NG2.</p>
+    <p><code>NOTE:</code> The [images] input must contain 2 object properties which are arrays, containing an object with a [image] property to pass.</p>
+  </div>
+</div>

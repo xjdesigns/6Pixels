@@ -1,0 +1,141 @@
+// IMAGE CAROUSEL
+.#{$ns}img-carousel {
+  margin: 50px 0 24px;
+
+  &__view {
+    text-align: center;
+  }
+
+  &__zoom {
+    margin: 24px auto;
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      .#{$ns}zoom-img {
+        border-color: $brand-primary;
+        &::before {
+          color: $brand-primary;
+        }
+        &::after {
+          background-color: $brand-primary;
+        }
+      }
+      .#{$ns}zoom-text {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &__picker {
+    margin: 24px 0;
+    text-align: center;
+
+    @media(min-width: $break-sm) {
+      .#{$ns}btn {
+        &:first-child {
+          margin-right: 12px;
+        }
+        &:last-child {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
+
+// IMAGE PICKER
+$imgWidth: 63;
+$imgHeight: $imgWidth;
+.#{$ns}picker-wrap {
+  display: inline-block;
+  min-width: $imgWidth + 0px;
+  max-width: $imgWidth * 3 + 0px;
+  height: $imgHeight + 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+.#{$ns}picker {
+  line-height: 0;
+  transition: margin-left .3s ease-in-out;
+
+  &__images {
+    display: inline-block;
+    width: $imgWidth + 0px;
+    max-height: $imgHeight + 0px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    transition: border-color .3s ease;
+
+    &:hover {
+      border-color: $greyscale-03;
+    }
+
+    &.is-selected {
+      border-color: $greyscale-04;
+    }
+  }
+}
+
+// IMAGE MODAL
+.#{$ns}modal-img {
+  position: absolute;
+  top: 5vh;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-width: 460px;
+  margin: 0 12px;
+  background-color: $greyscale-11;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  text-align: center;
+  display: none;
+
+  @media(min-width: $break-sm) {
+    margin: auto;
+  }
+
+  &.is-open {
+    display: block;
+  }
+
+  &__close {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+}
+
+// ZOOM AREA
+.#{$ns}zoom-img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: $greyscale-11;
+  border: 3px solid $greyscale-03;
+  transition: border-color .3s ease;
+
+  &::before {
+    content: attr(data-icon);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $greyscale-03;
+    font-size: .875rem;
+    transition: color .3s ease;
+  }
+}
+.#{$ns}zoom-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .875rem;
+  margin-left: 6px;
+  transition: color .3s ease;
+}
