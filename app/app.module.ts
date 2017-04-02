@@ -41,6 +41,7 @@ import { Ng2Component } from './NG2/ng2.component';
 import { CountdownComponent } from './NG2/countdown.component';
 import { SelectlistDisplayComponent } from './NG2/selectListDisplay.component';
 import { SelectlistComponent } from './NG2/selectlist.component';
+import { CarouselDisplayComponent } from './NG2/carousel-display.component';
 import { CarouselComponent } from './NG2/carousel.component';
 
 @NgModule({
@@ -89,6 +90,7 @@ import { CarouselComponent } from './NG2/carousel.component';
     CountdownComponent,
     SelectlistDisplayComponent,
     SelectlistComponent,
+    CarouselDisplayComponent,
     CarouselComponent
   ],
   bootstrap:    [ AppComponent ]

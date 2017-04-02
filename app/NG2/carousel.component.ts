@@ -21,8 +21,8 @@ export class CarouselComponent {
   length = 0;
 
   @Input() images = {};
-  @Input() primary?: string = 'PrimaryImage';
-  @Input() alternate?: string = 'AlternateImages';
+  @Input() primary: string = 'PrimaryImage';
+  @Input() alternate: string = 'AlternateImages';
 
   ngOnInit() {
     this.imgs = this.images[0];

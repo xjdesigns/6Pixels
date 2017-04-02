@@ -42,6 +42,7 @@ var ng2_component_1 = require('./NG2/ng2.component');
 var countdown_component_1 = require('./NG2/countdown.component');
 var selectListDisplay_component_1 = require('./NG2/selectListDisplay.component');
 var selectlist_component_1 = require('./NG2/selectlist.component');
+var carousel_display_component_1 = require('./NG2/carousel-display.component');
 var carousel_component_1 = require('./NG2/carousel.component');
 var AppModule = (function () {
     function AppModule() {
@@ -93,6 +94,7 @@ var AppModule = (function () {
                 countdown_component_1.CountdownComponent,
                 selectListDisplay_component_1.SelectlistDisplayComponent,
                 selectlist_component_1.SelectlistComponent,
+                carousel_display_component_1.CarouselDisplayComponent,
                 carousel_component_1.CarouselComponent
             ],
             bootstrap: [app_component_1.AppComponent]
