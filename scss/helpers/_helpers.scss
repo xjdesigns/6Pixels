@@ -14,3 +14,19 @@
   pointer-events: none;
   opacity: .4;
 }
+
+// CLICK SHIELD
+.#{$ns}click-shield {
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
