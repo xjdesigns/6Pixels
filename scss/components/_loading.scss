@@ -1,0 +1,33 @@
+// LOADING DOTS
+$dots: 6;
+
+.#{$ns}loading {
+  text-align: center;
+
+  &__dots {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    background: $brand-primary;
+    animation: growing 1s infinite;
+
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
+  }
+}
+@keyframes growing {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1.5);
+  }
+}
+
+@for $i from 1 through $dots {
+  .spx-loading__dots:nth-child(#{$i}) {
+    animation-delay: $i/10 + s;
+  }
+}
