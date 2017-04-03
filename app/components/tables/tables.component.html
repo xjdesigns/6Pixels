@@ -1,0 +1,70 @@
+<div class="app-menu-title">
+  <h1>Tables</h1>
+  <p>Tables are ever so important but yet so tricky when it comes to mobile. So much it deserves it's own route &amp; view.</p>
+  <p>Here I will support 2 different types, css only and a JS version which becomes much more useable on mobile devices.</p>
+  <br>
+</div>
+
+<div class="spx-table" data-title="Spx Table Data">
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>{{head.title}}</th>
+        <th>{{head.first_name}}</th>
+        <th>{{head.last_name}}</th>
+        <th>{{head.address}}</th>
+        <th>{{head.city}}</th>
+        <th>{{head.zip_code}}</th>
+        <th>{{head.age}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let d of data">
+        <td>{{d.title}}</td>
+        <td>{{d.first_name}}</td>
+        <td>{{d.last_name}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.city}}</td>
+        <td>{{d.zip_code}}</td>
+        <td>{{d.age}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+<div class="spx-table spx-table--responsive-list" data-title="Spx Table Data">
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>{{head.title}}</th>
+        <th>{{head.first_name}}</th>
+        <th>{{head.last_name}}</th>
+        <th>{{head.address}}</th>
+        <th>{{head.city}}</th>
+        <th>{{head.zip_code}}</th>
+        <th>{{head.age}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let d of data">
+        <td [attr.data-title]="head.title">{{d.title}}</td>
+        <td [attr.data-title]="head.first_name">{{d.first_name}}</td>
+        <td [attr.data-title]="head.last_name">{{d.last_name}}</td>
+        <td [attr.data-title]="head.address">{{d.address}}</td>
+        <td [attr.data-title]="head.city">{{d.city}}</td>
+        <td [attr.data-title]="head.zip_code">{{d.zip_code}}</td>
+        <td [attr.data-title]="head.age">{{d.age}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

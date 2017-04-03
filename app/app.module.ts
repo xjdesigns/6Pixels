@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { GridComponent } from './components/grid/grid.component';
+import { TablesComponent } from './components/tables/tables.component';
 import { VarComponent } from './components/variables/var.component';
 import { HelpersComponent } from './components/helpers/helpers.component';
 
@@ -30,6 +31,7 @@ import { Ng2Component, Ng2Provider } from './NG2'
       { path: 'welcome', component: WelcomeComponent },
       { path: 'elements', component: ElementsComponent },
       { path: 'grid', component: GridComponent },
+      { path: 'tables', component: TablesComponent },
       { path: 'components', component: ComponentsComponent },
       { path: 'variable', component: VarComponent },
       { path: 'helpers', component: HelpersComponent },
@@ -41,6 +43,7 @@ import { Ng2Component, Ng2Provider } from './NG2'
     AppComponent,
     WelcomeComponent,
     GridComponent,
+    TablesComponent,
     HelpersComponent,
     VarComponent,
     CodeDisplayDirective,
