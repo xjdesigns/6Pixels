@@ -1,11 +1,7 @@
 This serves as the master doc for what six pixels is and what can be added.
 
-• Look into conditional boolean for manual builds
-
 ** ELEMENTS
-• Select Boxes CUSTOM USIING MY CODE
-• Text Elements (ie.block quotes, paragraph, aside, all of those)
-• images
+• All is current
 
 ** COMPONENTS
 • Header

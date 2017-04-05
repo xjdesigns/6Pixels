@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var TablesComponent = (function () {
     function TablesComponent() {
+        this.d = {};
+        this.isOpen = false;
         this.head = {
             title: 'Title',
             first_name: 'First Name',
@@ -46,6 +48,13 @@ var TablesComponent = (function () {
                 age: '32'
             }];
     }
+    TablesComponent.prototype.toggleData = function (d) {
+        this.d = d;
+        this.isOpen = !this.isOpen;
+    };
+    TablesComponent.prototype.closeModal = function () {
+        this.isOpen = false;
+    };
     TablesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

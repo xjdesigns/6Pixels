@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: 'tables.component.html'
 })
 export class TablesComponent {
+  d = {};
+  isOpen = false;
+
   head = {
     title: 'Title',
     first_name: 'First Name',
@@ -40,4 +43,13 @@ export class TablesComponent {
     zip_code: '55448',
     age: '32'
   }];
+
+  toggleData(d) {
+    this.d = d;
+    this.isOpen = !this.isOpen;
+  }
+
+  closeModal() {
+    this.isOpen = false;
+  }
 }

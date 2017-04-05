@@ -54,7 +54,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let d of data">
+      <tr *ngFor="let d of data" (click)="toggleData(d)">
         <td [attr.data-title]="head.title">{{d.title}}</td>
         <td [attr.data-title]="head.first_name">{{d.first_name}}</td>
         <td [attr.data-title]="head.last_name">{{d.last_name}}</td>
@@ -67,4 +67,86 @@
 
   </table>
 
+  <div class="spx-click-shield" (click)="closeModal()" [class.is-open]="isOpen"></div>
+  <div class="spx-table-display" [class.is-open]="isOpen">
+    <p [attr.data-title]="head.title">{{d.title}}</p>
+    <p [attr.data-title]="head.first_name">{{d.first_name}}</p>
+    <p [attr.data-title]="head.last_name">{{d.last_name}}</p>
+    <p [attr.data-title]="head.address">{{d.address}}</p>
+    <p [attr.data-title]="head.city">{{d.city}}</p>
+    <p [attr.data-title]="head.zip_code">{{d.zip_code}}</p>
+    <p [attr.data-title]="head.age">{{d.age}}</p>
+  </div>
+
+</div>
+<br>
+<!-- DOCS -->
+<div class="flex">
+  <div class="flex__i--xs-6">
+<pre>
+  <code code-display>
+    <div class="spx-table" data-title="Spx Table Data">
+      <table>
+        <thead>
+          <tr>
+            <th>...</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Tables (Scrollable)</h2>
+    <p>
+      <span class="spx-pill spx-pill--pr">Stable</span>
+    </p>
+    <p>Tables scrollable variation, this example is built to scroll on the X axis when it hits responsive.</p>
+  </div>
+</div>
+
+<br><br>
+
+<div class="flex">
+  <div class="flex__i--xs-6">
+<pre>
+  <code code-display>
+    <div class="spx-table spx-table--responsive-list" data-title="Spx Table Data">
+      <table>
+        <thead>
+          <tr>
+            <th>...</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-title="header title">...</td>
+          </tr>
+        </tbody>
+      </table>
+
+      // BELOW IS OPTIONAL
+      <div class="spx-click-shield"></div>
+      <div class="spx-table-display">
+        <p data-title="header title">...</p>
+      </div>
+      // END OF OPTIONAL
+    </div>
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Tables (List view)</h2>
+    <p>
+      <span class="spx-pill spx-pill--pr">Stable</span>
+    </p>
+    <p>Tables list view variation. The second example uses psuedos and data attributes to create lists, along with that you can optionally add the table display and toggle the data into a modal.</p>
+    <p><code>NOTE:</code> Adding the [data-title] to the top element will display that value as a table name.</p>
+  </div>
 </div>
