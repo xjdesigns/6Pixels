@@ -13,13 +13,15 @@ import { HelpersComponent } from './components/helpers/helpers.component';
 import { CodeDisplayDirective } from './shared/code-display.directive';
 import { CodeTableComponent } from './shared/code-table.component';
 
+import { TheGridComponent } from './experimental/the-grid.component';
+
 // PROVIDERS
 import {
   ElementsComponent,
   ComponentsComponent,
   SixPixelsProvider
-} from './components'
-import { Ng2Component, Ng2Provider } from './NG2'
+} from './components';
+import { Ng2Component, Ng2Provider } from './NG2';
 
 @NgModule({
   imports:      [
@@ -34,6 +36,7 @@ import { Ng2Component, Ng2Provider } from './NG2'
       { path: 'variable', component: VarComponent },
       { path: 'helpers', component: HelpersComponent },
       { path: 'ng2', component: Ng2Component},
+      { path: 'gridLayout', component: TheGridComponent},
       { path: '', component: WelcomeComponent }
     ])
   ],
@@ -45,6 +48,7 @@ import { Ng2Component, Ng2Provider } from './NG2'
     VarComponent,
     CodeDisplayDirective,
     CodeTableComponent,
+    TheGridComponent,
     ...SixPixelsProvider,
     ...Ng2Provider
   ],

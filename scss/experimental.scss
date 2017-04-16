@@ -1,0 +1,27 @@
+// THIS IS GRID LAYOUT
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+
+  background: red;
+  min-height: 400px;
+
+  &__item {
+    background: black;
+    grid-column: 3 / span 2;
+  }
+}
+
+.test {
+  background-color: green;
+  min-height: 200px;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+
+  &__item {
+    background-color: red;
+  }
+}

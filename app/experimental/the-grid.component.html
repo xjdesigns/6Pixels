@@ -1,0 +1,58 @@
+<h1>The Grid Layout</h1>
+<p>Lets learn the grid. This represents the grid as a whole with even amount of elements to show what the areas are. This does not use template-areas.</p>
+<button class="spx-btn spx-btn--primary" (click)="addCol()">Add another column</button>
+<button class="spx-btn spx-btn--primary" (click)="addRow()">Add another row</button>
+<div>
+  <p>This is the grid you have defined::</p>
+  <pre>
+    grid-template-columns: {{tempColumns}};
+    grid-template-rows: {{tempRows}};
+    grid-column-gap: {{gap.column}};
+    grid-row-gap: {{gap.row}}
+  </pre>
+</div>
+<div>
+  <form #c="ngForm" (ngSubmit)="submit(c)" class="spx-form">
+    <div class="flex">
+      <!-- {{c.value | json}} -->
+      <div class="flex__i--xs-3" *ngFor="let c of columns; let i = index">
+        Grid Item Column {{i}} ||
+        <input class="spx-input" type="text" [ngModel]="c.col" name="col-{{i}}" required>
+      </div>
+    </div>
+    <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+  </form>
+</div>
+<div>
+  <form #r="ngForm" (ngSubmit)="submit(r)" class="spx-form">
+    <div class="flex">
+      <!-- {{r.value | json}} -->
+      <div class="flex__i--xs-3" *ngFor="let r of rows; let i = index">
+        Grid Item Row {{i}} ||
+        <input class="spx-input" type="text" [ngModel]="r.row" name="row-{{i}}" required>
+      </div>
+    </div>
+    <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+  </form>
+</div>
+<div>
+  <form #gp="ngForm" (ngSubmit)="submit(r)" class="spx-form">
+    <div class="flex">
+      <!-- {{gp.value | json}} -->
+      <div class="flex__i--xs-6">
+        Grid Column gap {{i}} ||
+        <input class="spx-input" type="text" [ngModel]="gap.column" name="gap-column" required>
+      </div>
+      <div class="flex__i--xs-6">
+        Grid Row gap {{i}} ||
+        <input class="spx-input" type="text" [ngModel]="gap.row" name="gap-row" required>
+      </div>
+    </div>
+    <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+  </form>
+</div>
+<button class="spx-btn spx-btn--primary" (click)="applyGridChanges(c, r, gp)">Apply new Changes</button>
+
+<div class="test" [ngStyle]="theGrid()">
+  <div class="test__item" *ngFor="let item of gridItem; let i = index">Grid Item {{i}}</div>
+</div>

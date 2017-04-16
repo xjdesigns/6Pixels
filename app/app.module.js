@@ -20,6 +20,7 @@ var var_component_1 = require('./components/variables/var.component');
 var helpers_component_1 = require('./components/helpers/helpers.component');
 var code_display_directive_1 = require('./shared/code-display.directive');
 var code_table_component_1 = require('./shared/code-table.component');
+var the_grid_component_1 = require('./experimental/the-grid.component');
 // PROVIDERS
 var components_1 = require('./components');
 var NG2_1 = require('./NG2');
@@ -40,6 +41,7 @@ var AppModule = (function () {
                     { path: 'variable', component: var_component_1.VarComponent },
                     { path: 'helpers', component: helpers_component_1.HelpersComponent },
                     { path: 'ng2', component: NG2_1.Ng2Component },
+                    { path: 'gridLayout', component: the_grid_component_1.TheGridComponent },
                     { path: '', component: welcome_component_1.WelcomeComponent }
                 ])
             ],
@@ -50,7 +52,8 @@ var AppModule = (function () {
                 helpers_component_1.HelpersComponent,
                 var_component_1.VarComponent,
                 code_display_directive_1.CodeDisplayDirective,
-                code_table_component_1.CodeTableComponent
+                code_table_component_1.CodeTableComponent,
+                the_grid_component_1.TheGridComponent
             ].concat(components_1.SixPixelsProvider, NG2_1.Ng2Provider),
             bootstrap: [app_component_1.AppComponent]
         }), 
