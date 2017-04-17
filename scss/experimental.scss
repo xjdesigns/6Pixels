@@ -5,8 +5,7 @@
 
   &__editor {
     padding: 24px;
-    background-color: $greyscale-09;
-    display: none;
+    background-color: $greyscale-10;
 
     position: fixed;
     top: 72px;
@@ -15,9 +14,11 @@
     z-index: 1001;
     width: 30vw;
     overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform .5s ease-in-out;
 
     .is-open & {
-      display: block;
+      transform: translateX(0%);
     }
   }
 
@@ -29,10 +30,34 @@
 }
 
 .grid-display {
+  position: relative;
   background-color: $greyscale-03;
   min-height: 200px;
+  margin-left: 0px;
+  transition: margin-left .5s ease-in-out;
+
+  &.item-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   &__item {
     background-color: $brand-primary;
+    padding: 6px;
+  }
+
+  &__item-edit {
+    background-color: $brand-tertiary;
+    padding: 6px;
+  }
+}
+.jason {
+  position: relative;
+
+  .grid-display:nth-child(2) {
+    background-color: transparent;
   }
 }

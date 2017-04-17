@@ -11,10 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var TheGridComponent = (function () {
     function TheGridComponent() {
-        this.isOpen = false;
+        this.isOpen = true;
+        this.itemEditor = false;
         this.columns = [];
         this.rows = [];
         this.gridItem = [];
+        this.itemColumn = '1 / span 2';
+        this.itemRow = '1 / span 2';
         this.justifyItem = 'stretch';
         this.alignItem = 'stretch';
         this.justifyContent = 'stretch';
@@ -53,8 +56,14 @@ var TheGridComponent = (function () {
                 row: 'auto'
             }];
     }
+    TheGridComponent.prototype.ngOnInit = function () {
+        this.gridItem = new Array(2);
+    };
     TheGridComponent.prototype.toggleGridEditor = function () {
         this.isOpen = !this.isOpen;
+    };
+    TheGridComponent.prototype.toggleItemEditor = function () {
+        this.itemEditor = !this.itemEditor;
     };
     TheGridComponent.prototype.addCol = function () {
         this.newCol.name = this.columns.length + 1;
@@ -77,6 +86,12 @@ var TheGridComponent = (function () {
             'align-content': "" + this.alignContent
         };
     };
+    TheGridComponent.prototype.theItems = function () {
+        return {
+            'grid-column': "" + this.itemColumn,
+            'grid-row': "" + this.itemRow
+        };
+    };
     TheGridComponent.prototype.applyGridChanges = function (c, r, gp) {
         this.setTemplateColumns(c.value);
         this.setTemplateRows(r.value);
@@ -85,6 +100,11 @@ var TheGridComponent = (function () {
         var r = this.tempRows.split(" ");
         var a = new Array(c.length * r.length);
         this.gridItem = a;
+    };
+    TheGridComponent.prototype.applyItemChanges = function (item) {
+        var i = item.form.value;
+        this.itemColumn = i['item-column'];
+        this.itemRow = i['item-row'];
     };
     TheGridComponent.prototype.setTemplateColumns = function (g) {
         var cc = [];

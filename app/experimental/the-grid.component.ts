@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'app-the-grid',
   templateUrl: 'the-grid.component.html'
 })
-export class TheGridComponent {
-  isOpen: boolean = false;
+export class TheGridComponent implements OnInit {
+  isOpen: boolean = true;
+  itemEditor: boolean = false;
   columns = [];
   rows = [];
   gridItem = [];
+  itemColumn = '1 / span 2';
+  itemRow = '1 / span 2';
   justifyItem = 'stretch';
   alignItem = 'stretch';
   justifyContent = 'stretch';
@@ -52,8 +58,16 @@ export class TheGridComponent {
     }];
   }
 
+  ngOnInit() {
+    this.gridItem = new Array(2);
+  }
+
   toggleGridEditor() {
     this.isOpen = !this.isOpen;
+  }
+
+  toggleItemEditor() {
+    this.itemEditor = !this.itemEditor;
   }
 
   addCol() {
@@ -80,6 +94,13 @@ export class TheGridComponent {
     }
   }
 
+  theItems() {
+    return {
+      'grid-column': `${this.itemColumn}`;
+      'grid-row': `${this.itemRow}`;
+    }
+  }
+
   applyGridChanges(c, r, gp) {
     this.setTemplateColumns(c.value);
     this.setTemplateRows(r.value);
@@ -88,6 +109,12 @@ export class TheGridComponent {
     var r = this.tempRows.split(" ");
     var a = new Array(c.length * r.length);
     this.gridItem = a;
+  }
+
+  applyItemChanges(item) {
+    var i = item.form.value;
+    this.itemColumn = i['item-column'];
+    this.itemRow = i['item-row'];
   }
 
   setTemplateColumns(g) {
