@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: 'the-grid.component.html'
 })
 export class TheGridComponent {
+  isOpen: boolean = false;
   columns = [];
   rows = [];
   gridItem = [];
+  justifyItem = 'stretch';
+  alignItem = 'stretch';
+  justifyContent = 'stretch';
+  alignContent = 'stretch';
   gap = {
     column: '10px',
     row: '10px'
@@ -22,6 +27,10 @@ export class TheGridComponent {
     name: '',
     row: 'auto'
   };
+  // same values for justify and align ITEMS
+  justifyItems = ['start', 'end', 'center', 'stretch'];
+  // same values for justify and align CONTENT
+  justifyContents = ['start', 'end', 'center', 'stretch', 'space-around', 'space-between', 'space-evenly'];
 
   tempColumns = 'auto';
   tempRows = 'auto';
@@ -43,6 +52,10 @@ export class TheGridComponent {
     }];
   }
 
+  toggleGridEditor() {
+    this.isOpen = !this.isOpen;
+  }
+
   addCol() {
     this.newCol.name = this.columns.length + 1;
     this.columns.push(this.newCol);
@@ -60,6 +73,10 @@ export class TheGridComponent {
       'grid-template-rows': `${this.tempRows}`;
       'grid-column-gap': `${this.gap.column}`;
       'grid-row-gap': `${this.gap.row}`;
+      'justify-items': `${this.justifyItem}`;
+      'align-items': `${this.alignItem}`;
+      'justify-content': `${this.justifyContent}`;
+      'align-content': `${this.alignContent}`;
     }
   }
 
@@ -94,6 +111,22 @@ export class TheGridComponent {
       column: gap.value['gap-column'],
       row: gap.value['gap-row']
     }
+  }
+
+  setJustifyItems(e) {
+    this.justifyItem = e;
+  }
+
+  setAlignItems(e) {
+    this.alignItem = e;
+  }
+
+  setJustifyContent(e) {
+    this.justifyContent = e;
+  }
+
+  setAlignContent(e) {
+    this.alignContent = e;
   }
 
   submit(v) {

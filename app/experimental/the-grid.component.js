@@ -11,9 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var TheGridComponent = (function () {
     function TheGridComponent() {
+        this.isOpen = false;
         this.columns = [];
         this.rows = [];
         this.gridItem = [];
+        this.justifyItem = 'stretch';
+        this.alignItem = 'stretch';
+        this.justifyContent = 'stretch';
+        this.alignContent = 'stretch';
         this.gap = {
             column: '10px',
             row: '10px'
@@ -27,6 +32,10 @@ var TheGridComponent = (function () {
             name: '',
             row: 'auto'
         };
+        // same values for justify and align ITEMS
+        this.justifyItems = ['start', 'end', 'center', 'stretch'];
+        // same values for justify and align CONTENT
+        this.justifyContents = ['start', 'end', 'center', 'stretch', 'space-around', 'space-between', 'space-evenly'];
         this.tempColumns = 'auto';
         this.tempRows = 'auto';
         this.columns = [{
@@ -44,6 +53,9 @@ var TheGridComponent = (function () {
                 row: 'auto'
             }];
     }
+    TheGridComponent.prototype.toggleGridEditor = function () {
+        this.isOpen = !this.isOpen;
+    };
     TheGridComponent.prototype.addCol = function () {
         this.newCol.name = this.columns.length + 1;
         this.columns.push(this.newCol);
@@ -58,7 +70,11 @@ var TheGridComponent = (function () {
             'grid-template-columns': "" + this.tempColumns,
             'grid-template-rows': "" + this.tempRows,
             'grid-column-gap': "" + this.gap.column,
-            'grid-row-gap': "" + this.gap.row
+            'grid-row-gap': "" + this.gap.row,
+            'justify-items': "" + this.justifyItem,
+            'align-items': "" + this.alignItem,
+            'justify-content': "" + this.justifyContent,
+            'align-content': "" + this.alignContent
         };
     };
     TheGridComponent.prototype.applyGridChanges = function (c, r, gp) {
@@ -89,6 +105,18 @@ var TheGridComponent = (function () {
             column: gap.value['gap-column'],
             row: gap.value['gap-row']
         };
+    };
+    TheGridComponent.prototype.setJustifyItems = function (e) {
+        this.justifyItem = e;
+    };
+    TheGridComponent.prototype.setAlignItems = function (e) {
+        this.alignItem = e;
+    };
+    TheGridComponent.prototype.setJustifyContent = function (e) {
+        this.justifyContent = e;
+    };
+    TheGridComponent.prototype.setAlignContent = function (e) {
+        this.alignContent = e;
     };
     TheGridComponent.prototype.submit = function (v) {
         console.warn('Val submitted', v);

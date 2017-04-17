@@ -1,27 +1,38 @@
 // THIS IS GRID LAYOUT
+@import "base/var";
 .grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  position: relative;
 
-  background: red;
-  min-height: 400px;
+  &__editor {
+    padding: 24px;
+    background-color: $greyscale-09;
+    display: none;
 
-  &__item {
-    background: black;
-    grid-column: 3 / span 2;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+    width: 30vw;
+    overflow-y: auto;
+
+    .is-open & {
+      display: block;
+    }
+  }
+
+  &.is-open {
+    .grid-display {
+      margin-left: calc(30vw + 12px);
+    }
   }
 }
 
-.test {
-  background-color: green;
+.grid-display {
+  background-color: $greyscale-03;
   min-height: 200px;
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
 
   &__item {
-    background-color: red;
+    background-color: $brand-primary;
   }
 }
