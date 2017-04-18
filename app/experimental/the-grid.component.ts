@@ -11,25 +11,25 @@ import {
 export class TheGridComponent implements OnInit {
   isOpen: boolean = true;
   itemEditor: boolean = false;
-  columns = [];
-  rows = [];
-  gridItem = [];
-  itemColumn = '1 / span 2';
-  itemRow = '1 / span 2';
-  justifyItem = 'stretch';
-  alignItem = 'stretch';
-  justifyContent = 'stretch';
-  alignContent = 'stretch';
-  gap = {
+  columns: any = [];
+  rows: any = [];
+  gridItem: any = [];
+  itemColumn: any = '1 / span 2';
+  itemRow: any = '1 / span 2';
+  justifyItem: any = 'stretch';
+  alignItem: any = 'stretch';
+  justifyContent: any = 'stretch';
+  alignContent: any = 'stretch';
+  gap: any = {
     column: '10px',
     row: '10px'
   };
-  bg = 'blue';
-  newCol = {
+  bg: any = 'blue';
+  newCol: any = {
     name: '',
     col: 'auto',
   };
-  newRow = {
+  newRow: any = {
     name: '',
     row: 'auto'
   };
@@ -83,21 +83,21 @@ export class TheGridComponent implements OnInit {
   theGrid() {
     return {
       'display': 'grid',
-      'grid-template-columns': `${this.tempColumns}`;
-      'grid-template-rows': `${this.tempRows}`;
-      'grid-column-gap': `${this.gap.column}`;
-      'grid-row-gap': `${this.gap.row}`;
-      'justify-items': `${this.justifyItem}`;
-      'align-items': `${this.alignItem}`;
-      'justify-content': `${this.justifyContent}`;
-      'align-content': `${this.alignContent}`;
+      'grid-template-columns': `${this.tempColumns}`,
+      'grid-template-rows': `${this.tempRows}`,
+      'grid-column-gap': `${this.gap.column}`,
+      'grid-row-gap': `${this.gap.row}`,
+      'justify-items': `${this.justifyItem}`,
+      'align-items': `${this.alignItem}`,
+      'justify-content': `${this.justifyContent}`,
+      'align-content': `${this.alignContent}`
     }
   }
 
   theItems() {
     return {
-      'grid-column': `${this.itemColumn}`;
-      'grid-row': `${this.itemRow}`;
+      'grid-column': `${this.itemColumn}`,
+      'grid-row': `${this.itemRow}`
     }
   }
 
@@ -105,8 +105,8 @@ export class TheGridComponent implements OnInit {
     this.setTemplateColumns(c.value);
     this.setTemplateRows(r.value);
     this.setGridGap(gp);
-    var c = this.tempColumns.split(" ");
-    var r = this.tempRows.split(" ");
+    var c = this.tempColumns.split(" ") as any;
+    var r = this.tempRows.split(" ") as any;
     var a = new Array(c.length * r.length);
     this.gridItem = a;
   }
