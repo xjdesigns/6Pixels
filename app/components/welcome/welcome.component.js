@@ -9,16 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var noaa_api_service_1 = require('../../services/noaa-api.service');
 var WelcomeComponent = (function () {
-    function WelcomeComponent() {
+    function WelcomeComponent(noaa) {
+        this.noaa = noaa;
     }
+    WelcomeComponent.prototype.ngOnInit = function () {
+        // this.getData();
+    };
+    WelcomeComponent.prototype.getData = function () {
+        this.noaa
+            .getData()
+            .then(function (data) {
+            console.warn('DATA', data);
+        });
+    };
     WelcomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'app-welcome',
-            templateUrl: 'welcome.component.html'
+            templateUrl: 'welcome.component.html',
+            providers: [noaa_api_service_1.NoaaService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [noaa_api_service_1.NoaaService])
     ], WelcomeComponent);
     return WelcomeComponent;
 }());
