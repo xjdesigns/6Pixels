@@ -25,7 +25,7 @@ gulp.task('sass', function () {
     outputStyle: 'compressed'
   });
 
-  return gulp.src('./scss/**/*.{sass,scss}')
+  return gulp.src('./src/scss/**/*.{sass,scss}')
     .pipe(plumber(plumberSettings))
     // .pipe(sourcemaps.init())
     .pipe(sass(settings))
@@ -34,12 +34,12 @@ gulp.task('sass', function () {
     .pipe(size({
       showFiles: true
     }))
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('prod', function() {
-  return gulp.src('./scss/style.{sass,scss}')
+  return gulp.src('./src/scss/style.{sass,scss}')
     .pipe(plumber(plumberSettings))
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer({ browsers: ['> 1%', 'last 4 versions', 'Firefox ESR', 'Opera 12.1'] }))
