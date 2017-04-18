@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/">
+    <title>6 Pixels UI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/app-visual.css">
+    <link rel="stylesheet" href="css/em-reset.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-guide.css">
+    <link rel="stylesheet" href="css/prettify.css">
+
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+
+    <my-app>
+      <div class="spx-loading">
+        <div class="spx-loading__dots"></div>
+        <div class="spx-loading__dots"></div>
+        <div class="spx-loading__dots"></div>
+      </div>
+    </my-app>
+
+    <!-- Polyfills -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+
+  </body>
+</html>
