@@ -16,6 +16,7 @@ var WelcomeComponent = (function () {
         this.w = w;
         this.weather = {};
         this.temperature = '0';
+        this.wind = '';
     }
     WelcomeComponent.prototype.ngOnInit = function () {
         // this.getData();
@@ -25,6 +26,7 @@ var WelcomeComponent = (function () {
         this.w
             .getWeather()
             .then(function (weather) {
+            console.warn('weather::', weather);
             _this.weather = weather;
             _this.displayWeatherData(weather);
         });
@@ -32,6 +34,7 @@ var WelcomeComponent = (function () {
     WelcomeComponent.prototype.displayWeatherData = function (d) {
         var kel = d.main.temp.toString();
         this.temperature = kel.split(".", 1);
+        this.wind = d.wind.speed;
     };
     WelcomeComponent.prototype.convertKelvinToFar = function (kelvinValue) {
         return ((kelvinValue - 273.15) * 9 / 5) + 32;

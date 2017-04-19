@@ -10,6 +10,7 @@ import { WeatherService } from '../../services/weather.service';
 export class WelcomeComponent implements OnInit {
   weather = {};
   temperature = '0';
+  wind = '';
 
   constructor(private w: WeatherService) {}
 
@@ -21,6 +22,7 @@ export class WelcomeComponent implements OnInit {
     this.w
       .getWeather()
       .then(weather => {
+        console.warn('weather::', weather);
         this.weather = weather;
         this.displayWeatherData(weather);
       })
@@ -29,6 +31,7 @@ export class WelcomeComponent implements OnInit {
   displayWeatherData(d) {
     let kel = d.main.temp.toString();
     this.temperature = kel.split(".", 1);
+    this.wind = d.wind.speed;
   }
 
   convertKelvinToFar(kelvinValue) {
