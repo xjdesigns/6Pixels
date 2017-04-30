@@ -1,0 +1,148 @@
+// DATA TABLE
+// TABLES
+$table-min: 43.9375em; // 767px
+$table-sm: 30em; // 480px
+
+.#{$ns}table {
+  border: 1px solid $greyscale-09;
+  overflow-x: scroll;
+
+  .is-hidden {
+    display: none;
+  }
+
+  @media(min-width: $table-min) {
+    overflow: visible;
+  }
+
+  &[data-title] {
+    position: relative;
+    margin-top: 32px;
+
+    &::before {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 100%;
+      left: 6px;
+      min-width: 100px;
+      max-width: 320px;
+      padding: 6px;
+      font-size: .6rem;
+      background-color: white;
+      border-radius: 3px 3px 0px 0px;
+      border: 1px solid $greyscale-09;
+    }
+    @media(min-width: $table-min) {
+      &::before {
+        min-width: 400px;
+        max-width: 600px;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    @media(min-width: $table-min) {
+      table-layout: fixed;
+    }
+  }
+  tr {
+    &:hover {
+      box-shadow: 1px 2px 5px red;
+    }
+  }
+  th {
+    background-color: $greyscale-09;
+    text-align: left;
+  }
+  th,
+  td {
+    padding: 12px 6px;
+    font-size: .75rem;
+    color: $greyscale-05;
+  }
+}
+
+// RESPONSIVE TABLES
+.#{$ns}table {
+  &--responsive-list {
+    overflow: visible;
+
+    thead {
+      display: none;
+
+      @media(min-width: $table-sm) {
+        display: table-header-group;
+      }
+    }
+
+    tr,
+    td {
+      display: block;
+    }
+
+    tr {
+      border-bottom: 1px solid $greyscale-07;
+      box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.5);
+
+      @media(min-width: $table-min) {
+        display: table-row;
+      }
+    }
+
+    td {
+      &:nth-child(even) {
+        background-color: $greyscale-10;
+      }
+      &::before {
+        content: attr(data-title);
+        display: inline-block;
+        border-right: 1px solid $greyscale-05;
+        margin-right: 6px;
+        padding-right: 6px;
+        font-weight: 700;
+      }
+      @media(min-width: $table-min) {
+        display: table-cell;
+
+        &:nth-child(even) {
+          background-color: white;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// OPTIONAL DISPLAY FOR MOBILE TOGGLING
+.#{$ns}table-display {
+  display: none;
+
+  &.is-open {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    padding: 12px;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+    transform: translate(-50%, -50%);
+  }
+
+  p[data-title] {
+    position: relative;
+
+    &::before {
+      content: attr(data-title) ":";
+      margin-right: 6px;
+      text-decoration: underline;
+    }
+  }
+}

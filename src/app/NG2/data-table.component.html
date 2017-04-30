@@ -1,0 +1,42 @@
+<h1>hello world</h1>
+<p>The goal here is to create something to use instead of AG GRID</p>
+<div>
+  <button class="spx-btn spx-btn--primary" (click)="sort()">Sort A/B</button>
+  <button class="spx-btn spx-btn--primary" (click)="sortNumber()">Sort number</button>
+</div>
+
+<div class="spx-table">
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <!-- select all -->
+          <label class="spx-checkbox" (mouseup)="selectAll()">
+            <input name="checkbox" type="checkbox" [attr.checked]="allSelected ? 'checked' : null">
+            <div class="spx-checkbox__box" data-icon="check"></div>
+          </label>
+        </th>
+
+        <th *ngFor="let h of head; let i = index" (click)="handle(i)">{{h.name}} || {{h.type}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let d of list; let i = index">
+        <td>
+          <!-- select row -->
+          <label class="spx-checkbox" (mouseup)="setRow(i, d)">
+            <input name="checkbox" type="checkbox" [checked]="d.selected">
+            <div class="spx-checkbox__box" data-icon="check"></div>
+          </label>
+          {{d.selected}}
+        </td>
+        <td [class.is-hidden]="i === hidden">{{d.name}}</td>
+        <td>{{d.lName}}</td>
+        <td>{{d.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
