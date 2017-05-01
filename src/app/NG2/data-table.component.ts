@@ -12,7 +12,7 @@ export class DataTableComponent {
   list = [];
   final = [];
   allSelected: boolean = false;
-  hidden = 0;
+  hidden = -1;
   // default if number is set in head data
   numberFilter = ['equals', 'not equal', 'less than', 'less than or equal', 'greater than', 'greater than or equals'];
 
@@ -35,7 +35,7 @@ export class DataTableComponent {
 
   data = [{ // remove once passing and set to blank
     name: "Jason",
-    lName: 'Jacobson',
+    lName: 'AJacobson',
     age: '33'
   }, { // remove once passing and set to blank
     name: "Frank",
@@ -73,11 +73,6 @@ export class DataTableComponent {
     });
   }
 
-  jason(e) {
-    let c = e.target.checked;
-    this.setChecked(c);
-  }
-
   selectAll(e) {
     let c = e.target.checked;
 
@@ -93,7 +88,6 @@ export class DataTableComponent {
     console.warn(this.final);
   }
 
-  // checkboxes acting odd, I need to look at the data
   setRow(i, dt) {
     this.list.forEach((d, index) => {
       // match first, the splice it off at its indexOf
@@ -119,25 +113,38 @@ export class DataTableComponent {
     });
   }
 
-  sort() {
+  sort(h) {
+    let j;
+    if (h.name === 'Last name') {
+      console.warn('this');
+      j = 'lName';
+    } else {
+      j = 'name';
+    }
+
     this.list.sort((a,b) => {
-      if(a.name < b.name) {
+      if(a[j] < b[j]) {
         return -1
       }
-      if(a.name > b.name) {
+      if(a[j] > b[j]) {
         return 1;
       }
       return 0;
     });
   }
+
   sortNumber() {
     this.list.sort((a,b) => {
       return Number(a.age) - Number(b.age);
     });
   }
 
-  handle(i) {
-    console.warn('i', i);
-    this.hidden = i + 1;
+  handle(i, type, h) {
+    console.warn(h);
+    if (type === 'number') {
+      this.sortNumber();
+    } else {
+      this.sort(h);
+    }
   }
 }

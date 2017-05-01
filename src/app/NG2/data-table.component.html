@@ -18,7 +18,7 @@
           </label>
         </th>
 
-        <th *ngFor="let h of head; let i = index" (click)="handle(i)">{{h.name}} || {{h.type}}</th>
+        <th *ngFor="let h of head; let i = index" (click)="handle(i, h.type, h)">{{h.name}} || {{h.type}}</th>
       </tr>
     </thead>
 

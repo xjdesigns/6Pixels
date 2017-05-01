@@ -26,7 +26,7 @@ var DataTableComponent = (function () {
         this.list = [];
         this.final = [];
         this.allSelected = false;
-        this.hidden = 0;
+        this.hidden = -1;
         // default if number is set in head data
         this.numberFilter = ['equals', 'not equal', 'less than', 'less than or equal', 'greater than', 'greater than or equals'];
         this.head = [{
@@ -47,7 +47,7 @@ var DataTableComponent = (function () {
             }];
         this.data = [{
                 name: "Jason",
-                lName: 'Jacobson',
+                lName: 'AJacobson',
                 age: '33'
             }, {
                 name: "Frank",
@@ -65,10 +65,6 @@ var DataTableComponent = (function () {
             return d;
         });
     };
-    DataTableComponent.prototype.jason = function (e) {
-        var c = e.target.checked;
-        this.setChecked(c);
-    };
     DataTableComponent.prototype.selectAll = function (e) {
         var _this = this;
         var c = e.target.checked;
@@ -84,7 +80,6 @@ var DataTableComponent = (function () {
         }
         console.warn(this.final);
     };
-    // checkboxes acting odd, I need to look at the data
     DataTableComponent.prototype.setRow = function (i, dt) {
         var _this = this;
         this.list.forEach(function (d, index) {
@@ -109,12 +104,20 @@ var DataTableComponent = (function () {
             return d;
         });
     };
-    DataTableComponent.prototype.sort = function () {
+    DataTableComponent.prototype.sort = function (h) {
+        var j;
+        if (h.name === 'Last name') {
+            console.warn('this');
+            j = 'lName';
+        }
+        else {
+            j = 'name';
+        }
         this.list.sort(function (a, b) {
-            if (a.name < b.name) {
+            if (a[j] < b[j]) {
                 return -1;
             }
-            if (a.name > b.name) {
+            if (a[j] > b[j]) {
                 return 1;
             }
             return 0;
@@ -125,9 +128,14 @@ var DataTableComponent = (function () {
             return Number(a.age) - Number(b.age);
         });
     };
-    DataTableComponent.prototype.handle = function (i) {
-        console.warn('i', i);
-        this.hidden = i + 1;
+    DataTableComponent.prototype.handle = function (i, type, h) {
+        console.warn(h);
+        if (type === 'number') {
+            this.sortNumber();
+        }
+        else {
+            this.sort(h);
+        }
     };
     return DataTableComponent;
 }());
