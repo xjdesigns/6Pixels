@@ -65,20 +65,24 @@ var DataTableComponent = (function () {
             return d;
         });
     };
-    DataTableComponent.prototype.selectAll = function () {
+    DataTableComponent.prototype.jason = function (e) {
+        var c = e.target.checked;
+        this.setChecked(c);
+    };
+    DataTableComponent.prototype.selectAll = function (e) {
         var _this = this;
-        if (this.allSelected) {
+        var c = e.target.checked;
+        if (!c) {
             this.final = [];
-            this.allSelected = false;
-            this.setChecked(this.allSelected);
+            this.setChecked(c);
         }
         else {
             this.list.forEach(function (d) {
                 _this.final.push(d);
             });
-            this.allSelected = true;
-            this.setChecked(this.allSelected);
+            this.setChecked(c);
         }
+        console.warn(this.final);
     };
     // checkboxes acting odd, I need to look at the data
     DataTableComponent.prototype.setRow = function (i, dt) {
@@ -88,23 +92,22 @@ var DataTableComponent = (function () {
             if (dt === d) {
                 if (_this.final.indexOf(dt) !== -1) {
                     d['selected'] = false;
-                    _this.final.splice(_this.final.indexOf(dt), 1);
+                    return _this.final.splice(_this.final.indexOf(dt), 1);
                 }
             }
             if (i === index) {
                 d['selected'] = true;
-                _this.final.push(d);
+                return _this.final.push(d);
             }
         });
         // console.warn('set row data', this.final);
         // console.warn(this.list);
     };
     DataTableComponent.prototype.setChecked = function (bool) {
-        console.warn(bool);
         this.list.forEach(function (d) {
             d['selected'] = bool;
+            return d;
         });
-        console.warn(this.data);
     };
     DataTableComponent.prototype.sort = function () {
         this.list.sort(function (a, b) {

@@ -12,8 +12,8 @@
       <tr>
         <th>
           <!-- select all -->
-          <label class="spx-checkbox" (mouseup)="selectAll()">
-            <input name="checkbox" type="checkbox" [attr.checked]="allSelected ? 'checked' : null">
+          <label class="spx-checkbox" (change)="selectAll($event)">
+            <input name="allSelected" type="checkbox" (ngModel)="allSelected" [checked]="allSelected">
             <div class="spx-checkbox__box" data-icon="check"></div>
           </label>
         </th>
@@ -26,8 +26,8 @@
       <tr *ngFor="let d of list; let i = index">
         <td>
           <!-- select row -->
-          <label class="spx-checkbox" (mouseup)="setRow(i, d)">
-            <input name="checkbox" type="checkbox" [checked]="d.selected">
+          <label class="spx-checkbox" (change)="setRow(i, d)">
+            <input name="checkbox-{{d.name}}" type="checkbox" (ngModel)="d.selected" [checked]="d.selected">
             <div class="spx-checkbox__box" data-icon="check"></div>
           </label>
           {{d.selected}}

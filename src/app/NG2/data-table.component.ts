@@ -73,18 +73,24 @@ export class DataTableComponent {
     });
   }
 
-  selectAll() {
-    if (this.allSelected) {
+  jason(e) {
+    let c = e.target.checked;
+    this.setChecked(c);
+  }
+
+  selectAll(e) {
+    let c = e.target.checked;
+
+    if (!c) {
       this.final = [];
-      this.allSelected = false;
-      this.setChecked(this.allSelected);
+      this.setChecked(c);
     } else {
       this.list.forEach((d) => {
         this.final.push(d);
       });
-      this.allSelected = true;
-      this.setChecked(this.allSelected);
+      this.setChecked(c);
     }
+    console.warn(this.final);
   }
 
   // checkboxes acting odd, I need to look at the data
@@ -94,12 +100,12 @@ export class DataTableComponent {
       if (dt === d) {
         if (this.final.indexOf(dt) !== -1) {
           d['selected'] = false;
-          this.final.splice(this.final.indexOf(dt), 1);
+          return this.final.splice(this.final.indexOf(dt), 1);
         }
       }
       if (i === index) {
         d['selected'] = true;
-        this.final.push(d);
+        return this.final.push(d);
       }
     });
     // console.warn('set row data', this.final);
@@ -107,11 +113,10 @@ export class DataTableComponent {
   }
 
   setChecked(bool) {
-    console.warn(bool);
     this.list.forEach(d => {
       d['selected'] = bool;
+      return d;
     });
-    console.warn(this.data);
   }
 
   sort() {
