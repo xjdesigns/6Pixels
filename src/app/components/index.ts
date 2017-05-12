@@ -36,6 +36,7 @@ import { BreadcrumbComponent } from './components/breadcrumb.component';
 import { PaginationComponent } from './components/pagination.component';
 import { ToastComponent } from './components/toast.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { TileComponent } from './components/tiles/tiles.component';
 
 const ComponentsProvider = [
   ComponentsComponent,
@@ -44,7 +45,8 @@ const ComponentsProvider = [
   BreadcrumbComponent,
   PaginationComponent,
   ToastComponent,
-  LoadingComponent
+  LoadingComponent,
+  TileComponent
 ];
 export { ComponentsComponent } from './components/components.component';
 
