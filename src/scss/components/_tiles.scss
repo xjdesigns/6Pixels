@@ -13,6 +13,7 @@
     align-items: flex-end;
     min-height: 200px;
     position: relative;
+    cursor: pointer;
     background: $brand-primary;
     margin: 3px;
     padding: 6px;
@@ -22,6 +23,10 @@
 
     &:hover {
       box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+
+      .#{$ns}tile-actions {
+        max-height: 100px;
+      }
     }
 
     &--fave {
@@ -56,5 +61,22 @@
 
   &.is-favorited {
     color: red;
+  }
+}
+
+.#{$ns}tile-actions {
+  margin: 6px 0 0;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+
+  a {
+    color: white;
+    font-size: 10px;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
