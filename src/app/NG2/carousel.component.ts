@@ -18,6 +18,7 @@ export class CarouselComponent {
   currentImg = '';
   altImgs = [];
   length = 0;
+  // nextIsDisabled = false;
 
   @Input() images = {};
   @Input() primary: string = 'PrimaryImage';
@@ -47,6 +48,7 @@ export class CarouselComponent {
     }
     this.offset = this.offset + this.imgWidth;
     this.slide++;
+    this.isDisabled();
   }
   previousImage() {
     if (this.slide === 0) {
@@ -54,6 +56,7 @@ export class CarouselComponent {
     }
     this.offset = this.offset - this.imgWidth;
     this.slide--;
+    this.isDisabled();
   }
 
   openZoomModal() {
@@ -62,5 +65,10 @@ export class CarouselComponent {
 
   closeModal() {
     this.isOpen = false;
+  }
+
+  isDisabled() {
+    console.warn(this.slide);
+    console.warn();
   }
 }

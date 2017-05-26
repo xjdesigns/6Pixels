@@ -21,6 +21,7 @@ var CarouselComponent = (function () {
         this.currentImg = '';
         this.altImgs = [];
         this.length = 0;
+        // nextIsDisabled = false;
         this.images = {};
         this.primary = 'PrimaryImage';
         this.alternate = 'AlternateImages';
@@ -46,6 +47,7 @@ var CarouselComponent = (function () {
         }
         this.offset = this.offset + this.imgWidth;
         this.slide++;
+        this.isDisabled();
     };
     CarouselComponent.prototype.previousImage = function () {
         if (this.slide === 0) {
@@ -53,12 +55,17 @@ var CarouselComponent = (function () {
         }
         this.offset = this.offset - this.imgWidth;
         this.slide--;
+        this.isDisabled();
     };
     CarouselComponent.prototype.openZoomModal = function () {
         this.isOpen = true;
     };
     CarouselComponent.prototype.closeModal = function () {
         this.isOpen = false;
+    };
+    CarouselComponent.prototype.isDisabled = function () {
+        console.warn(this.slide);
+        console.warn();
     };
     return CarouselComponent;
 }());
