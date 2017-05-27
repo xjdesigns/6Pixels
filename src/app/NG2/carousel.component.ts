@@ -18,7 +18,8 @@ export class CarouselComponent {
   currentImg = '';
   altImgs = [];
   length = 0;
-  // nextIsDisabled = false;
+  prevIsDisabled = false;
+  nextIsDisabled = false;
 
   @Input() images = {};
   @Input() primary: string = 'PrimaryImage';
@@ -29,6 +30,7 @@ export class CarouselComponent {
     this.currentImg = this.imgs[this.primary][0].image;
     this.altImgs = this.addPrimaryToAlt(this.imgs[this.alternate], this.imgs[this.primary][0]);
     this.length = this.altImgs.length;
+    this.isDisabled();
   }
 
   addPrimaryToAlt(o, n) {
@@ -37,7 +39,6 @@ export class CarouselComponent {
   }
 
   selectImage(idx) {
-    console.warn(idx);
     this.currentSlide = idx;
     this.currentImg = this.altImgs[this.currentSlide].image;
   }
@@ -68,7 +69,7 @@ export class CarouselComponent {
   }
 
   isDisabled() {
-    console.warn(this.slide);
-    console.warn();
+    this.prevIsDisabled = (this.length - this.slide) === this.length ? true : false;
+    this.nextIsDisabled = (this.length - this.slide) === 3 ? true : false;
   }
 }

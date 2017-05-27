@@ -21,7 +21,8 @@ var CarouselComponent = (function () {
         this.currentImg = '';
         this.altImgs = [];
         this.length = 0;
-        // nextIsDisabled = false;
+        this.prevIsDisabled = false;
+        this.nextIsDisabled = false;
         this.images = {};
         this.primary = 'PrimaryImage';
         this.alternate = 'AlternateImages';
@@ -31,13 +32,13 @@ var CarouselComponent = (function () {
         this.currentImg = this.imgs[this.primary][0].image;
         this.altImgs = this.addPrimaryToAlt(this.imgs[this.alternate], this.imgs[this.primary][0]);
         this.length = this.altImgs.length;
+        this.isDisabled();
     };
     CarouselComponent.prototype.addPrimaryToAlt = function (o, n) {
         o.unshift(n);
         return o;
     };
     CarouselComponent.prototype.selectImage = function (idx) {
-        console.warn(idx);
         this.currentSlide = idx;
         this.currentImg = this.altImgs[this.currentSlide].image;
     };
@@ -64,8 +65,8 @@ var CarouselComponent = (function () {
         this.isOpen = false;
     };
     CarouselComponent.prototype.isDisabled = function () {
-        console.warn(this.slide);
-        console.warn();
+        this.prevIsDisabled = (this.length - this.slide) === this.length ? true : false;
+        this.nextIsDisabled = (this.length - this.slide) === 3 ? true : false;
     };
     return CarouselComponent;
 }());

@@ -16,6 +16,8 @@
       data-icon="navigate_before"
       aria-label="previous"
       data-id="previous"
+      [class.spx-is-disabled]="prevIsDisabled"
+      [disabled]="prevIsDisabled"
     ></button>
     <div class="spx-picker-wrap">
       <div [ngStyle]="{'margin-left': '-' + offset + 'px'}" class="spx-picker" data-id="picker">
@@ -40,7 +42,7 @@
       aria-label="next"
       data-id="next"
       [class.spx-is-disabled]="nextIsDisabled"
-      [attr.disabled]="nextIsDisabled"
+      [disabled]="nextIsDisabled"
     ></button>
   </div>
 </div>
