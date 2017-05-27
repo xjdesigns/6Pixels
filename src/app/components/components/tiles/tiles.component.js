@@ -13,6 +13,9 @@ var TilesComponent = (function () {
                 add: '[tileData]',
                 desc: 'Tile data object, see properties below'
             }, {
+                add: '.app-tile--fave',
+                desc: 'Class for app-tile which shows at 50%'
+            }, {
                 add: '{title}: string',
                 desc: 'Tile title property'
             }, {
@@ -24,9 +27,6 @@ var TilesComponent = (function () {
             }, {
                 add: '{favorite}: boolean',
                 desc: 'Favorite property'
-            }, {
-                add: '{isFave}: boolean',
-                desc: 'isFave property displays as favorite and 50% width'
             }, {
                 add: '{isIcon}: boolean',
                 desc: 'isIcon property'
@@ -45,7 +45,6 @@ var TilesComponent = (function () {
                 desc: 'description text',
                 baseHref: 'http://target.com',
                 favorite: this.isFavorited,
-                isFave: false,
                 isIcon: false,
                 icon: 'check',
                 actions: [{
@@ -60,8 +59,7 @@ var TilesComponent = (function () {
                 desc: 'description text',
                 baseHref: 'http://target.com',
                 favorite: this.isFavorited,
-                isFave: false,
-                isIcon: false,
+                isIcon: true,
                 icon: 'check',
                 actions: [{
                         title: 'One',
@@ -75,7 +73,6 @@ var TilesComponent = (function () {
                 desc: 'description text',
                 baseHref: 'http://target.com',
                 favorite: this.isFavorited,
-                isFave: false,
                 isIcon: false,
                 icon: 'check',
                 actions: [{

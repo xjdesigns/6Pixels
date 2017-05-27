@@ -4,11 +4,15 @@
     <div class="spx-tiles">
       <app-tile *ngFor="let d of theTiles" [tileData]="d"></app-tile>
     </div>
+    <div class="spx-tiles">
+      <app-tile [tileData]="theTiles[0]" class="app-tile--fave"></app-tile>
+    </div>
 
 <pre>
   <code code-display>
     <div class="spx-tiles">
       &lt;app-tile [tileData]="object">&lt;/app-tile>
+      &lt;app-tile class="app-tile--fave" [tileData]="object">&lt;/app-tile>
     </div>
   </code>
 </pre>

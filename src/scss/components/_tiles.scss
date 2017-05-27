@@ -10,6 +10,10 @@
   app-tile {
     flex: 0 0 200px;
     display: block;
+
+    &.app-tile--fave {
+      flex: 1 0 400px;
+    }
   }
 
   &__tile {
@@ -31,10 +35,6 @@
       .#{$ns}tile-actions {
         max-height: 100px;
       }
-    }
-
-    &--fave {
-      flex: 1 0 400px;
     }
 
     &--icon {
