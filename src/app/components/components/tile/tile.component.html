@@ -1,0 +1,26 @@
+<div
+  (click)="baseAction()"
+  class="spx-tiles__tile"
+  [class.spx-tiles__tile--fave]="tileData.isFave"
+  [class.spx-tiles__tile--icon]="tileData.isIcon"
+  [attr.data-icon]="tileData.icon"
+>
+  <div *ngIf="!tileData.isIcon" class="spx-contents">
+    <p>{{tileData.title}}</p>
+    <p class="spx-contents__desc">{{tileData.desc}}</p>
+
+    <div *ngIf="tileData.actions" class="spx-tile-actions">
+      <a
+        *ngFor="let a of tileData.actions"
+        [href]="a.href"
+      >{{a.title}}</a>
+    </div>
+  </div>
+  <div
+    (click)="setAsFavorite($event)"
+    class="spx-fave"
+    [class.is-favorited]="isFavorited"
+  >
+    <i class="material-icons">loyalty</i>
+  </div>
+</div>

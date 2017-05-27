@@ -1,63 +1,24 @@
-<div class="spx-tiles">
+<div class="flex">
+  <div class="flex__i--xs-6">
 
-  <div class="spx-tiles__tile">
-    <div class="spx-contents">
-      <p>Title of tile</p>
-      <p class="spx-contents__desc">Supporting text</p>
-
-      <div class="spx-tile-actions">
-        <a href="#">One</a>
-        <a href="#">Two</a>
-        <a href="#">Three</a>
-      </div>
+    <div class="spx-tiles">
+      <app-tile *ngFor="let d of theTiles" [tileData]="d"></app-tile>
     </div>
-    <div class="spx-fave is-favorited">%</div>
-  </div>
 
-  <div class="spx-tiles__tile">
-    <div class="spx-contents">
-      <p>Title of tile</p>
-      <p class="spx-contents__desc">Supporting text</p>
+<pre>
+  <code code-display>
+    <div class="spx-tiles">
+      &lt;app-tile [tileData]="object">&lt;/app-tile>
     </div>
-    <div class="spx-fave">%</div>
+  </code>
+</pre>
   </div>
-
-  <div class="spx-tiles__tile spx-tiles__tile--fave">
-
+  <div class="flex__i--xs-6">
+    <h2>Tiles</h2>
+    <p>
+      <span class="spx-pill spx-pill--pr">Stable</span>
+    </p>
+    <p>Tiles offer a functional item for users to interact with. Can link to a route, pass link actions, and toggle a favorite status. Favorites emit and event which the data is passed back.</p>
+    <app-code-table [data]='description'></app-code-table>
   </div>
-
-  <div class="spx-tiles__tile spx-tiles__tile--icon" data-icon="check">
-
-  </div>
-
-  <div class="spx-tiles__tile">
-
-  </div>
-
-</div>
-
-<div class="spx-tiles">
-
-  <div class="spx-tiles__tile spx-tiles__tile--fave">
-    <div class="spx-contents">
-      <p>Title of tile</p>
-      <p class="spx-contents__desc">Supporting text</p>
-    </div>
-    <div class="spx-fave is-favorited">%</div>
-  </div>
-
-  <div class="spx-tiles__tile spx-tiles__tile--fave">
-    <div class="spx-contents">
-      <p>Title of tile</p>
-      <p class="spx-contents__desc">Supporting text</p>
-
-      <div class="spx-tile-actions">
-        <a href="#">One</a>
-        <a href="#">Two</a>
-        <a href="#">Three</a>
-      </div>
-    </div>
-    <div class="spx-fave is-favorited">%</div>
-  </div>
-
 </div>

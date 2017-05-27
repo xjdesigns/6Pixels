@@ -7,8 +7,12 @@
     margin: 24px 0;
   }
 
-  &__tile {
+  app-tile {
     flex: 0 0 200px;
+    display: block;
+  }
+
+  &__tile {
     display: flex;
     align-items: flex-end;
     min-height: 200px;
