@@ -5,13 +5,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var alert_service_1 = require("../../../services/alert-service");
 var TilesComponent = (function () {
-    function TilesComponent() {
+    function TilesComponent(alS) {
+        this.alS = alS;
         this.description = [{
                 add: '[tileData]',
-                desc: 'Tile data object, see properties below'
+                desc: '[tileData] object, see properties below'
             }, {
                 add: '.app-tile--fave',
                 desc: 'Class for app-tile which shows at 50%'
@@ -37,14 +42,14 @@ var TilesComponent = (function () {
                 add: '{actions[{title,href}]}: array',
                 desc: 'actions property is array of objects. '
             }, {
-                add: 'onChange',
-                desc: 'onChange event is emitted when favorite is toggled, passes tileData object as $event'
+                add: '(onChange)',
+                desc: '(onChange) event is emitted when favorite is toggled, passes tileData object as $event'
             }];
         this.theTiles = [{
                 title: 'Item',
                 desc: 'description text',
                 baseHref: 'http://target.com',
-                favorite: this.isFavorited,
+                favorite: false,
                 isIcon: false,
                 icon: 'check',
                 actions: [{
@@ -57,8 +62,8 @@ var TilesComponent = (function () {
             }, {
                 title: 'Item 1',
                 desc: 'description text',
-                baseHref: 'http://target.com',
-                favorite: this.isFavorited,
+                baseHref: '/ng2',
+                favorite: true,
                 isIcon: true,
                 icon: 'check',
                 actions: [{
@@ -72,7 +77,7 @@ var TilesComponent = (function () {
                 title: 'Item 2',
                 desc: 'description text',
                 baseHref: 'http://target.com',
-                favorite: this.isFavorited,
+                favorite: false,
                 isIcon: false,
                 icon: 'check',
                 actions: [{
@@ -84,12 +89,19 @@ var TilesComponent = (function () {
                     }]
             }];
     }
+    TilesComponent.prototype.addAlert = function () {
+        this.alS.jason('succes');
+    };
+    TilesComponent.prototype.onChange = function (e) {
+        console.warn('tile onChange(e)', e);
+    };
     return TilesComponent;
 }());
 TilesComponent = __decorate([
     core_1.Component({
         selector: 'app-tiles',
         templateUrl: 'app/components/components/tiles/tiles.component.html'
-    })
+    }),
+    __metadata("design:paramtypes", [alert_service_1.AlertService])
 ], TilesComponent);
 exports.TilesComponent = TilesComponent;

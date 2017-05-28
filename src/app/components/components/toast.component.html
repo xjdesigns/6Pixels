@@ -13,10 +13,13 @@
     </div>
 <pre>
   <code code-display>
-    <div class="spx-bcrumb">
-      <button class="spx-trail">Home</button>
-      <button class="spx-trail">app</button>
-      <button class="spx-trail">options</button>
+    <div [class.is-open]="isOpen" class="spx-toaster">
+      <div class="spx-toast is-success">
+        <p>This was successful</p>
+      </div>
+      <div class="spx-toast is-error">
+        <p>This was an error</p>
+      </div>
     </div>
   </code>
 </pre>

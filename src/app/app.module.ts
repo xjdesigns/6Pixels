@@ -21,7 +21,10 @@ import {
   ComponentsComponent,
   SixPixelsProvider
 } from './components'
-import { Ng2Component, Ng2Provider } from './NG2'
+import { Ng2Component, Ng2Provider } from './NG2';
+
+import { AlertComponent } from './services/alert/alert';
+import { AlertService } from './services/alert-service';
 
 @NgModule({
   imports:      [
@@ -38,8 +41,12 @@ import { Ng2Component, Ng2Provider } from './NG2'
     VarComponent,
     CodeDisplayDirective,
     CodeTableComponent,
+    AlertComponent,
     ...SixPixelsProvider,
     ...Ng2Provider
+  ],
+  providers: [
+    AlertService
   ],
   bootstrap:    [ AppComponent ]
 })

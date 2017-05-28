@@ -1,0 +1,26 @@
+ <!-- <div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div> -->
+<!-- <h1>HELLO WORLD</h1> -->
+
+<div
+  *ngIf="message"
+  class="spx-toaster"
+  [class.is-open]="message"
+>
+  <div *ngFor="let m of message; let i = index">
+    <div
+      class="spx-toast"
+      (click)="removeAlert(i)"
+      *ngIf="message"
+      [ngClass]="{'is-success': m.type === 'success', 'is-error': m.type === 'error'}"
+    >
+      <p>{{ m.text + i }}</p>
+    </div>
+  </div>
+
+  <div>
+    {{message}}
+  </div>
+  <div *ngFor="let msg of messages">
+    <div *ngIf="msg">{{msg.text}}</div>
+  </div>
+</div>

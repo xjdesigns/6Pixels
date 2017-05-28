@@ -11,15 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var alert_service_1 = require("../../../services/alert-service");
 var TileComponent = (function () {
-    function TileComponent(router) {
+    function TileComponent(router, alS) {
         this.router = router;
-        this.isFavorited = false;
+        this.alS = alS;
         this.tileData = {
             title: 'Item',
             desc: 'description text',
             baseHref: 'http://target.com',
-            favorite: this.isFavorited,
+            favorite: false,
             isFave: false,
             isIcon: false,
             icon: 'check',
@@ -32,21 +33,25 @@ var TileComponent = (function () {
                 }]
         };
         this.onChange = new core_1.EventEmitter();
-        console.warn('construtor', this);
+        this.alS.jason('error');
+        // setTimeout(() => {
+        //   this.alS.removeAS();
+        // }, 5000);
     }
     TileComponent.prototype.baseAction = function () {
+        var link = this.tileData.favorite;
         // starts with '/' means route
-        var route = /^\//g.test(this.tileData.baseHref);
+        var route = /^\//g.test(link);
         if (route) {
-            this.router.navigate(['/ng2']);
+            this.router.navigate([link]);
         }
         else {
-            window.open(this.tileData.baseHref, '_blank');
+            window.open(link, '_blank');
         }
     };
     TileComponent.prototype.setAsFavorite = function (e) {
         e.stopPropagation();
-        this.isFavorited = !this.isFavorited;
+        this.tileData.favorite = !this.tileData.favorite;
         this.onChange.emit(this.tileData);
     };
     return TileComponent;
@@ -64,6 +69,6 @@ TileComponent = __decorate([
         selector: 'app-tile',
         templateUrl: 'app/components/components/tile/tile.component.html'
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [router_1.Router, alert_service_1.AlertService])
 ], TileComponent);
 exports.TileComponent = TileComponent;
