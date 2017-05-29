@@ -18,10 +18,7 @@ var AlertService = (function () {
         this.router = router;
         this.subject = new Subject_1.Subject();
         this.keepAfterNavigationChange = false;
-        this.list = [{
-                name: 'jason',
-                text: 'yes'
-            }];
+        this.list = [];
         // clear alert message on route change
         router.events.subscribe(function (event) {
             if (event instanceof router_1.NavigationStart) {
@@ -35,28 +32,30 @@ var AlertService = (function () {
             }
         });
     }
-    AlertService.prototype.success = function (message, keepAfterNavigationChange) {
-        if (keepAfterNavigationChange === void 0) { keepAfterNavigationChange = false; }
-        this.keepAfterNavigationChange = keepAfterNavigationChange;
-        this.subject.next({ type: 'success', text: message });
-    };
-    AlertService.prototype.error = function (message, keepAfterNavigationChange) {
-        if (keepAfterNavigationChange === void 0) { keepAfterNavigationChange = false; }
-        this.keepAfterNavigationChange = keepAfterNavigationChange;
-        this.subject.next({ type: 'error', text: message });
-    };
+    // success(message: string, keepAfterNavigationChange = false) {
+    //   this.keepAfterNavigationChange = keepAfterNavigationChange;
+    //   this.subject.next({ type: 'success', text: message });
+    // }
+    //
+    // error(message: string, keepAfterNavigationChange = false) {
+    //   this.keepAfterNavigationChange = keepAfterNavigationChange;
+    //   this.subject.next({ type: 'error', text: message });
+    // }
     AlertService.prototype.getMessage = function () {
         return this.subject.asObservable();
     };
-    AlertService.prototype.clearSubject = function () {
-        this.subject.next();
-    };
-    AlertService.prototype.jason = function (message) {
-        this.list.push({ name: 'jason1', text: message });
+    AlertService.prototype.addAlert = function (message, type) {
+        if (type === void 0) { type = 'success'; }
+        this.keepAfterNavigationChange = true;
+        this.list.push({ type: type, text: message });
         this.serviceNext(this.list);
     };
     AlertService.prototype.removeAlertByIndex = function (i) {
         this.list.splice(i, 1);
+        this.serviceNext(this.list);
+    };
+    AlertService.prototype.clearSubject = function () {
+        this.list.splice(0, this.list.length);
         this.serviceNext(this.list);
     };
     AlertService.prototype.serviceNext = function (alerts) {

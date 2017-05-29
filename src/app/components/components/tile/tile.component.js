@@ -11,11 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var alert_service_1 = require("../../../services/alert-service");
 var TileComponent = (function () {
-    function TileComponent(router, alS) {
+    function TileComponent(router) {
         this.router = router;
-        this.alS = alS;
         this.tileData = {
             title: 'Item',
             desc: 'description text',
@@ -33,13 +31,9 @@ var TileComponent = (function () {
                 }]
         };
         this.onChange = new core_1.EventEmitter();
-        this.alS.jason('error');
-        // setTimeout(() => {
-        //   this.alS.removeAS();
-        // }, 5000);
     }
     TileComponent.prototype.baseAction = function () {
-        var link = this.tileData.favorite;
+        var link = this.tileData.baseHref;
         // starts with '/' means route
         var route = /^\//g.test(link);
         if (route) {
@@ -69,6 +63,6 @@ TileComponent = __decorate([
         selector: 'app-tile',
         templateUrl: 'app/components/components/tile/tile.component.html'
     }),
-    __metadata("design:paramtypes", [router_1.Router, alert_service_1.AlertService])
+    __metadata("design:paramtypes", [router_1.Router])
 ], TileComponent);
 exports.TileComponent = TileComponent;

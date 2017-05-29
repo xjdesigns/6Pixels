@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlertService } from '../../../services/alert-service';
 
 @Component({
   selector: 'app-tiles',
@@ -82,11 +81,7 @@ export class TilesComponent {
     }]
   }];
 
-  constructor(private alS: AlertService) {}
-
-  addAlert() {
-    this.alS.jason('succes');
-  }
+  constructor() {}
 
   onChange(e) {
     console.warn('tile onChange(e)', e)

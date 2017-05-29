@@ -10,10 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var alert_service_1 = require("../../../services/alert-service");
 var TilesComponent = (function () {
-    function TilesComponent(alS) {
-        this.alS = alS;
+    function TilesComponent() {
         this.description = [{
                 add: '[tileData]',
                 desc: '[tileData] object, see properties below'
@@ -89,9 +87,6 @@ var TilesComponent = (function () {
                     }]
             }];
     }
-    TilesComponent.prototype.addAlert = function () {
-        this.alS.jason('succes');
-    };
     TilesComponent.prototype.onChange = function (e) {
         console.warn('tile onChange(e)', e);
     };
@@ -102,6 +97,6 @@ TilesComponent = __decorate([
         selector: 'app-tiles',
         templateUrl: 'app/components/components/tiles/tiles.component.html'
     }),
-    __metadata("design:paramtypes", [alert_service_1.AlertService])
+    __metadata("design:paramtypes", [])
 ], TilesComponent);
 exports.TilesComponent = TilesComponent;

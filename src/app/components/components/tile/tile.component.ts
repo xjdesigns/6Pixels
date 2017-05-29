@@ -6,7 +6,6 @@ import {
   EventEmitter
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from '../../../services/alert-service';
 
 @Component({
   selector: 'app-tile',
@@ -32,15 +31,10 @@ export class TileComponent {
 
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
-  constructor(public router: Router, public alS: AlertService) {
-    this.alS.jason('error');
-    // setTimeout(() => {
-    //   this.alS.removeAS();
-    // }, 5000);
-  }
+  constructor(public router: Router) {}
 
   baseAction() {
-    var link = this.tileData.favorite;
+    var link = this.tileData.baseHref;
     // starts with '/' means route
     var route =  /^\//g.test(link);
     if (route) {

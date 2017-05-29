@@ -10,29 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var alert_service_1 = require("../alert-service");
-var AlertComponent = (function () {
-    function AlertComponent(alertService) {
+var alert_service_1 = require("../../services/alert-service");
+var AlertDisplayComponent = (function () {
+    function AlertDisplayComponent(alertService) {
         this.alertService = alertService;
-        this.message = [];
+        this.description = [{
+                add: '[tileData]',
+                desc: '[tileData] object, see properties below'
+            }];
     }
-    AlertComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.alertService.getMessage()
-            .subscribe(function (message) {
-            _this.message = message;
-        });
+    AlertDisplayComponent.prototype.addAlert = function () {
+        this.alertService.addAlert('Fail alert message', 'error');
     };
-    AlertComponent.prototype.removeAlert = function (i) {
-        this.alertService.removeAlertByIndex(i);
+    AlertDisplayComponent.prototype.clearAll = function () {
+        this.alertService.clearSubject();
     };
-    return AlertComponent;
+    return AlertDisplayComponent;
 }());
-AlertComponent = __decorate([
+AlertDisplayComponent = __decorate([
     core_1.Component({
-        selector: 'alert',
-        templateUrl: 'app/services/alert/alert.html'
+        selector: 'app-alert-display',
+        templateUrl: 'app/NG2/alert-display/alert-display.component.html'
     }),
     __metadata("design:paramtypes", [alert_service_1.AlertService])
-], AlertComponent);
-exports.AlertComponent = AlertComponent;
+], AlertDisplayComponent);
+exports.AlertDisplayComponent = AlertDisplayComponent;

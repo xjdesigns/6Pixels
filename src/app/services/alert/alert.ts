@@ -7,22 +7,28 @@ import { AlertService } from '../alert-service';
  })
 
  export class AlertComponent {
-   message: any;
-   messages = [];
+   message = [];
 
    constructor(private alertService: AlertService) { }
 
    ngOnInit() {
-     var j = [];
-      this.alertService.getMessage()
-        .subscribe(message => {
-          console.warn('msg sub::', message);
-          this.message = message;
-        });
-   }
+    this.alertService.getMessage()
+      .subscribe(message => {
+        this.message = message;
+      });
+  }
 
-   removeAlert(i) {
-     console.warn('alert', i, this);
-     this.alertService.removeAlert(i);
-   }
+  removeAlert(i) {
+    this.alertService.removeAlertByIndex(i);
+  }
+
+  // popOnInterval(dur = 1000) {
+  //   var clear = setInterval(() => {
+  //     this.message.shift()
+  //
+  //     if (this.message.length === 0) {
+  //       clearInterval(clear);
+  //     }
+  //   }, dur);
+  // }
  }

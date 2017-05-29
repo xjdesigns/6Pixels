@@ -4,6 +4,7 @@ import { SelectlistDisplayComponent } from './selectListDisplay.component';
 import { SelectlistComponent } from './selectlist.component';
 import { CarouselDisplayComponent } from './carousel-display.component';
 import { CarouselComponent } from './carousel.component';
+import { AlertDisplayComponent } from './alert-display/alert-display.component';
 
 export const Ng2Provider = [
   Ng2Component,
@@ -11,6 +12,7 @@ export const Ng2Provider = [
   SelectlistDisplayComponent,
   SelectlistComponent,
   CarouselDisplayComponent,
-  CarouselComponent
+  CarouselComponent,
+  AlertDisplayComponent
 ];
 export { Ng2Component } from './ng2.component';
