@@ -1,0 +1,16 @@
+<div
+  *ngIf="message"
+  class="spx-toaster"
+  [class.is-open]="message"
+>
+  <div *ngFor="let m of message; let i = index">
+    <div
+      class="spx-toast"
+      (click)="removeAlert(i)"
+      *ngIf="message"
+      [ngClass]="{'is-success': m.type === 'success', 'is-error': m.type === 'error'}"
+    >
+      <p>{{ m.text }}</p>
+    </div>
+  </div>
+</div>

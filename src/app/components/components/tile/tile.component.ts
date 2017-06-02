@@ -12,13 +12,11 @@ import { Router } from '@angular/router';
   templateUrl: 'app/components/components/tile/tile.component.html'
 })
 export class TileComponent {
-  isFavorited = false;
-
   @Input() tileData = {
     title: 'Item',
     desc: 'description text',
     baseHref: 'http://target.com',
-    favorite: this.isFavorited,
+    favorite: false,
     isFave: false,
     isIcon: false,
     icon: 'check',
@@ -33,23 +31,22 @@ export class TileComponent {
 
   @Output() onChange: EventEmitter<any> = new EventEmitter();
 
-  constructor(public router: Router) {
-    console.warn('construtor', this);
-  }
+  constructor(public router: Router) {}
 
   baseAction() {
+    var link = this.tileData.baseHref;
     // starts with '/' means route
-    var route =  /^\//g.test(this.tileData.baseHref);
+    var route =  /^\//g.test(link);
     if (route) {
-      this.router.navigate(['/ng2']);
+      this.router.navigate([link]);
     } else {
-      window.open(this.tileData.baseHref, '_blank');
+      window.open(link, '_blank');
     }
   }
 
   setAsFavorite(e) {
     e.stopPropagation();
-    this.isFavorited = !this.isFavorited;
+    this.tileData.favorite = !this.tileData.favorite;
     this.onChange.emit(this.tileData);
   }
 }

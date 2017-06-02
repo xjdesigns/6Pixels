@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class TilesComponent {
   description = [{
     add: '[tileData]',
-    desc: 'Tile data object, see properties below'
+    desc: '[tileData] object, see properties below'
   }, {
     add: '.app-tile--fave',
     desc: 'Class for app-tile which shows at 50%'
@@ -33,15 +33,15 @@ export class TilesComponent {
     add: '{actions[{title,href}]}: array',
     desc: 'actions property is array of objects. '
   }, {
-    add: 'onChange',
-    desc: 'onChange event is emitted when favorite is toggled, passes tileData object as $event'
+    add: '(onChange)',
+    desc: '(onChange) event is emitted when favorite is toggled, passes tileData object as $event'
   }];
 
   theTiles = [{
     title: 'Item',
     desc: 'description text',
     baseHref: 'http://target.com',
-    favorite: this.isFavorited,
+    favorite: false,
     isIcon: false,
     icon: 'check',
     actions: [{
@@ -54,8 +54,8 @@ export class TilesComponent {
   },{
     title: 'Item 1',
     desc: 'description text',
-    baseHref: 'http://target.com',
-    favorite: this.isFavorited,
+    baseHref: '/ng2',
+    favorite: true,
     isIcon: true,
     icon: 'check',
     actions: [{
@@ -69,7 +69,7 @@ export class TilesComponent {
     title: 'Item 2',
     desc: 'description text',
     baseHref: 'http://target.com',
-    favorite: this.isFavorited,
+    favorite: false,
     isIcon: false,
     icon: 'check',
     actions: [{
@@ -79,5 +79,11 @@ export class TilesComponent {
       title: 'Two',
       href: 'http://google.com'
     }]
-  }]
+  }];
+
+  constructor() {}
+
+  onChange(e) {
+    console.warn('tile onChange(e)', e)
+  }
 }

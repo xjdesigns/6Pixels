@@ -14,12 +14,11 @@ var router_1 = require("@angular/router");
 var TileComponent = (function () {
     function TileComponent(router) {
         this.router = router;
-        this.isFavorited = false;
         this.tileData = {
             title: 'Item',
             desc: 'description text',
             baseHref: 'http://target.com',
-            favorite: this.isFavorited,
+            favorite: false,
             isFave: false,
             isIcon: false,
             icon: 'check',
@@ -32,21 +31,21 @@ var TileComponent = (function () {
                 }]
         };
         this.onChange = new core_1.EventEmitter();
-        console.warn('construtor', this);
     }
     TileComponent.prototype.baseAction = function () {
+        var link = this.tileData.baseHref;
         // starts with '/' means route
-        var route = /^\//g.test(this.tileData.baseHref);
+        var route = /^\//g.test(link);
         if (route) {
-            this.router.navigate(['/ng2']);
+            this.router.navigate([link]);
         }
         else {
-            window.open(this.tileData.baseHref, '_blank');
+            window.open(link, '_blank');
         }
     };
     TileComponent.prototype.setAsFavorite = function (e) {
         e.stopPropagation();
-        this.isFavorited = !this.isFavorited;
+        this.tileData.favorite = !this.tileData.favorite;
         this.onChange.emit(this.tileData);
     };
     return TileComponent;

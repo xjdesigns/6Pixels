@@ -1,0 +1,30 @@
+<div class="flex">
+  <div class="flex__i--xs-6">
+
+    <button class="spx-btn spx-btn--primary" (click)="addAlert()">
+      Add Alert
+    </button>
+    <button class="spx-btn spx-btn--primary" (click)="clearAll()">
+      Clear all
+    </button>
+
+<pre>
+  <code code-display>
+    @params message:string
+    @params type:'success(default)' or 'error'
+    this.alertService.addAlert(message, type);
+
+    this.alertService.clearSubject();
+  </code>
+</pre>
+  </div>
+  <div class="flex__i--xs-6">
+    <h2>Alert Service</h2>
+    <p>
+      <span class="spx-pill spx-pill--g3">Angular 2</span>
+      <span class="spx-pill spx-pill--g3">RxJS</span>
+      <span class="spx-pill spx-pill--pr">Stable</span>
+    </p>
+    <p>Alert service utilizes the SIX PIXELS toast UI and adds an observable pattern for subscribing to the alerts.</p>
+  </div>
+</div>
