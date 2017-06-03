@@ -38,7 +38,7 @@ export class AlertService {
   }
 
   addAlert(message, type = 'success') {
-      this.keepAfterNavigationChange = true;
+    this.keepAfterNavigationChange = true;
     this.list.push({type: type, text: message});
     this.serviceNext(this.list);
   }

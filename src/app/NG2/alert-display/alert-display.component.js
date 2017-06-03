@@ -11,27 +11,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var alert_service_1 = require("../../services/alert-service");
+var firebase_service_1 = require("../../services/firebase.service");
 var AlertDisplayComponent = (function () {
-    function AlertDisplayComponent(alertService) {
+    function AlertDisplayComponent(alertService, ffbs) {
         this.alertService = alertService;
+        this.ffbs = ffbs;
         this.description = [{
                 add: '[tileData]',
                 desc: '[tileData] object, see properties below'
             }];
+        this.ffbs.init();
     }
+    AlertDisplayComponent.prototype.ngOnInit = function () {
+        this.ffbs.getData().subscribe(function (data) {
+            console.warn('sub data', data);
+        });
+    };
     AlertDisplayComponent.prototype.addAlert = function () {
         this.alertService.addAlert('Fail alert message', 'error');
     };
     AlertDisplayComponent.prototype.clearAll = function () {
         this.alertService.clearSubject();
     };
+    AlertDisplayComponent.prototype.getUser = function (uuid) {
+        this.ffbs.writeUserData(1225, 'tony jacobson', 'jason@jason.com', 'none');
+    };
     return AlertDisplayComponent;
 }());
 AlertDisplayComponent = __decorate([
     core_1.Component({
         selector: 'app-alert-display',
-        templateUrl: 'app/NG2/alert-display/alert-display.component.html'
+        templateUrl: 'app/NG2/alert-display/alert-display.component.html',
+        providers: [firebase_service_1.FirebaseService]
     }),
-    __metadata("design:paramtypes", [alert_service_1.AlertService])
+    __metadata("design:paramtypes", [alert_service_1.AlertService, firebase_service_1.FirebaseService])
 ], AlertDisplayComponent);
 exports.AlertDisplayComponent = AlertDisplayComponent;

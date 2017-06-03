@@ -42,6 +42,7 @@
     "@angular/upgrade": "~4.0.0",
     "angular-in-memory-web-api": "~0.3.1",
     "core-js": "^2.4.1",
+    "firebase": "^4.1.1",
     "rxjs": "5.0.1",
     "systemjs": "0.19.39",
     "zone.js": "^0.8.4"
@@ -71,7 +72,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "lite-server": "^2.2.2",
-    "lodash": "^4.16.2",
+    "lodash": "^4.16.6",
     "phantomjs-prebuilt": "^2.1.7",
     "protractor": "~4.0.14",
     "rollup": "^0.41.6",
@@ -89,8 +90,6 @@
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-watch": "^4.3.10",
-    "lite-server": "^2.2.2",
-    "lodash": "^4.16.6",
     "node-sass": "^3.11.3",
     "require-dir": "^0.3.1"
   },
