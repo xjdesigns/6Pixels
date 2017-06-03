@@ -3,6 +3,7 @@ import { AlertService } from '../../services/alert-service';
 import { FirebaseService } from '../../services/firebase.service';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-alert-display',
@@ -17,12 +18,15 @@ export class AlertDisplayComponent {
 
   constructor(private alertService: AlertService, private ffbs: FirebaseService) {
     this.ffbs.init();
+    console.warn('lodash', _);
   }
 
   ngOnInit() {
     this.ffbs.getData().subscribe(data => {
       console.warn('sub data', data);
     });
+    var i = _.join(['a', 'b', 'c'], '~');
+    console.warn('i', i);
   }
 
   addAlert() {

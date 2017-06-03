@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Observable_1 = require("rxjs/Observable");
+require("firebase");
+// declare var firebase: any
 var FirebaseService = (function () {
     function FirebaseService() {
         this.items = [];

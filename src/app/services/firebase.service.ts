@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
-declare var firebase: any
+import 'firebase';
+// declare var firebase: any
 
 @Injectable()
 export class FirebaseService {

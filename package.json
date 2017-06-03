@@ -40,9 +40,11 @@
     "@angular/router": "~4.0.0",
     "@angular/tsc-wrapped": "~4.0.0",
     "@angular/upgrade": "~4.0.0",
+    "@types/lodash": "^4.14.65",
     "angular-in-memory-web-api": "~0.3.1",
     "core-js": "^2.4.1",
     "firebase": "^4.1.1",
+    "lodash": "^4.17.4",
     "rxjs": "5.0.1",
     "systemjs": "0.19.39",
     "zone.js": "^0.8.4"
