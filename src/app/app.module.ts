@@ -26,6 +26,8 @@ import { Ng2Component, Ng2Provider } from './NG2';
 import { AlertComponent } from './services/alert/alert';
 import { AlertService } from './services/alert-service';
 
+import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+
 @NgModule({
   imports:      [
     BrowserModule,
@@ -42,6 +44,7 @@ import { AlertService } from './services/alert-service';
     CodeDisplayDirective,
     CodeTableComponent,
     AlertComponent,
+    FirebaseGameComponent,
     ...SixPixelsProvider,
     ...Ng2Provider
   ],

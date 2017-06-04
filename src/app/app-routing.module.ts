@@ -12,6 +12,8 @@ import {
 } from './components';
 import { Ng2Component } from './NG2';
 
+import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'components', component: ComponentsComponent },
   { path: 'variable', component: VarComponent },
   { path: 'helpers', component: HelpersComponent },
-  { path: 'ng2', component: Ng2Component}
+  { path: 'ng2', component: Ng2Component},
+  { path: 'firebase-game', component: FirebaseGameComponent}
 ];
 
 @NgModule({

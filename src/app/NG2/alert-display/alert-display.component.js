@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var alert_service_1 = require("../../services/alert-service");
 var firebase_service_1 = require("../../services/firebase.service");
-var _ = require("lodash");
 var AlertDisplayComponent = (function () {
     function AlertDisplayComponent(alertService, ffbs) {
         this.alertService = alertService;
@@ -22,14 +21,11 @@ var AlertDisplayComponent = (function () {
                 desc: '[tileData] object, see properties below'
             }];
         this.ffbs.init();
-        console.warn('lodash', _);
     }
     AlertDisplayComponent.prototype.ngOnInit = function () {
-        this.ffbs.getData().subscribe(function (data) {
-            console.warn('sub data', data);
-        });
-        var i = _.join(['a', 'b', 'c'], '~');
-        console.warn('i', i);
+        // this.ffbs.getData().subscribe(data => {
+        //   console.warn('sub data', data);
+        // });
     };
     AlertDisplayComponent.prototype.addAlert = function () {
         this.alertService.addAlert('Fail alert message', 'error');

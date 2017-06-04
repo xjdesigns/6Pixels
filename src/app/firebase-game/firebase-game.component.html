@@ -1,0 +1,21 @@
+<h1>Welcome to the Firebase Game</h1>
+<div *ngFor="let user of users">
+  {{user.username}} {{user.email}}
+
+  <div class="spx-form">
+    <form #f="ngForm" (ngSubmit)="verdict(f)">
+      <div>
+        <label class="spx-label">Input Label</label>
+        <input class="spx-input" type="text" [ngModel]="user.username" name="answer1">
+      </div>
+      <div>
+        <label class="spx-label">Input Label</label>
+        <input class="spx-input" type="text" [ngModel]="user.email" name="answer2">
+      </div>
+      <div>
+        <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</div>
