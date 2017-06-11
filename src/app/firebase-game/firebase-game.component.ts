@@ -12,6 +12,7 @@ import { Observer } from 'rxjs/Observer';
 export class FirebaseGameComponent {
   users = [];
   one = {};
+  currentUserIdToIncrement= 0;
 
   constructor(private alertService: AlertService, private ffbs: FirebaseService) {
     this.ffbs.init();
@@ -22,7 +23,9 @@ export class FirebaseGameComponent {
       console.warn('sub data', data);
       this.users = data;
       console.warn('users', this.users);
+      console.warn(this.users[this.users.length - 1]);
     });
+    console.warn('users outside', this.users);
   }
 
   verdict(form) {

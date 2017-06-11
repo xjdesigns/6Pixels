@@ -18,6 +18,7 @@ var FirebaseGameComponent = (function () {
         this.ffbs = ffbs;
         this.users = [];
         this.one = {};
+        this.currentUserIdToIncrement = 0;
         this.ffbs.init();
     }
     FirebaseGameComponent.prototype.ngOnInit = function () {
@@ -26,7 +27,9 @@ var FirebaseGameComponent = (function () {
             console.warn('sub data', data);
             _this.users = data;
             console.warn('users', _this.users);
+            console.warn(_this.users[_this.users.length - 1]);
         });
+        console.warn('users outside', this.users);
     };
     FirebaseGameComponent.prototype.verdict = function (form) {
         console.warn(form.value);
