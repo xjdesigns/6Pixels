@@ -10,9 +10,12 @@ import { Observer } from 'rxjs/Observer';
   providers: [ FirebaseService ]
 })
 export class FirebaseGameComponent {
-  users = [];
-  one = {};
-  currentUserIdToIncrement= 0;
+  users: any = [];
+  questions = [];
+  userLength = 0;
+  currentUser: any = {};
+  currentUserCount = 0;
+  thumbsActive = false;
 
   constructor(private alertService: AlertService, private ffbs: FirebaseService) {
     this.ffbs.init();
@@ -20,31 +23,68 @@ export class FirebaseGameComponent {
 
   ngOnInit() {
     this.ffbs.getData().subscribe(data => {
-      console.warn('sub data', data);
+      // console.warn('data', data);
       this.users = data;
-      console.warn('users', this.users);
-      console.warn(this.users[this.users.length - 1]);
+      this.currentUserCount = this.users.length;
+      // console.warn('user', this.currentUserCount);
     });
-    console.warn('users outside', this.users);
+    this.ffbs.getQuestions().subscribe(data => {
+      console.warn('questions', data);
+      this.questions = data;
+    });
+  }
+
+  //users
+  checkIn(val, ev) {
+    ev.preventDefault();
+    this.currentUser = {
+      username: val.value.username,
+      name: val.value.name
+    }
+
+    this.checkForUser();
+
+    this.thumbsActive = true;
+    setTimeout(() => {
+      this.thumbsActive = false;
+    }, 10000);
+  }
+
+  createNewUser(uuid, name) {
+    this.ffbs.writeUserData(uuid, name);
+  }
+
+  checkForUser() {
+    var j = this.users.filter((user) => {
+      return user.username === this.currentUser.username ? true : false;
+    });
+    if (j.length > 0) {
+      this.currentUser = this.currentUser;
+      this.addAlert('User Already Exists, Enjoy!')
+    } else {
+      this.createNewUser(this.currentUserCount + 1, this.currentUser.username);
+      this.addAlert('New User Created, Enjoy!')
+    }
+  }
+
+  // questions
+  addQuestion(question, ev) {
+    ev.preventDefault();
+    console.warn('q', question.value.question);
+    var q = question.value.question;
+    var uuid = this.questions.length + 1;
+    this.ffbs.writeNewQuestion(uuid, q);
   }
 
   verdict(form) {
     console.warn(form.value);
   }
 
-  // addAlert() {
-  //   this.alertService.addAlert('Fail alert message', 'error');
-  // }
+  addAlert(msg) {
+    this.alertService.addAlert(msg, 'success');
+  }
   //
   // clearAll() {
   //   this.alertService.clearSubject();
   // }
-
-  createNewUser(uuid, name) {
-    this.ffbs.writeUserData(1225, 'tony jacobson', 'jason@jason.com', 'none');
-  }
-
-  getUser(uuid) {
-    this.ffbs.writeUserData(1225, 'tony jacobson', 'jason@jason.com', 'none');
-  }
 }

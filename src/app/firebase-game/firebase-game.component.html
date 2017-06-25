@@ -1,19 +1,61 @@
 <h1>Welcome to the Firebase Game</h1>
-<div *ngFor="let user of users">
-  {{user.username}} {{user.email}}
+<p>The one and only game where we can all vote on the knowledge of Sir Elofson</p>
+
+<div class="sg-divider"></div>
+
+<div class="like-container" (class.is-active)="thumbsActive" *ngIf="thumbsActive">
+  <i class="material-icons">thumb_up</i>
+  <i class="material-icons">thumb_up</i>
+  <i class="material-icons">thumb_up</i>
+  <i class="material-icons">thumb_up</i>
 </div>
-<div class="spx-form">
-  <form #f="ngForm" (ngSubmit)="verdict(f)">
-    <div>
-      <label class="spx-label">Input Label</label>
-      <input class="spx-input" type="text" [ngModel]="one.answer1" name="answer1">
+
+<div class="flex">
+  <div class="flex__i--xs-8">
+    <div class="spx-form">
+      <form #f="ngForm" (ngSubmit)="checkIn(f, $event)" class="flex">
+        <div class="flex__i--xs-6">
+          <label class="spx-label">Username</label>
+          <input class="spx-input" type="text" [ngModel]="currentUser.username" name="username">
+        </div>
+        <div class="flex__i--xs-6">
+          <label class="spx-label">Name</label>
+          <input class="spx-input" type="text" [ngModel]="currentUser.name" name="name">
+        </div>
+        <div class="flex__i--xs-12">
+          <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
+
     <div>
-      <label class="spx-label">Input Label</label>
-      <input class="spx-input" type="text" [ngModel]="one.answer2" name="answer2">
+      <p><span class="spx-pill spx-pill--pr">NOTE</span> Use the above form to enter user details. If user is already created you are assigned to that user, if not a new user will be created.</p>
     </div>
+
+    <div class="sg-divider"></div>
+
+    <div class="spx-form">
+      <form #q="ngForm" (ngSubmit)="addQuestion(q, $event)" class="flex">
+        <div class="flex__i--xs-12">
+          <label class="spx-label">Add Question</label>
+          <input class="spx-input" type="text" [ngModel]="questions.question" name="question">
+        </div>
+        <div class="flex__i--xs-12">
+          <button class="spx-btn spx-btn--primary" type="submit">Add Question</button>
+        </div>
+      </form>
+    </div>
+
     <div>
-      <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
+      <p>Add questions to ask Mike and see how he answers.</p>
     </div>
-  </form>
+  </div>
+  <div class="flex__i--xs-4">
+    <h3>Current Users</h3>
+    <div class="sg-divider"></div>
+    <div *ngFor="let user of users">
+      {{user.username}} {{user.email}}
+    </div>
+
+  </div>
 </div>

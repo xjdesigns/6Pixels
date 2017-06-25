@@ -17,35 +17,70 @@ var FirebaseGameComponent = (function () {
         this.alertService = alertService;
         this.ffbs = ffbs;
         this.users = [];
-        this.one = {};
-        this.currentUserIdToIncrement = 0;
+        this.questions = [];
+        this.userLength = 0;
+        this.currentUser = {};
+        this.currentUserCount = 0;
+        this.thumbsActive = false;
         this.ffbs.init();
     }
     FirebaseGameComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.ffbs.getData().subscribe(function (data) {
-            console.warn('sub data', data);
+            // console.warn('data', data);
             _this.users = data;
-            console.warn('users', _this.users);
-            console.warn(_this.users[_this.users.length - 1]);
+            _this.currentUserCount = _this.users.length;
+            // console.warn('user', this.currentUserCount);
         });
-        console.warn('users outside', this.users);
+        this.ffbs.getQuestions().subscribe(function (data) {
+            console.warn('questions', data);
+            _this.questions = data;
+        });
+    };
+    //users
+    FirebaseGameComponent.prototype.checkIn = function (val, ev) {
+        var _this = this;
+        ev.preventDefault();
+        this.currentUser = {
+            username: val.value.username,
+            name: val.value.name
+        };
+        this.checkForUser();
+        this.thumbsActive = true;
+        setTimeout(function () {
+            _this.thumbsActive = false;
+        }, 10000);
+    };
+    FirebaseGameComponent.prototype.createNewUser = function (uuid, name) {
+        this.ffbs.writeUserData(uuid, name);
+    };
+    FirebaseGameComponent.prototype.checkForUser = function () {
+        var _this = this;
+        var j = this.users.filter(function (user) {
+            return user.username === _this.currentUser.username ? true : false;
+        });
+        if (j.length > 0) {
+            this.currentUser = this.currentUser;
+            this.addAlert('User Already Exists, Enjoy!');
+        }
+        else {
+            this.createNewUser(this.currentUserCount + 1, this.currentUser.username);
+            this.addAlert('New User Created, Enjoy!');
+        }
+    };
+    // questions
+    FirebaseGameComponent.prototype.addQuestion = function (question, ev) {
+        ev.preventDefault();
+        console.warn('q', question.value.question);
+        var q = question.value.question;
+        var uuid = this.questions.length + 1;
+        this.ffbs.writeNewQuestion(uuid, q);
     };
     FirebaseGameComponent.prototype.verdict = function (form) {
         console.warn(form.value);
     };
-    // addAlert() {
-    //   this.alertService.addAlert('Fail alert message', 'error');
-    // }
-    //
-    // clearAll() {
-    //   this.alertService.clearSubject();
-    // }
-    FirebaseGameComponent.prototype.createNewUser = function (uuid, name) {
-        this.ffbs.writeUserData(1225, 'tony jacobson', 'jason@jason.com', 'none');
-    };
-    FirebaseGameComponent.prototype.getUser = function (uuid) {
-        this.ffbs.writeUserData(1225, 'tony jacobson', 'jason@jason.com', 'none');
+    FirebaseGameComponent.prototype.addAlert = function (msg) {
+        this.alertService.addAlert(msg, 'success');
     };
     return FirebaseGameComponent;
 }());

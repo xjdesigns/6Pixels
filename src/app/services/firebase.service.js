@@ -12,12 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Observable_1 = require("rxjs/Observable");
 require("firebase");
-// declare var firebase: any
 var FirebaseService = (function () {
     function FirebaseService() {
         this.items = [];
+        this.q = [];
     }
-    // TODO: Move this somewhere else maybe???
     FirebaseService.prototype.init = function () {
         var config = {
             apiKey: "AIzaSyCtWS13cYro9d3PgPqb3qYkpBYUSLlCmJQ",
@@ -29,11 +28,9 @@ var FirebaseService = (function () {
         };
         firebase.initializeApp(config);
     };
-    FirebaseService.prototype.writeUserData = function (userId, name, email, imageUrl) {
+    FirebaseService.prototype.writeUserData = function (userId, username) {
         firebase.database().ref('users/' + userId).set({
-            username: name,
-            email: email,
-            profile_picture: imageUrl
+            username: username
         });
     };
     FirebaseService.prototype.getData = function () {
@@ -41,10 +38,29 @@ var FirebaseService = (function () {
         return Observable_1.Observable.create(function (observer) {
             firebase.database().ref('users').on('value', function (snapshot) {
                 var snap = snapshot.val();
+                _this.items = [];
                 for (var key in snap) {
                     _this.items.push(snap[key]);
                 }
                 observer.next(_this.items);
+            });
+        });
+    };
+    FirebaseService.prototype.writeNewQuestion = function (uuid, question) {
+        firebase.database().ref('questions/' + uuid).set({
+            question: question
+        });
+    };
+    FirebaseService.prototype.getQuestions = function () {
+        var _this = this;
+        return Observable_1.Observable.create(function (observer) {
+            firebase.database().ref('questions').on('value', function (snapshot) {
+                var snap = snapshot.val();
+                _this.q = [];
+                for (var key in snap) {
+                    _this.q.push(snap[key]);
+                }
+                observer.next(_this.q);
             });
         });
     };
