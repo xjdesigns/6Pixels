@@ -49,13 +49,24 @@
     <div>
       <p>Add questions to ask Mike and see how he answers.</p>
     </div>
+
+    <div class="sg-divider"></div>
+
+    <div>
+      <div *ngFor="let q of questions; let i = index;">
+        <p>{{q.question}}</p>
+        <button (click)="vote('up', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_up"></button>
+        <button (click)="vote('down', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_down"></button>
+        <div class="sg-divider"></div>
+      </div>
+    </div>
   </div>
+
   <div class="flex__i--xs-4">
     <h3>Current Users</h3>
     <div class="sg-divider"></div>
     <div *ngFor="let user of users">
       {{user.username}} {{user.email}}
     </div>
-
   </div>
 </div>

@@ -37,6 +37,9 @@ var FirebaseGameComponent = (function () {
             _this.questions = data;
         });
     };
+    FirebaseGameComponent.prototype.vote = function (vote, idx) {
+        console.warn('vote', vote, idx);
+    };
     //users
     FirebaseGameComponent.prototype.checkIn = function (val, ev) {
         var _this = this;

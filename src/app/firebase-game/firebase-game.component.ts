@@ -34,6 +34,10 @@ export class FirebaseGameComponent {
     });
   }
 
+  vote(vote, idx) {
+    console.warn('vote', vote, idx);
+  }
+
   //users
   checkIn(val, ev) {
     ev.preventDefault();
