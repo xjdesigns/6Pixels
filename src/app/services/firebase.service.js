@@ -48,7 +48,9 @@ var FirebaseService = (function () {
     };
     FirebaseService.prototype.writeNewQuestion = function (uuid, question) {
         firebase.database().ref('questions/' + uuid).set({
-            question: question
+            question: question,
+            yes: 0,
+            no: 0
         });
     };
     FirebaseService.prototype.getQuestions = function () {
@@ -63,6 +65,13 @@ var FirebaseService = (function () {
                 observer.next(_this.q);
             });
         });
+    };
+    FirebaseService.prototype.answerQuestionAtIndex = function (idx, vote, answer) {
+        console.warn(vote);
+        firebase.database().ref('questions/' + idx).update((_a = {},
+            _a[vote] = answer,
+            _a));
+        var _a;
     };
     return FirebaseService;
 }());

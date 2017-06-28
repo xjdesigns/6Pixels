@@ -36,6 +36,8 @@ export class FirebaseGameComponent {
 
   vote(vote, idx) {
     console.warn('vote', vote, idx);
+    console.warn('vote questions', this.questions[idx][vote]);
+    this.ffbs.answerQuestionAtIndex(idx + 1, vote, this.questions[idx][vote] + 1);
   }
 
   //users
@@ -84,9 +86,9 @@ export class FirebaseGameComponent {
     console.warn(form.value);
   }
 
-  addAlert(msg) {
-    this.alertService.addAlert(msg, 'success');
-  }
+  // addAlert(msg) {
+  //   this.alertService.addAlert(msg, 'success');
+  // }
   //
   // clearAll() {
   //   this.alertService.clearSubject();

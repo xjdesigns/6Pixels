@@ -55,8 +55,12 @@
     <div>
       <div *ngFor="let q of questions; let i = index;">
         <p>{{q.question}}</p>
-        <button (click)="vote('up', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_up"></button>
-        <button (click)="vote('down', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_down"></button>
+        <button (click)="vote('yes', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_up"></button>
+        <button (click)="vote('no', i)" class="spx-btn spx-btn--primary spx-btn--circle" data-icon="thumb_down"></button>
+        <div>
+          <p>{{q.yes}}</p>
+          <p>{{q.no}}</p>
+        </div>
         <div class="sg-divider"></div>
       </div>
     </div>

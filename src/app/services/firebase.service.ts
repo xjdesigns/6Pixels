@@ -43,7 +43,9 @@ export class FirebaseService {
 
   writeNewQuestion(uuid, question) {
     firebase.database().ref('questions/' + uuid).set({
-      question: question
+      question: question,
+      yes: 0,
+      no: 0
     });
   }
 
@@ -57,6 +59,13 @@ export class FirebaseService {
         }
         observer.next(this.q)
       });
+    });
+  }
+
+  answerQuestionAtIndex(idx, vote, answer) {
+    console.warn(vote);
+    firebase.database().ref('questions/' + idx).update({
+      [vote]: answer
     });
   }
 }
