@@ -23,21 +23,12 @@ export class FirebaseGameComponent {
 
   ngOnInit() {
     this.ffbs.getData().subscribe(data => {
-      // console.warn('data', data);
       this.users = data;
       this.currentUserCount = this.users.length;
-      // console.warn('user', this.currentUserCount);
     });
     this.ffbs.getQuestions().subscribe(data => {
-      console.warn('questions', data);
       this.questions = data;
     });
-  }
-
-  vote(vote, idx) {
-    console.warn('vote', vote, idx);
-    console.warn('vote questions', this.questions[idx][vote]);
-    this.ffbs.answerQuestionAtIndex(idx + 1, vote, this.questions[idx][vote] + 1);
   }
 
   //users
@@ -76,14 +67,13 @@ export class FirebaseGameComponent {
   // questions
   addQuestion(question, ev) {
     ev.preventDefault();
-    console.warn('q', question.value.question);
     var q = question.value.question;
     var uuid = this.questions.length + 1;
     this.ffbs.writeNewQuestion(uuid, q);
   }
 
-  verdict(form) {
-    console.warn(form.value);
+  vote(vote, idx) {
+    this.ffbs.answerQuestionAtIndex(idx + 1, vote, this.questions[idx][vote] + 1);
   }
 
   // addAlert(msg) {

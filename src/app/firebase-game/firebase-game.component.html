@@ -13,28 +13,6 @@
 <div class="flex">
   <div class="flex__i--xs-8">
     <div class="spx-form">
-      <form #f="ngForm" (ngSubmit)="checkIn(f, $event)" class="flex">
-        <div class="flex__i--xs-6">
-          <label class="spx-label">Username</label>
-          <input class="spx-input" type="text" [ngModel]="currentUser.username" name="username">
-        </div>
-        <div class="flex__i--xs-6">
-          <label class="spx-label">Name</label>
-          <input class="spx-input" type="text" [ngModel]="currentUser.name" name="name">
-        </div>
-        <div class="flex__i--xs-12">
-          <button class="spx-btn spx-btn--primary" type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-
-    <div>
-      <p><span class="spx-pill spx-pill--pr">NOTE</span> Use the above form to enter user details. If user is already created you are assigned to that user, if not a new user will be created.</p>
-    </div>
-
-    <div class="sg-divider"></div>
-
-    <div class="spx-form">
       <form #q="ngForm" (ngSubmit)="addQuestion(q, $event)" class="flex">
         <div class="flex__i--xs-12">
           <label class="spx-label">Add Question</label>
@@ -67,8 +45,28 @@
   </div>
 
   <div class="flex__i--xs-4">
-    <h3>Current Users</h3>
+    <h3>Create User</h3>
+    <div class="spx-form">
+      <form #f="ngForm" (ngSubmit)="checkIn(f, $event)" class="flex">
+        <div class="flex__i--xs-12">
+          <label class="spx-label">Username</label>
+          <input class="spx-input" type="text" [ngModel]="currentUser.username" name="username">
+        </div>
+        <div class="flex__i--xs-12">
+          <label class="spx-label">Name</label>
+          <input class="spx-input" type="text" [ngModel]="currentUser.name" name="name">
+        </div>
+        <div class="flex__i--xs-12">
+          <button class="spx-btn spx-btn--primary spx-btn--block" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <p><span class="spx-pill spx-pill--pr">NOTE</span> Use the above form to enter user details. If user is already created you are assigned to that user, if not a new user will be created.</p>
+    </div>
     <div class="sg-divider"></div>
+    <h3>Current Users</h3>
     <div *ngFor="let user of users">
       {{user.username}} {{user.email}}
     </div>

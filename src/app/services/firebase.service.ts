@@ -63,7 +63,6 @@ export class FirebaseService {
   }
 
   answerQuestionAtIndex(idx, vote, answer) {
-    console.warn(vote);
     firebase.database().ref('questions/' + idx).update({
       [vote]: answer
     });

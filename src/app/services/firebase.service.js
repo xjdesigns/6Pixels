@@ -67,7 +67,6 @@ var FirebaseService = (function () {
         });
     };
     FirebaseService.prototype.answerQuestionAtIndex = function (idx, vote, answer) {
-        console.warn(vote);
         firebase.database().ref('questions/' + idx).update((_a = {},
             _a[vote] = answer,
             _a));

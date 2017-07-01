@@ -27,20 +27,12 @@ var FirebaseGameComponent = (function () {
     FirebaseGameComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.ffbs.getData().subscribe(function (data) {
-            // console.warn('data', data);
             _this.users = data;
             _this.currentUserCount = _this.users.length;
-            // console.warn('user', this.currentUserCount);
         });
         this.ffbs.getQuestions().subscribe(function (data) {
-            console.warn('questions', data);
             _this.questions = data;
         });
-    };
-    FirebaseGameComponent.prototype.vote = function (vote, idx) {
-        console.warn('vote', vote, idx);
-        console.warn('vote questions', this.questions[idx][vote]);
-        this.ffbs.answerQuestionAtIndex(idx + 1, vote, this.questions[idx][vote] + 1);
     };
     //users
     FirebaseGameComponent.prototype.checkIn = function (val, ev) {
@@ -76,13 +68,12 @@ var FirebaseGameComponent = (function () {
     // questions
     FirebaseGameComponent.prototype.addQuestion = function (question, ev) {
         ev.preventDefault();
-        console.warn('q', question.value.question);
         var q = question.value.question;
         var uuid = this.questions.length + 1;
         this.ffbs.writeNewQuestion(uuid, q);
     };
-    FirebaseGameComponent.prototype.verdict = function (form) {
-        console.warn(form.value);
+    FirebaseGameComponent.prototype.vote = function (vote, idx) {
+        this.ffbs.answerQuestionAtIndex(idx + 1, vote, this.questions[idx][vote] + 1);
     };
     return FirebaseGameComponent;
 }());
