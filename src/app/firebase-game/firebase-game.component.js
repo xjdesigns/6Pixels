@@ -58,11 +58,9 @@ var FirebaseGameComponent = (function () {
         });
         if (j.length > 0) {
             this.currentUser = this.currentUser;
-            this.addAlert('User Already Exists, Enjoy!');
         }
         else {
             this.createNewUser(this.currentUserCount + 1, this.currentUser.username);
-            this.addAlert('New User Created, Enjoy!');
         }
     };
     // questions
