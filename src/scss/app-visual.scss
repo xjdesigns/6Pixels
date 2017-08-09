@@ -61,7 +61,7 @@ $header: 72px;
 
   // OPEN
   &__open {
-    background: blue;
+    background: red;
     color: white;
     max-width: 36px;
     max-height: 36px;
@@ -94,6 +94,12 @@ $header: 72px;
     li {
       margin: 12px 0;
       cursor: pointer;
+
+      &.app-nav__nav {
+        font-size: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e5e5e5;
+      }
     }
   }
 }

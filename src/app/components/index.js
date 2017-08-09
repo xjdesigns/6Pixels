@@ -37,6 +37,7 @@ var breadcrumb_component_1 = require("./components/breadcrumb.component");
 var pagination_component_1 = require("./components/pagination.component");
 var toast_component_1 = require("./components/toast.component");
 var loading_component_1 = require("./components/loading/loading.component");
+var accordion_component_1 = require("./components/accordion/accordion.component");
 var tiles_component_1 = require("./components/tiles/tiles.component");
 var tile_component_1 = require("./components/tile/tile.component");
 var ComponentsProvider = [
@@ -47,6 +48,7 @@ var ComponentsProvider = [
     pagination_component_1.PaginationComponent,
     toast_component_1.ToastComponent,
     loading_component_1.LoadingComponent,
+    accordion_component_1.AccordionComponent,
     tiles_component_1.TilesComponent,
     tile_component_1.TileComponent
 ];

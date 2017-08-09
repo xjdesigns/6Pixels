@@ -4,7 +4,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding-left: 18px;
+  padding-left: 24px;
   font-size: .875rem;
   line-height: 1.2;
   margin-right: 12px;
@@ -17,7 +17,7 @@
 
     &:checked + .#{$ns}radio__dot {
       &:after {
-        background-color: $greyscale-07;
+        background-color: $primary;
         transform: scale(1);
         transition: transform .3s;
       }
@@ -30,10 +30,11 @@
     }
   }
   .#{$ns}radio__dot {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background-color: $greyscale-07;
+    background-color: transparent;
+    border: 1px solid $greyscale-07;
     position: absolute;
     top: 0;
     left: 0;

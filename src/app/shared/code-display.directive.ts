@@ -1,4 +1,5 @@
 import { Directive, ElementRef, Input, Renderer } from '@angular/core';
+declare var PR:any;
 
 @Directive({ selector: '[code-display]' })
 export class CodeDisplayDirective {
@@ -10,5 +11,8 @@ export class CodeDisplayDirective {
       let text = this.el.nativeElement.innerHTML;
       let snippet = text.replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace(/\t/g, '&nbsp;&nbsp;');
       this.renderer.setElementProperty(this.el.nativeElement, 'innerHTML', snippet);
+      setTimeout(() => {
+        PR.prettyPrint();
+      }, 100);
     }
 }

@@ -25,7 +25,7 @@ $nssg: 'sg-';
 }
 
 code {
-  background-color: blue;
+  background-color: red;
   padding: 3px 6px;
   border-radius: 3px;
   font-size: 14px;
@@ -34,17 +34,11 @@ code {
 }
 
 code.#{$nssg}code-block {
-	background-color: blue;
+  background-color: transparent;
   display: block;
-	color: white;
 	font-size: 12px;
 	font-family: monospace;
 	line-height: 1.7;
-	margin: 24px 0;
-	padding: 6px;
-	border: 1px solid blue;
-	box-shadow: 2px 2px 1px rgba(0,0,0,.5);
-	text-shadow: 1px 1px 0px gray;
 	overflow: auto;
 }
 
@@ -54,7 +48,7 @@ code.#{$nssg}code-block {
   display: flex;
   align-items: center;
   height: 200px;
-  background: blue;
+  background: red;
   margin-top: 72px;
   overflow: hidden;
 
@@ -239,7 +233,7 @@ $coloring: (
     left: 6px;
     width: 200px;
     height: 200px;
-    background: transparentize(blue, .5);
+    background: transparentize(red, .5);
     transform-style: preserve-3d;
     transform: translate3d(0, 0, 0px);
     transition: transform .5s ease-in-out .5s;
