@@ -23,13 +23,13 @@ export class HelpersComponent {
     desc: 'Adds padding to all sides using 4 values. Values = 6,12,18,24'
   }, {
     add: 'spx-pd-{side}-{value}',
-    desc: 'Adds padding to side specified using value. Sides = lt,rt,tp,bt'
+    desc: 'Adds padding to side specified using value. See above for values. Sides = lt,rt,tp,bt'
   }, {
     add: 'spx-mg-{value}',
     desc: 'Adds margin to all sides using 4 values. Values = 6,12,18,24'
   }, {
-    add: 'spx-mg-{size}-{value}',
-    desc: 'Adds margin to side specified using value. Sides = lt,rt,tp,bt'
+    add: 'spx-mg-{side}-{value}',
+    desc: 'Adds margin to side specified using value. See above for values. Sides = lt,rt,tp,bt'
   }, {
     add: 'spx-ele-{value}',
     desc: 'Adds elevation to the element. Values = 1,2,3,4,5'
