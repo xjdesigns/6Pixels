@@ -40,6 +40,7 @@ var loading_component_1 = require("./components/loading/loading.component");
 var accordion_component_1 = require("./components/accordion/accordion.component");
 var tiles_component_1 = require("./components/tiles/tiles.component");
 var tile_component_1 = require("./components/tile/tile.component");
+var flyout_component_1 = require("./components/flyout/flyout.component");
 var ComponentsProvider = [
     components_component_1.ComponentsComponent,
     tooltip_component_1.TooltipComponent,
@@ -50,7 +51,8 @@ var ComponentsProvider = [
     loading_component_1.LoadingComponent,
     accordion_component_1.AccordionComponent,
     tiles_component_1.TilesComponent,
-    tile_component_1.TileComponent
+    tile_component_1.TileComponent,
+    flyout_component_1.FlyoutComponent
 ];
 var components_component_2 = require("./components/components.component");
 exports.ComponentsComponent = components_component_2.ComponentsComponent;

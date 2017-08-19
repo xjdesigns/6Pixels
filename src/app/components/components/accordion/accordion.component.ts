@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 
 export class AccordionComponent {
   isActive: boolean = false;
+  flyoutIsOpen: boolean = false;
 
   toggleAcc() {
     this.isActive = !this.isActive;
+  }
+
+  toggleFlyout() {
+    this.flyoutIsOpen = !this.flyoutIsOpen;
   }
 }

@@ -30,6 +30,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.goToRoute = function (route) {
         this.router.navigate(["" + route]);
+        this.appMenuOpen = false;
     };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;

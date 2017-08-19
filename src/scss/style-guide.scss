@@ -47,7 +47,7 @@ code.#{$nssg}code-block {
 .#{$nssg}hero {
   display: flex;
   align-items: center;
-  height: 200px;
+  height: 60px;
   background: red;
   margin-top: 72px;
   overflow: hidden;
@@ -58,31 +58,6 @@ code.#{$nssg}code-block {
   }
 }
 
-// WELCOME HERO
-.#{$nssg}hero-welcome {
-  margin-top: 72px;
-  padding: 10vh 0;
-  text-align: center;
-  color: white;
-
-  h1 {
-    text-shadow: 1px 1px 3px black;
-  }
-
-  background: $brand-primary url('https://images.unsplash.com/photo-1429516387459-9891b7b96c78?dpr=2&auto=format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
-  background-attachment: fixed;
-
-  &--01 {
-    background: $brand-primary url('https://images.unsplash.com/photo-1445965860339-a61271f3578e?dpr=2&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
-    background-attachment: fixed;
-
-  }
-
-  &--02 {
-    background: $brand-primary url('https://images.unsplash.com/photo-1456532078044-0eada87ed0df?dpr=2&auto=format&fit=crop&w=1199&h=801&q=80&cs=tinysrgb&crop=') no-repeat center center / cover;
-    background-attachment: fixed;
-  }
-}
 
 .#{$nssg}pixel-parent {
   perspective: 50em;
@@ -92,7 +67,7 @@ code.#{$nssg}code-block {
   vertical-align: middle;
   width: 16px;
   height: 16px;
-  background: lightgray;
+  background: white;
   margin: 6px;
 
   // animation: liftOff 4s infinite ease-in-out;

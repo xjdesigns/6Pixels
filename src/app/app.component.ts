@@ -24,6 +24,7 @@ export class AppComponent {
 
   goToRoute(route) {
     this.router.navigate([`${route}`]);
+    this.appMenuOpen = false;
   }
 
   toggleMenu() {

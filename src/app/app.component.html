@@ -3,7 +3,8 @@
   <header class="app-header">
 
     <div class="app-header__logo">
-      SIX PIXELS
+      <div class="bullseye"></div>
+      BULLSEYE
     </div>
     <div class="app-header__links">
       <span (click)="goToRoute('/welcome')">v1:ALPHA</span>
@@ -11,6 +12,7 @@
 
   </header>
 
+  <div class="spx-click-shield" [class.is-open]="appMenuOpen" (click)="toggleMenu()"></div>
   <div class="app-sidebar" [class.is-open]="appMenuOpen">
     <div (click)="toggleMenu()" class="app-sidebar__open" [class.is-open]="appMenuOpen">
       <i class="material-icons">add</i>
@@ -25,26 +27,12 @@
         <li (click)="goToRoute('/components')">Components</li>
         <li (click)="goToRoute('/helpers')">Helpers</li>
         <li (click)="goToRoute('/ng2')">NG2</li>
-        <li (click)="goToRoute('/firebase-game')">firebase game</li>
+        <!-- <li (click)="goToRoute('/firebase-game')">firebase game</li> -->
       </ul>
     </nav>
   </div>
 
-  <div *ngIf="heroWelcome">
-    <div class="sg-hero-welcome">
-      <h1>Welcome to SIX PIXELS</h1>
-    </div>
-
-    <div class="sg-hero-welcome sg-hero-welcome--01">
-      <h1>A small CSS framework built for Evergreen support.</h1>
-    </div>
-
-    <div class="sg-hero-welcome sg-hero-welcome--02">
-      <h1>Start writing now and enjoy more time outside</h1>
-    </div>
-  </div>
-
-  <div *ngIf="!heroWelcome" class="sg-hero">
+  <div class="sg-hero">
     <div class="sg-hero__elem">
       <div class="sg-pixel-parent">
         <div class="sg-pixel sg-pixel--01"></div>

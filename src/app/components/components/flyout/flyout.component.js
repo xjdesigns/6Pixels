@@ -7,23 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AccordionComponent = (function () {
-    function AccordionComponent() {
-        this.isActive = false;
-        this.flyoutIsOpen = false;
+var FlyoutComponent = (function () {
+    function FlyoutComponent() {
+        this.flyoutIsLeftOpen = false;
+        this.flyoutIsRightOpen = false;
     }
-    AccordionComponent.prototype.toggleAcc = function () {
-        this.isActive = !this.isActive;
+    FlyoutComponent.prototype.toggleFlyout = function (s) {
+        if (s === 'lt') {
+            this.flyoutIsLeftOpen = !this.flyoutIsLeftOpen;
+        }
+        else {
+            this.flyoutIsRightOpen = !this.flyoutIsRightOpen;
+        }
     };
-    AccordionComponent.prototype.toggleFlyout = function () {
-        this.flyoutIsOpen = !this.flyoutIsOpen;
-    };
-    return AccordionComponent;
+    return FlyoutComponent;
 }());
-AccordionComponent = __decorate([
+FlyoutComponent = __decorate([
     core_1.Component({
-        selector: 'app-accordion',
-        templateUrl: 'app/components/components/accordion/accordion.component.html'
+        selector: 'app-flyout',
+        templateUrl: 'app/components/components/flyout/flyout.component.html'
     })
-], AccordionComponent);
-exports.AccordionComponent = AccordionComponent;
+], FlyoutComponent);
+exports.FlyoutComponent = FlyoutComponent;
