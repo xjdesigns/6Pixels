@@ -1,0 +1,156 @@
+///////////////
+// FLEXGRID //
+///////////////
+
+.#{$ns}container {
+  max-width: $container;
+  margin-left: auto;
+  margin-right: auto;
+  // fluid container
+  &--fluid {
+    max-width: 100%;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+
+  &--no-gutter {
+    margin:0 0;
+
+    [class*="flex__"] {
+      padding: 0 0;
+    }
+  }
+}
+
+@mixin flex-additional($bp) {
+  .flex {
+    &--#{$bp}-flex-nowrap {
+      flex-wrap: nowrap;
+    }
+    &--#{$bp}-flex-wrap-rev {
+      flex-wrap: wrap-reverse;
+    }
+    &--#{$bp}-horizontal-rev {
+      flex-direction: column-reverse;
+    }
+    &--#{$bp}-vertical {
+      flex-direction: column;
+    }
+    &--#{$bp}-vertical-rev {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@mixin flex-alignment($bp) {
+  .flex {
+    &--#{$bp}-start {
+      justify-content: flex-start;
+    }
+    &--#{$bp}-center {
+      justify-content: center;
+    }
+    &--#{$bp}-end {
+      justify-content: flex-end;
+    }
+    &--#{$bp}-around {
+      justify-content: space-around;
+    }
+    &--#{$bp}-between {
+      justify-content: space-between;
+    }
+    &--#{$bp}-top {
+      align-items: flex-start;
+    }
+    &--#{$bp}-middle {
+      align-items: center;
+    }
+    &--#{$bp}-bottom {
+      align-items: flex-end;
+    }
+  }
+}
+
+// columns base is for setting up the base styling
+[class*="flex__"] {
+  flex: 0 0 auto;
+  // prevent column from collapsing
+  min-height: 1px;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+// THE GRID
+// default is 12 columns
+// if you set multiple values flex is append with those values
+// example: flex--12 flex--10
+@mixin flex-columns($bp, $columns: $base-columns) {
+  @if $columns == default {
+    @for $i from 1 through $base-columns-default {
+      .flex {
+        .flex__i--#{$bp}-#{$i} {
+          flex-basis: ((100% / $base-columns-default)*$i);
+          max-width: ((100% / $base-columns-default)*$i);
+        }
+      }
+    }
+    @for $i from 1 through $base-columns-default {
+      .flex {
+        .flex__o--#{$bp}-#{$i} {
+          margin-left: ((100% / $base-columns-default)*$i);
+        }
+      }
+    }
+  } @else {
+    @for $i from 1 through length($columns) {
+      .flex--#{nth($columns, $i)} {
+        @for $j from 1 through nth($columns, $i) {
+          .flex__i--#{$bp}-#{$j} {
+            flex-basis: ((100% / nth($columns, $i))*$j);
+            max-width: ((100% / nth($columns, $i)*$j));
+          }
+        }
+        @for $j from 1 through nth($columns, $i) - 1 {
+          .flex__o--#{$bp}-#{$j} {
+            margin-left: ((100% / nth($columns, $i))*$j);
+          }
+        }
+      }
+    }
+  }
+}
+
+// main mixin to be called for building the grid
+@mixin flex-grid($bp) {
+  @include flex-columns($bp);
+  @include flex-alignment($bp);
+  @include flex-additional($bp);
+}
+
+// breakpoint xs
+// base styling going mobile up
+@include flex-grid(xs);
+
+// breakpoint small
+// min-width default is 30em/480px
+@media (min-width: $break-sm) {
+  @include flex-grid(sm);
+}
+
+// breakpoint medium
+// min-width default is 48em/768px
+@media (min-width: $break-md) {
+  @include flex-grid(md);
+}
+
+// breakpoint large
+// min-width default is 64em/1024px
+@media (min-width: $break-lg) {
+  @include flex-grid(lg);
+}

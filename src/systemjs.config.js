@@ -31,6 +31,7 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'JasonTest': 'npm:npm-test/index.js',
       'NG2': 'app/NG2',
       'firebase': 'npm:firebase/firebase.js',
       'lodash': 'npm:lodash/lodash.js',

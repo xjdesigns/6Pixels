@@ -40,6 +40,7 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { TilesComponent } from './components/tiles/tiles.component';
 import { TileComponent } from './components/tile/tile.component';
 import { FlyoutComponent } from './components/flyout/flyout.component';
+import { CardComponent } from './components/card/card.component';
 
 const ComponentsProvider = [
   ComponentsComponent,
@@ -52,7 +53,8 @@ const ComponentsProvider = [
   AccordionComponent,
   TilesComponent,
   TileComponent,
-  FlyoutComponent
+  FlyoutComponent,
+  CardComponent
 ];
 export { ComponentsComponent } from './components/components.component';
 

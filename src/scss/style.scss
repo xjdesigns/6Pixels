@@ -47,6 +47,8 @@
 @import 'components/loading'; // Loading Dots
 @import 'components/accordion'; // Accordion pane
 @import "components/tiles"; // APP Tiles
+@import "components/flyout"; // flyout menu
+@import "components/card"; // card
 
 // HELPERS
 @import "helpers/helpers"; // Helper snippets
@@ -66,60 +68,4 @@
   box-shadow:
     0px 0px 0px 4px white,
     0px 0px 0px 8px red;
-}
-
-.#{$ns}flyout {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-
-  &--right {
-    .#{$ns}flyout {
-      &__menu {
-        left: auto;
-        right: 0px;
-      }
-    }
-  }
-
-  &.is-open {
-    .#{$ns}flyout {
-      &__menu {
-        display: block;
-        animation: flyout .3s ease forwards;
-      }
-    }
-  }
-
-  &__menu {
-    min-width: 200px;
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    z-index: 10;
-    transform: translateY(-50%);
-    background: white;
-    border: 1px solid $greyscale-10;
-    cursor: pointer;
-    @include elevation-3;
-    display: none;
-
-    li {
-      padding: 6px;
-
-      &:hover {
-        background-color: $primary;
-        color: white;
-      }
-    }
-  }
-}
-
-@keyframes flyout {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
 }
