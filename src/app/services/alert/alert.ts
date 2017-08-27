@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../alert-service';
 
- @Component({
-    selector: 'alert',
-    templateUrl: 'app/services/alert/alert.html'
- })
+@Component({
+  selector: 'alert',
+  templateUrl: 'app/services/alert/alert.html'
+})
 
- export class AlertComponent {
-   message = [];
+export class AlertComponent {
+  message = [];
 
-   constructor(private alertService: AlertService) { }
+  constructor(private alertService: AlertService) { }
 
-   ngOnInit() {
+  ngOnInit() {
     this.alertService.getMessage()
       .subscribe(message => {
         this.message = message;
@@ -21,14 +21,4 @@ import { AlertService } from '../alert-service';
   removeAlert(i) {
     this.alertService.removeAlertByIndex(i);
   }
-
-  // popOnInterval(dur = 1000) {
-  //   var clear = setInterval(() => {
-  //     this.message.shift()
-  //
-  //     if (this.message.length === 0) {
-  //       clearInterval(clear);
-  //     }
-  //   }, dur);
-  // }
- }
+}

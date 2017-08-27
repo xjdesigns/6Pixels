@@ -15,6 +15,7 @@ $prog-radius: 24px; // change to value wanted globally
 		background-color: $primary;
 		min-height: 6px;
 		border-radius: ($prog-radius);
+    transition: width .3s ease;
 	}
 
 	// data-title

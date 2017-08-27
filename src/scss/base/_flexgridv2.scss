@@ -1,9 +1,17 @@
 ///////////////
 // FLEXGRID //
 ///////////////
+$container: 1140px; // our max width
+$gutter: 24px; // gutters = 1/2 width
+$base-columns: default; // columns
+$base-columns-default: 12;
+$break-xl: 80em; // 1280
+$break-lg: 64em; // 1024
+$break-md: 48em; // 768
+$break-sm: 20em; // 320
 
-.#{$ns}container {
-  max-width: $container;
+.container {
+  max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   // fluid container
@@ -12,7 +20,7 @@
   }
 }
 
-.flex {
+.flx {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,18 +30,18 @@
   &--no-gutter {
     margin:0 0;
 
-    [class*="flex__"] {
+    [class*="flx__"] {
       padding: 0 0;
     }
   }
 }
 
-@mixin flex-additional($bp) {
-  .flex {
-    &--#{$bp}-flex-nowrap {
+@mixin flx-additional($bp) {
+  .flx {
+    &--#{$bp}-flx-nowrap {
       flex-wrap: nowrap;
     }
-    &--#{$bp}-flex-wrap-rev {
+    &--#{$bp}-flx-wrap-rev {
       flex-wrap: wrap-reverse;
     }
     &--#{$bp}-horizontal-rev {
@@ -48,8 +56,8 @@
   }
 }
 
-@mixin flex-alignment($bp) {
-  .flex {
+@mixin flx-alignment($bp) {
+  .flx {
     &--#{$bp}-start {
       justify-content: flex-start;
     }
@@ -78,7 +86,7 @@
 }
 
 // columns base is for setting up the base styling
-[class*="flex__"] {
+[class*="flx__i"] {
   flex: 0 0 auto;
   // prevent column from collapsing
   min-height: 1px;
@@ -90,34 +98,34 @@
 // default is 12 columns
 // if you set multiple values flex is append with those values
 // example: flex--12 flex--10
-@mixin flex-columns($bp, $columns: $base-columns) {
+@mixin flx-columns($bp, $columns: $base-columns) {
   @if $columns == default {
     @for $i from 1 through $base-columns-default {
-      .flex {
-        .flex__i--#{$bp}-#{$i} {
+      .flx {
+        .i--#{$bp}-#{$i} {
           flex-basis: ((100% / $base-columns-default)*$i);
           max-width: ((100% / $base-columns-default)*$i);
         }
       }
     }
     @for $i from 1 through $base-columns-default {
-      .flex {
-        .flex__o--#{$bp}-#{$i} {
+      .flx {
+        .o--#{$bp}-#{$i} {
           margin-left: ((100% / $base-columns-default)*$i);
         }
       }
     }
   } @else {
     @for $i from 1 through length($columns) {
-      .flex--#{nth($columns, $i)} {
+      .flx--#{nth($columns, $i)} {
         @for $j from 1 through nth($columns, $i) {
-          .flex__i--#{$bp}-#{$j} {
+          .i--#{$bp}-#{$j} {
             flex-basis: ((100% / nth($columns, $i))*$j);
             max-width: ((100% / nth($columns, $i)*$j));
           }
         }
         @for $j from 1 through nth($columns, $i) - 1 {
-          .flex__o--#{$bp}-#{$j} {
+          .o--#{$bp}-#{$j} {
             margin-left: ((100% / nth($columns, $i))*$j);
           }
         }
@@ -127,30 +135,30 @@
 }
 
 // main mixin to be called for building the grid
-@mixin flex-grid($bp) {
-  @include flex-columns($bp);
-  @include flex-alignment($bp);
-  @include flex-additional($bp);
+@mixin flx-grid($bp) {
+  @include flx-columns($bp);
+  @include flx-alignment($bp);
+  @include flx-additional($bp);
 }
 
 // breakpoint xs
 // base styling going mobile up
-@include flex-grid(xs);
+@include flx-grid(xs);
 
 // breakpoint small
 // min-width default is 30em/480px
 @media (min-width: $break-sm) {
-  @include flex-grid(sm);
+  @include flx-grid(sm);
 }
 
 // breakpoint medium
 // min-width default is 48em/768px
 @media (min-width: $break-md) {
-  @include flex-grid(md);
+  @include flx-grid(md);
 }
 
 // breakpoint large
 // min-width default is 64em/1024px
 @media (min-width: $break-lg) {
-  @include flex-grid(lg);
+  @include flx-grid(lg);
 }

@@ -1,6 +1,6 @@
 <div class="app">
 
-  <header class="app-header">
+  <header class="app-header" [class.top-offset]="isOffset">
 
     <div class="app-header__logo">
       <div class="bullseye"></div>
@@ -32,7 +32,16 @@
     </nav>
   </div>
 
+  <div>
+    <div class="flx flx--xs-middle">
+      <div class="item item--xs-auto item--xs-sm-6"></div>
+      <div class="item item--xs-sm-6 off--xs-sm-6"></div>
+    </div>
+  </div>
+
   <div class="sg-hero">
+    <!-- <angular-module-starter></angular-module-starter> -->
+    <!-- <jason-rocks></jason-rocks> -->
     <div class="sg-hero__elem">
       <div class="sg-pixel-parent">
         <div class="sg-pixel sg-pixel--01"></div>

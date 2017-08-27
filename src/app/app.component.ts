@@ -9,6 +9,7 @@ import { Router, NavigationStart } from  '@angular/router';
 export class AppComponent {
   appMenuOpen: boolean = false;
   heroWelcome: boolean = true;
+  isOffset: boolean = false;
 
   constructor(private router: Router) {
     this.router.events.subscribe(e => {
@@ -20,6 +21,9 @@ export class AppComponent {
         }
       }
     });
+    // window.addEventListener('scroll', () => {
+    //   this.isOffset = window.pageYOffset > 30 ? true : false;
+    // });
   }
 
   goToRoute(route) {

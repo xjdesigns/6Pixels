@@ -28,12 +28,15 @@ import { AlertService } from './services/alert-service';
 
 import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
 
+// import { AngularModuleStarterModule } from 'angular-module-starter';
+
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule
+    // AngularModuleStarterModule
   ],
   declarations: [
     AppComponent,

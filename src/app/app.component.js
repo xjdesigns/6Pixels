@@ -17,6 +17,7 @@ var AppComponent = (function () {
         this.router = router;
         this.appMenuOpen = false;
         this.heroWelcome = true;
+        this.isOffset = false;
         this.router.events.subscribe(function (e) {
             if (e instanceof router_1.NavigationStart) {
                 if (e.url === '/welcome') {
@@ -27,6 +28,9 @@ var AppComponent = (function () {
                 }
             }
         });
+        // window.addEventListener('scroll', () => {
+        //   this.isOffset = window.pageYOffset > 30 ? true : false;
+        // });
     }
     AppComponent.prototype.goToRoute = function (route) {
         this.router.navigate(["" + route]);
