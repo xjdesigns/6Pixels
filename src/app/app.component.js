@@ -18,6 +18,37 @@ var AppComponent = (function () {
         this.appMenuOpen = false;
         this.heroWelcome = true;
         this.isOffset = false;
+        this.innerIsOpen = false;
+        this.activeNav = 'welcome';
+        // TODO: add routes and a loop, need nesting of menus as we break it out
+        this.routes = [{
+                name: 'Elements',
+                routes: [{
+                        name: 'Buttons',
+                        path: '/elements'
+                    }, {
+                        name: 'Forms',
+                        path: '/elements'
+                    }]
+            }, {
+                name: 'Components',
+                routes: [{
+                        name: 'Components',
+                        path: '/components'
+                    }]
+            }, {
+                name: 'Helpers',
+                routes: [{
+                        name: 'helpers',
+                        path: '/helpers'
+                    }]
+            }, {
+                name: 'NG2',
+                routes: [{
+                        name: 'ng2',
+                        path: '/ng2'
+                    }]
+            }];
         this.router.events.subscribe(function (e) {
             if (e instanceof router_1.NavigationStart) {
                 if (e.url === '/welcome') {
@@ -26,18 +57,16 @@ var AppComponent = (function () {
                 else {
                     _this.heroWelcome = false;
                 }
+                _this.appMenuOpen = false;
             }
         });
-        // window.addEventListener('scroll', () => {
-        //   this.isOffset = window.pageYOffset > 30 ? true : false;
-        // });
     }
-    AppComponent.prototype.goToRoute = function (route) {
-        this.router.navigate(["" + route]);
-        this.appMenuOpen = false;
-    };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;
+    };
+    AppComponent.prototype.toggleNav = function (e) {
+        console.warn(e);
+        this.activeNav = this.activeNav === e ? '' : e;
     };
     return AppComponent;
 }());

@@ -15,8 +15,6 @@ export class AlertDisplayComponent {
 
   constructor(private alertService: AlertService) {}
 
-  ngOnInit() {}
-
   addAlert() {
     this.alertService.addAlert('Fail alert message', 'error');
   }

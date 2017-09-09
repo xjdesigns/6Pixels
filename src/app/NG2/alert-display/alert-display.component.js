@@ -19,7 +19,6 @@ var AlertDisplayComponent = (function () {
                 desc: '[tileData] object, see properties below'
             }];
     }
-    AlertDisplayComponent.prototype.ngOnInit = function () { };
     AlertDisplayComponent.prototype.addAlert = function () {
         this.alertService.addAlert('Fail alert message', 'error');
     };

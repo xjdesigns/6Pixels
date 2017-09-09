@@ -1,7 +1,7 @@
 // ELEMENTS
 import { ElementsComponent } from './elements/elements.component';
 import { FormsComponent } from './elements/forms.component';
-import { ButtonComponent } from './elements/button.component';
+import { ButtonComponent } from './elements/button/button.component';
 import { ProgressBarComponent } from './elements/progress-bar.component';
 import { RangeSliderComponent } from './elements/range-slider.component';
 import { RadioComponent } from './elements/radio.component';
@@ -27,6 +27,7 @@ const ElementsProvider = [
   SelectComponent
 ];
 export { ElementsComponent } from './elements/elements.component';
+export { ButtonComponent } from './elements/button/button.component';
 
 // COMPONENTS
 import { ComponentsComponent } from './components/components.component';

@@ -71,11 +71,11 @@ $imgHeight: $imgWidth;
     transition: border-color .3s ease;
 
     &:hover {
-      border-color: $greyscale-03;
+      border-color: $grey-d1;
     }
 
     &.is-selected {
-      border-color: $greyscale-04;
+      border-color: $grey-d1;
     }
   }
 }
@@ -89,8 +89,8 @@ $imgHeight: $imgWidth;
   z-index: 1000;
   max-width: 460px;
   margin: 0 12px;
-  background-color: $greyscale-11;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  background-color: $white;
+  @include elevation-2;
   text-align: center;
   display: none;
 
@@ -117,8 +117,8 @@ $imgHeight: $imgWidth;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: $greyscale-11;
-  border: 3px solid $greyscale-03;
+  background-color: $white;
+  border: 3px solid $grey-d1;
   transition: border-color .3s ease;
 
   &::before {
@@ -127,7 +127,7 @@ $imgHeight: $imgWidth;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: $greyscale-03;
+    color: $grey-d1;
     font-size: .875rem;
     transition: color .3s ease;
   }

@@ -5,7 +5,7 @@
   margin-bottom: 12px;
   background-color: white;
   border-radius: 6px;
-  border: 1px solid $greyscale-10;
+  border: 1px solid $grey-l1;
   @include elevation-1;
   transition: box-shadow .3s ease-in-out;
 
@@ -67,7 +67,7 @@
     display: none;
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px solid $greyscale-10;
+    border-top: 1px solid $grey-l1;
     transform: translateY(-10%);
     opacity: 0;
   }

@@ -24,7 +24,7 @@ var NG2_1 = require("./NG2");
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
 var firebase_game_component_1 = require("./firebase-game/firebase-game.component");
-// import { AngularModuleStarterModule } from 'angular-module-starter';
+var angular_module_starter_1 = require("angular-module-starter");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,8 +36,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            app_routing_module_1.AppRoutingModule
-            // AngularModuleStarterModule
+            app_routing_module_1.AppRoutingModule,
+            angular_module_starter_1.AngularModuleStarterModule
         ],
         declarations: [
             app_component_1.AppComponent,

@@ -8,7 +8,7 @@
   font-size: .875rem;
   line-height: 1.2;
   margin-right: 12px;
-  color: $greyscale-07;
+  color: $grey-l1;
   cursor: pointer;
 
   // RADIO
@@ -28,7 +28,7 @@
     height: 18px;
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid $greyscale-07;
+    border: 1px solid $grey-l1;
     position: absolute;
     top: 0;
     left: 0;
@@ -53,7 +53,7 @@
 
   &:hover {
     .#{$ns}radio__dot::before {
-      background-color: $greyscale-08;
+      background-color: $grey-d1;
       transform: scale(.5);
       transition: transform .3s ease, color .3s ease;
     }

@@ -42,13 +42,13 @@ code.#{$nssg}code-block {
 	overflow: auto;
 }
 
-
+// TODO:: this should just be a component
 // HERO
 .#{$nssg}hero {
   display: flex;
   align-items: center;
-  height: 60px;
-  background: red;
+  min-height: 160px;
+  background: $grey-l1;
   margin-top: 72px;
   overflow: hidden;
 
@@ -57,7 +57,6 @@ code.#{$nssg}code-block {
     text-align: center;
   }
 }
-
 
 .#{$nssg}pixel-parent {
   perspective: 50em;
@@ -73,6 +72,7 @@ code.#{$nssg}code-block {
   // animation: liftOff 4s infinite ease-in-out;
 }
 
+// TODO: this should be a core element
 .#{$nssg}countdown {
   display: flex;
   align-items: center;
@@ -126,9 +126,7 @@ $coloring: (
   pr: $brand-primary,
   sd: $brand-secondary,
   tr: $brand-tertiary,
-  g1: $greyscale-01,
-  g2: $greyscale-03,
-  g3: $greyscale-05
+  g1: $black,
 );
 
 .#{$nssg}color-palette {
@@ -157,125 +155,4 @@ $coloring: (
       }
     }
   }
-}
-
-
-.stacked {
-  padding: 10vh 0;
-}
-.plane {
-  perspective: 1600px;
-}
-.set-container {
-  position: relative;
-  width: 80%;
-  height: 400px;
-  margin: auto;
-  background: red;
-  transform-style: preserve-3d;
-  transform:
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg)
-  ;
-  transition: transform .5s ease-in-out;
-
-  &:hover {
-    transform:
-      rotateX(50deg)
-      rotateY(0deg)
-      rotateZ(0deg)
-    ;
-
-    .set {
-      &--01 {
-        transform: translate3d(0, 0, 60px);
-      }
-    }
-    .plane-btn {
-      transform: translate3d(0, 0, 120px);
-    }
-    .plane-form {
-      transform: translate3d(0, 0, 80px);
-    }
-  }
-}
-.set {
-  position: absolute;
-
-  &--01 {
-    top: 6px;
-    left: 6px;
-    width: 200px;
-    height: 200px;
-    background: transparentize(red, .5);
-    transform-style: preserve-3d;
-    transform: translate3d(0, 0, 0px);
-    transition: transform .5s ease-in-out .5s;
-  }
-}
-.plane-btn {
-  position: absolute;
-  transform-style: preserve-3d;
-  top: 0;
-  left: 0;
-  transform: translate3d(0, 0, 0);
-  transition: transform .5s ease-in-out .5s;
-}
-.plane-form {
-  position: absolute;
-  transform-style: preserve-3d;
-  bottom: 0;
-  right: 0;
-  width: 500px;
-  transform: translate3d(0, 0, 1px);
-  transition: transform .5s ease-in-out .5s;
-}
-
-
-// ATTRIBUTE PLANES AND STAGES
-[plane] {
-  perspective: 1600px;
-}
-[stage='front'] {
-  position: relative;
-  padding: 24px;
-  background: transparent;
-  transform-style: preserve-3d;
-  transform:
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg)
-  ;
-  transition: transform .5s ease-in-out, background .5s ease-in-out;
-
-  &:hover,
-  &.front-active {
-    background: lightgray;
-    transform:
-      rotateX(50deg)
-      rotateY(0deg)
-      rotateZ(0deg)
-    ;
-    [lift='20'] {
-      transform: translate3d(0, 0, 20px);
-    }
-    [lift='60'] {
-      transform: translate3d(0, 0, 60px);
-    }
-    .lift-active {
-      transform: translate3d(0, 0, 70px);
-    }
-  }
-}
-[stage*='front-tilt'] {
-  &:hover,
-  &.front-active {
-    transform: rotateX(-15deg);
-  }
-}
-[lift] {
-  transform-style: preserve-3d;
-  transition: transform .5s ease-in-out .5s;
-  transform: translate3d(0, 0, 1px);
 }

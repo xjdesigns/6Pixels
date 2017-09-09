@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // ELEMENTS
 var elements_component_1 = require("./elements/elements.component");
 var forms_component_1 = require("./elements/forms.component");
-var button_component_1 = require("./elements/button.component");
+var button_component_1 = require("./elements/button/button.component");
 var progress_bar_component_1 = require("./elements/progress-bar.component");
 var range_slider_component_1 = require("./elements/range-slider.component");
 var radio_component_1 = require("./elements/radio.component");
@@ -29,6 +29,8 @@ var ElementsProvider = [
 ];
 var elements_component_2 = require("./elements/elements.component");
 exports.ElementsComponent = elements_component_2.ElementsComponent;
+var button_component_2 = require("./elements/button/button.component");
+exports.ButtonComponent = button_component_2.ButtonComponent;
 // COMPONENTS
 var components_component_1 = require("./components/components.component");
 var tooltip_component_1 = require("./components/tooltip.component");

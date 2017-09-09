@@ -7,9 +7,9 @@
   padding: 3px 12px;
   font-size: .75rem;
   border-radius: 12px;
-  background-color: $greyscale-02;
+  background-color: $grey-l1;
   color: white;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  @include elevation-1;
 }
 
 
@@ -18,9 +18,7 @@ $coloring: (
   pr: $brand-primary,
   sd: $brand-secondary,
   tr: $brand-tertiary,
-  g1: $greyscale-01,
-  g2: $greyscale-03,
-  g3: $greyscale-05
+  g1: $grey-d1
 );
 @each $vr, $cr in $coloring {
   .#{$ns}pill--#{$vr} {

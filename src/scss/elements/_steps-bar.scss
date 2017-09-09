@@ -1,3 +1,4 @@
+// TODO:: ADD OR REMOVE
 //////////////////
 // STEPS BAR //
 //////////////////
@@ -34,7 +35,7 @@
       text-align: center;
       line-height: 2;
       background-color: $brand-primary;
-      color: $greyscale-11;
+      color: $white;
     }
 
     &:last-child:after {
@@ -53,24 +54,24 @@
 
   &--required {
     li {
-      color: $greyscale-10;
+      color: $grey-l1;
       cursor: not-allowed;
 
       &:before {
-        background-color: $greyscale-10;
-        color: $greyscale-11;
+        background-color: $grey-l1;
+        color: $white;
       }
       &:not(:last-child):after {
-        background-color: $greyscale-10;
+        background-color: $grey-l1;
       }
 
       &.is-active {
-        color: $greyscale-01;
+        color: $black;
         cursor: pointer;
 
         &:before {
           background-color: $brand-primary;
-          color: $greyscale-11;
+          color: $white;
         }
         &:not(:last-child):after {
           background-color: $brand-primary;

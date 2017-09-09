@@ -19,6 +19,7 @@ var routes = [
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'elements', component: components_1.ElementsComponent },
+    { path: 'buttons', component: components_1.ButtonComponent },
     { path: 'grid', component: grid_component_1.GridComponent },
     { path: 'components', component: components_1.ComponentsComponent },
     { path: 'variable', component: var_component_1.VarComponent },

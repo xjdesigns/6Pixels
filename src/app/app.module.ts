@@ -17,8 +17,6 @@ import { CodeTableComponent } from './shared/code-table.component';
 
 // PROVIDERS
 import {
-  ElementsComponent,
-  ComponentsComponent,
   SixPixelsProvider
 } from './components'
 import { Ng2Component, Ng2Provider } from './NG2';
@@ -28,15 +26,15 @@ import { AlertService } from './services/alert-service';
 
 import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
 
-// import { AngularModuleStarterModule } from 'angular-module-starter';
+import { AngularModuleStarterModule } from 'angular-module-starter';
 
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
-    // AngularModuleStarterModule
+    AppRoutingModule,
+    AngularModuleStarterModule
   ],
   declarations: [
     AppComponent,

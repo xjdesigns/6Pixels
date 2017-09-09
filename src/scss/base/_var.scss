@@ -1,48 +1,32 @@
-////////////////////////
 // 6PIXELS VARIABLES //
-////////////////////////
 
-////////////////
 // NAMESPACE //
-////////////////
 $ns: 'spx-';
 
-
-////////////////////
 // BASE SIZING //
-////////////////////
 $font-size-root: 16px;
 $font-size-base: $font-size-root;
 $line-height-base: 1.1;
 $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Roboto', helvetica, arial, sans-serif;
 $font-family-headline: 'Titillium Web', sans-serif;
 
-
-////////////////
 // BASE GRID //
-////////////////
 $container: 1140px; // our max width
 $gutter: 24px; // gutters = 1/2 width
 $base-columns: default; // columns
 $base-columns-default: 12;
 
-
-////////////////////
 // BREAKPOINTS //
-////////////////////
 //breakpoints based off 16px base size
 $break-xl: 80em; // 1280
 $break-lg: 64em; // 1024
 $break-md: 48em; // 768
 $break-sm: 20em; // 320
 
-
-/////////////////////
 // BRAND COLORS //
-/////////////////////
 $brand-primary: red;
 $brand-secondary: darkred;
-$brand-tertiary: lightred;
+$brand-tertiary: green;
 $brand-info: #04a3ff;
 $brand-success: green;
 $brand-warning: gold;
@@ -60,22 +44,16 @@ $success: $brand-success;
 $warning: $brand-warning;
 $error: $brand-error;
 
-//////////////////
-// GREYSCALE //
-//////////////////
-$greyscale-01: #000;
-$greyscale-02: #1a1a1a;
-$greyscale-03: #333;
-$greyscale-04: #4d4d4d;
-$greyscale-05: #666;
-$greyscale-06: #808080;
-$greyscale-07: #999;
-$greyscale-08: #b3b3b3;
-$greyscale-09: #ccc;
-$greyscale-10: #e5e5e5;
-$greyscale-11: #fff;
+// GREY //
+$white: rgb(255,255,255);
+$black: rgb(0,0,0);
+$grey-l1: #ccc;
+$grey-d1: #333;
 
-//////////////////////////
+
+// OPACITY COLORING //
+$b-01: rgba(0,0,0,0.9);
+$b-02: rgba(0,0,0,0.5);
+
 // LIGATURES -- ICONS //
-//////////////////////////
 $liga-font-family: 'Material Icons';

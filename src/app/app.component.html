@@ -1,16 +1,26 @@
 <div class="app">
 
-  <header class="app-header" [class.top-offset]="isOffset">
+  <header class="app-header">
 
     <div class="app-header__logo">
-      <div class="bullseye"></div>
-      BULLSEYE
+      <div class="spx-logo spx-logo--sm">
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+      </div>
+      SIX-PIXELS
     </div>
     <div class="app-header__links">
-      <span (click)="goToRoute('/welcome')">v1:ALPHA</span>
+      <span [routerLink]="['/welcome']">v1:ALPHA</span>
     </div>
 
   </header>
+
+  <!-- These are from my test module -->
+  <!-- <angular-module-starter></angular-module-starter> -->
+  <!-- <jason-rocks></jason-rocks> -->
 
   <div class="spx-click-shield" [class.is-open]="appMenuOpen" (click)="toggleMenu()"></div>
   <div class="app-sidebar" [class.is-open]="appMenuOpen">
@@ -20,41 +30,47 @@
     <nav class="app-sidebar__nav">
       <ul class="app-nav">
         <li class="app-nav__nav">Navigation</li>
-        <li (click)="goToRoute('/welcome')">Home</li>
-        <li (click)="goToRoute('/variable')">Vars / Base</li>
-        <li (click)="goToRoute('/grid')">Grid</li>
-        <li (click)="goToRoute('/elements')">Elements</li>
-        <li (click)="goToRoute('/components')">Components</li>
-        <li (click)="goToRoute('/helpers')">Helpers</li>
-        <li (click)="goToRoute('/ng2')">NG2</li>
-        <!-- <li (click)="goToRoute('/firebase-game')">firebase game</li> -->
+        <li [routerLink]="['/welcome']" [routerLinkActive]="['is-active']">Home</li>
+        <li [routerLink]="['/variable']" [routerLinkActive]="['is-active']">Vars / Base</li>
+        <li [routerLink]="['/grid']" [routerLinkActive]="['is-active']">Grid</li>
+        <li
+          *ngFor="let nav of routes"
+          (click)="toggleNav(nav.name)"
+          class="has-menu"
+          [class.is-active]="activeNav === nav.name"
+        >
+          {{nav.name}}
+          <div
+            class="app-nav-inner"
+            *ngIf="nav.routes && nav.routes.length > 0"
+          >
+            <ul>
+              <li
+                *ngFor="let sub of nav.routes"
+                [routerLink]="sub.path"
+                [routerLinkActive]="['is-active']"
+              >
+                {{sub.name}}
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
-
-  <div>
-    <div class="flx flx--xs-middle">
-      <div class="item item--xs-auto item--xs-sm-6"></div>
-      <div class="item item--xs-sm-6 off--xs-sm-6"></div>
-    </div>
-  </div>
-
   <div class="sg-hero">
-    <!-- <angular-module-starter></angular-module-starter> -->
-    <!-- <jason-rocks></jason-rocks> -->
     <div class="sg-hero__elem">
-      <div class="sg-pixel-parent">
-        <div class="sg-pixel sg-pixel--01"></div>
-        <div class="sg-pixel sg-pixel--02"></div>
-        <div class="sg-pixel sg-pixel--03"></div>
-        <div class="sg-pixel sg-pixel--04"></div>
-        <div class="sg-pixel sg-pixel--05"></div>
-        <div class="sg-pixel sg-pixel--06"></div>
+      <div class="spx-logo">
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
       </div>
     </div>
   </div>
 
-  <div class="app-view">
+  <div class="app-vie">
     <router-outlet></router-outlet>
   </div>
 

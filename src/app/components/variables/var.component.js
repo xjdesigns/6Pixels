@@ -40,37 +40,16 @@ var VarComponent = (function () {
                 color: 'red'
             }];
         this.greyscale = [{
-                name: '$greyscale-01',
+                name: '$black',
                 color: '#000'
             }, {
-                name: '$greyscale-02',
-                color: '#1a1a1a'
-            }, {
-                name: '$greyscale-03',
+                name: '$grey-d1',
                 color: '#333'
             }, {
-                name: '$greyscale-04',
-                color: '#4d4d4d'
-            }, {
-                name: '$greyscale-05',
-                color: '#666'
-            }, {
-                name: '$greyscale-06',
-                color: '#808080'
-            }, {
-                name: '$greyscale-07',
-                color: '#999'
-            }, {
-                name: '$greyscale-08',
-                color: '#b3b3b3'
-            }, {
-                name: '$greyscale-09',
+                name: '$grey-l1',
                 color: '#ccc'
             }, {
-                name: '$greyscale-10',
-                color: '#e5e5e5'
-            }, {
-                name: '$greyscale-11',
+                name: '$white',
                 color: '#fff'
             }];
     }
