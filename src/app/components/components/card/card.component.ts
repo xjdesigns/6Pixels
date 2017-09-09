@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 @Component({
+  moduleId: module.id,
   selector: 'app-card',
-  templateUrl: 'app/components/components/card/card.component.html'
+  templateUrl: 'card.component.html'
 })
 export class CardComponent {
 

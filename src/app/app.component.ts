@@ -17,32 +17,76 @@ export class AppComponent {
     name: 'Elements',
     routes: [{
       name: 'Buttons',
-      path: '/elements'
+      path: '/buttons'
     }, {
       name: 'Forms',
-      path: '/elements'
+      path: '/forms'
+    }, {
+      name: 'Checkbox',
+      path: '/checkbox'
+    }, {
+      name: 'Image',
+      path: '/image'
+    }, {
+      name: 'Pills',
+      path: '/pills'
+    }, {
+      name: 'Progress Bar',
+      path: '/progress-bar'
+    }, {
+      name: 'Radio',
+      path: '/radio'
+    }, {
+      name: 'Range Slider',
+      path: '/range-slider'
+    }, {
+      name: 'Select',
+      path: '/select'
+    }, {
+      name: 'Toggle',
+      path: '/toggle'
+    }, {
+      name: 'Video',
+      path: '/video'
     }]
   }, {
     name: 'Components',
     routes: [{
-      name: 'Components',
-      path: '/components'
-    }]
-  }, {
-    name: 'Helpers',
-    routes: [{
-      name: 'helpers',
-      path: '/helpers'
-    }]
-  }, {
-    name: 'NG2',
-    routes: [{
-      name: 'ng2',
-      path: '/ng2'
+      name: 'Accordion',
+      path: '/accordion'
+    }, {
+      name: 'Breadcrumb',
+      path: '/breadcrumb'
+    }, {
+      name: 'Card',
+      path: '/card'
+    }, {
+      name: 'Flyout',
+      path: '/flyout'
+    }, {
+      name: 'Loading',
+      path: '/loading'
+    }, {
+      name: 'Media Obj',
+      path: '/media-obj'
+    }, {
+      name: 'Pagination',
+      path: '/pagination'
+    }, {
+      name: 'Tiles',
+      path: '/tiles'
+    }, {
+      name: 'Toast',
+      path: '/toast'
+    }, {
+      name: 'Tooltip',
+      path: '/tooltip'
     }]
   }];
 
   constructor(private router: Router) {
+    let b = document.querySelector('body');
+
     this.router.events.subscribe(e => {
       if (e instanceof NavigationStart) {
         if (e.url === '/welcome') {
@@ -51,6 +95,7 @@ export class AppComponent {
           this.heroWelcome = false;
         }
         this.appMenuOpen = false;
+        b.scrollTop = 0;
       }
     });
   }

@@ -1,75 +1,76 @@
-<div>
-  <h1>Welcome to SIX PIXELS</h1>
-  <p>SIX PIXELS was created with the idea to move to an PURE CSS UI frameworks/pattern labs.</p>
-  <p>Here are the key benefits to using SIX PIXELS</p>
-  <ul class="spx-list">
-    <li>Light weight</li>
-    <li>1 variable file for easy customization</li>
-    <li>IE support for 10 and above</li>
-    <li>Uses no webfonts, only system level fonts</li>
-    <li>Built on an atomic level for minimal trumping</li>
-    <li>All components are scoped to its component</li>
-    <li>Optional includes for components</li>
-    <li>Namespace support(scss compiling required)</li>
-    <li>ZERO JS/External dependancies</li>
-  </ul>
-</div>
-
-<div class="sg-divider"></div>
-
-<div>
-  <p>My list of TODOs</p>
-  <ul>
-    <li>Change all views to be element/component specific</li>
-    <li>All views should have a header in which displays one styling of the element/component</li>
-    <li>Change all modifier variables to be small, as in buttons should be spx-btn--pr not spx-btn--primary</li>
-    <li>DONEXXX::: Move all shadows to the using the planes</li>
-    <li>Remove greyscale for something more managable</li>
-    <li>Separate all NG2 components to external modules</li>
-    <li>Figure out how to handle additional component sass, do we include all css or try expressions to add, dont package with the module as its coupled to Angular at that point</li>
-  </ul>
-</div>
-
-<div class="sg-divider"></div>
-
-<div>
-  <h2>Current filesize minified: 40kb</h2>
-</div>
-<div class="sg-divider"></div>
-<div>
-  <h1>Local Development</h1>
-
-  <p>Below are the commands for running a local instance of the app.</p>
-  <br>
-  <p><code>NOTE:</code> You must have gulp installed globally before running</p>
-  <br>
-  <p><code>npm install</code> Installs dependencies from our package.json</p>
-  <br>
-  <p><code>npm start</code> Starts the local instance and runs our sass with gulp</p>
-  <br>
-  <p><code>gulp prod</code> Runs a gulp command for compiling the final minified file</p>
-
-  <div class="sg-divider"></div>
-
-  <h2>Guidelines</h2>
-  <p>6PIXELS is meant to be a next gen CSS UI FRAMEWORK / PATTERN LAB, and can present progressive enhancement. Please use the <code>@supports</code>. Progressive enhancement code should live at the top of your SCSS file.</p>
-  <p>Everything should be created with MOBILE FIRST in mind.</p>
-  <p>Everything should be in increments of 6 PIXELS. This creates specific patterns and expectations.</p>
-  <p>With any new elements/components please supply a new route, along with at least one live example and code example.</p>
-
-  <div class="sg-divider"></div>
-
-  <h2>Code Markers</h2>
-  <p>
-    Here are markers to use with the code at the top of the elements docs.
-  </p>
-  <p><span class="spx-pill spx-pill--pr">Stable</span><p>
-  <p><span class="spx-pill spx-pill--sd">Working</span></p>
-  <p><span class="spx-pill spx-pill--g3">Progressive</span></p>
-  <div class="sg-divider"></div>
-  <h2>Code Snippets</h2>
-  <p>Code snippets use a <code>code</code> tag and apply the directive to it <code>[code-display]</code>.</p>
+<div class="app-view">
   <div>
+    <h1>Welcome to SIX PIXELS</h1>
+    <p>SIX PIXELS was created with the idea to move to an PURE CSS UI frameworks/pattern labs.</p>
+    <p>Here are the key benefits to using SIX PIXELS</p>
+    <ul class="spx-list">
+      <li>Light weight</li>
+      <li>1 variable file for easy customization</li>
+      <li>IE support for 10 and above</li>
+      <li>Uses no webfonts, only system level fonts</li>
+      <li>Built on an atomic level for minimal trumping</li>
+      <li>All components are scoped to its component</li>
+      <li>Optional includes for components</li>
+      <li>Namespace support(scss compiling required)</li>
+      <li>ZERO JS/External dependancies</li>
+    </ul>
+  </div>
+
+  <div class="sg-divider"></div>
+
+  <div>
+    <p>My list of TODOs</p>
+    <ul>
+      <li>Change all views to be element/component specific</li>
+      <li>All views should have a header in which displays one styling of the element/component</li>
+      <li>Change all modifier variables to be small, as in buttons should be spx-btn--pr not spx-btn--primary</li>
+      <li>DONEXXX::: Move all shadows to the using the planes</li>
+      <li>Remove greyscale for something more managable</li>
+      <li>Separate all NG2 components to external modules</li>
+      <li>Figure out how to handle additional component sass, do we include all css or try expressions to add, dont package with the module as its coupled to Angular at that point</li>
+    </ul>
+  </div>
+
+  <div class="sg-divider"></div>
+
+  <div>
+    <h2>Current filesize minified: 38kb</h2>
+  </div>
+  <div class="sg-divider"></div>
+  <div>
+    <h1>Local Development</h1>
+
+    <p>Below are the commands for running a local instance of the app.</p>
+    <br>
+    <p><code>NOTE:</code> You must have gulp installed globally before running</p>
+    <br>
+    <p><code>npm install</code> Installs dependencies from our package.json</p>
+    <br>
+    <p><code>npm start</code> Starts the local instance and runs our sass with gulp</p>
+    <br>
+    <p><code>gulp prod</code> Runs a gulp command for compiling the final minified file</p>
+
+    <div class="sg-divider"></div>
+
+    <h2>Guidelines</h2>
+    <p>6PIXELS is meant to be a next gen CSS UI FRAMEWORK / PATTERN LAB, and can present progressive enhancement. Please use the <code>@supports</code>. Progressive enhancement code should live at the top of your SCSS file.</p>
+    <p>Everything should be created with MOBILE FIRST in mind.</p>
+    <p>Everything should be in increments of 6 PIXELS. This creates specific patterns and expectations.</p>
+    <p>With any new elements/components please supply a new route, along with at least one live example and code example.</p>
+
+    <div class="sg-divider"></div>
+
+    <h2>Code Markers</h2>
+    <p>
+      Here are markers to use with the code at the top of the elements docs.
+    </p>
+    <p><span class="spx-pill spx-pill--pr">Stable</span><p>
+    <p><span class="spx-pill spx-pill--sd">Working</span></p>
+    <p><span class="spx-pill spx-pill--g3">Progressive</span></p>
+    <div class="sg-divider"></div>
+    <h2>Code Snippets</h2>
+    <p>Code snippets use a <code>code</code> tag and apply the directive to it <code>[code-display]</code>.</p>
+    <div>
 <pre class="prettyprint">
   <code code-display>
     <div>
@@ -79,22 +80,24 @@
     </div>
   </code>
 </pre>
+    </div>
+
+    <div class="sg-divider"></div>
+
+    <h2>Resources</h2>
+    <p>I love resources and documentation, so here is some I use.</p>
+    <p><a href="http://caniuse.com">Can I Use</a></p>
+    <p><a href="https://css-tricks.com">CSS TRICKS</a></p>
+    <p><a href="https://material.io/icons/">Material Icons by Google</a></p>
+
+    <div class="sg-i-support">
+      <div class="sg-supports">This feature uses the CSS rule <code>@supports</code>. If you are viewing in IE or EDGE you will not see any progressive enhancement as it is not supported. <br>If you see the rule below it is supported by your browser.</div>
+
+      <div class="sg-rule-all-initial"><code>all: initial;</code></div>
+      <div class="sg-rule-display-grid"><code>display: grid;</code></div>
+      <div class="sg-rule-filter"><code>filter: "all rules";</code></div>
+
+    </div>
   </div>
 
-  <div class="sg-divider"></div>
-
-  <h2>Resources</h2>
-  <p>I love resources and documentation, so here is some I use.</p>
-  <p><a href="http://caniuse.com">Can I Use</a></p>
-  <p><a href="https://css-tricks.com">CSS TRICKS</a></p>
-  <p><a href="https://material.io/icons/">Material Icons by Google</a></p>
-
-  <div class="sg-i-support">
-    <div class="sg-supports">This feature uses the CSS rule <code>@supports</code>. If you are viewing in IE or EDGE you will not see any progressive enhancement as it is not supported. <br>If you see the rule below it is supported by your browser.</div>
-
-    <div class="sg-rule-all-initial"><code>all: initial;</code></div>
-    <div class="sg-rule-display-grid"><code>display: grid;</code></div>
-    <div class="sg-rule-filter"><code>filter: "all rules";</code></div>
-
-  </div>
 </div>

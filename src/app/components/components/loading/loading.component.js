@@ -14,8 +14,9 @@ var LoadingComponent = (function () {
 }());
 LoadingComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'app-loading',
-        templateUrl: 'app/components/components/loading/loading.component.html'
+        templateUrl: 'loading.component.html'
     })
 ], LoadingComponent);
 exports.LoadingComponent = LoadingComponent;

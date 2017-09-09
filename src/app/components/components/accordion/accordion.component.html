@@ -1,53 +1,56 @@
-<div class="flex">
-  <div class="flex__i--xs-6">
+<div class="app-view">
+  <div class="flex">
+    <div class="flex__i--xs-6">
 
-    <div class="spx-ac" [class.is-active]="isActive">
-      <div class="spx-ac__pane">
-        <div class="spx-ac-title">
-          Pane title
+      <div class="spx-ac" [class.is-active]="isActive">
+        <div class="spx-ac__pane">
+          <div class="spx-ac-title">
+            Pane title
+          </div>
+          <div class="spx-ac-secondary">
+            <div class="spx-pill spx-pill--pr">pills</div>
+            <div class="spx-pill spx-pill--pr">pills-2</div>
+          </div>
+          <div class="spx-ac-action">
+            <button
+              class="spx-btn"
+              (click)="toggleAcc()"
+              data-icon="keyboard_arrow_down"></button>
+          </div>
         </div>
-        <div class="spx-ac-secondary">
-          <div class="spx-pill spx-pill--pr">pills</div>
-          <div class="spx-pill spx-pill--pr">pills-2</div>
-        </div>
-        <div class="spx-ac-action">
-          <button
-            class="spx-btn"
-            (click)="toggleAcc()"
-            data-icon="keyboard_arrow_down"></button>
+        <div class="spx-ac__content">
+          <p>Hello World Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dicta distinctio mollitia ea, dolorem minima debitis. Quas, voluptates iste, ipsum omnis deserunt explicabo quidem minus vitae odio laboriosam accusamus doloribus.</p>
         </div>
       </div>
-      <div class="spx-ac__content">
-        <p>Hello World Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dicta distinctio mollitia ea, dolorem minima debitis. Quas, voluptates iste, ipsum omnis deserunt explicabo quidem minus vitae odio laboriosam accusamus doloribus.</p>
-      </div>
-    </div>
 
-<pre class="prettyprint">
-  <code code-display>
-    <div class="spx-ac"> // .is-active gives the content display and toggles
-      <div class="spx-ac__pane">
-        <div class="spx-ac-title">
-          Pane title
+  <pre class="prettyprint">
+    <code code-display>
+      <div class="spx-ac"> // .is-active gives the content display and toggles
+        <div class="spx-ac__pane">
+          <div class="spx-ac-title">
+            Pane title
+          </div>
+          <div class="spx-ac-secondary">
+            Secondary
+          </div>
+          <div class="spx-ac-action">
+            <button class="spx-btn" data-icon="keyboard_arrow_down"></button>
+          </div>
         </div>
-        <div class="spx-ac-secondary">
-          Secondary
-        </div>
-        <div class="spx-ac-action">
-          <button class="spx-btn" data-icon="keyboard_arrow_down"></button>
+        <div class="spx-ac__content">
+          content here
         </div>
       </div>
-      <div class="spx-ac__content">
-        content here
-      </div>
+    </code>
+  </pre>
     </div>
-  </code>
-</pre>
+    <div class="flex__i--xs-6">
+      <h2>Accordion</h2>
+      <p>
+        <span class="spx-pill spx-pill--pr">Stable</span>
+      </p>
+      <p>Accordions are a collapsible pane that allows for content to be display, and a minimized set while closed.</p>
+    </div>
   </div>
-  <div class="flex__i--xs-6">
-    <h2>Accordion</h2>
-    <p>
-      <span class="spx-pill spx-pill--pr">Stable</span>
-    </p>
-    <p>Accordions are a collapsible pane that allows for content to be display, and a minimized set while closed.</p>
-  </div>
+
 </div>

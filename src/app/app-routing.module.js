@@ -12,21 +12,17 @@ var welcome_component_1 = require("./components/welcome/welcome.component");
 var grid_component_1 = require("./components/grid/grid.component");
 var var_component_1 = require("./components/variables/var.component");
 var helpers_component_1 = require("./components/helpers/helpers.component");
-var components_1 = require("./components");
 var NG2_1 = require("./NG2");
-var firebase_game_component_1 = require("./firebase-game/firebase-game.component");
+var elements_routes_1 = require("./components/elements/elements.routes");
+var components_routes_1 = require("./components/components/components.routes");
 var routes = [
     { path: '', redirectTo: '/welcome', pathMatch: 'full' },
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
-    { path: 'elements', component: components_1.ElementsComponent },
-    { path: 'buttons', component: components_1.ButtonComponent },
     { path: 'grid', component: grid_component_1.GridComponent },
-    { path: 'components', component: components_1.ComponentsComponent },
     { path: 'variable', component: var_component_1.VarComponent },
     { path: 'helpers', component: helpers_component_1.HelpersComponent },
-    { path: 'ng2', component: NG2_1.Ng2Component },
-    { path: 'firebase-game', component: firebase_game_component_1.FirebaseGameComponent }
-];
+    { path: 'ng2', component: NG2_1.Ng2Component }
+].concat(elements_routes_1.ElementRouting, components_routes_1.ComponentsRouting);
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }

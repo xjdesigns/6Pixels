@@ -1,5 +1,4 @@
 // 6PIXELS VARIABLES //
-
 // NAMESPACE //
 $ns: 'spx-';
 
@@ -32,10 +31,7 @@ $brand-success: green;
 $brand-warning: gold;
 $brand-error: red;
 
-// here we add just base color names
-// this is so we can have brand colors
-// along with project colors if needed
-// we ref these as brand with intent to change per project
+// BRAND REFERENCE //
 $primary: $brand-primary; // main blue
 $secondary: $brand-secondary; // main purple
 $tertiary: $brand-tertiary;

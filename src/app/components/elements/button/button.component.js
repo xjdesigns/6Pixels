@@ -33,8 +33,9 @@ var ButtonComponent = (function () {
 }());
 ButtonComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'app-button',
-        templateUrl: 'app/components/elements/button/button.component.html'
+        templateUrl: 'button.component.html'
     })
 ], ButtonComponent);
 exports.ButtonComponent = ButtonComponent;

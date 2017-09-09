@@ -94,8 +94,9 @@ var TilesComponent = (function () {
 }());
 TilesComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'app-tiles',
-        templateUrl: 'app/components/components/tiles/tiles.component.html'
+        templateUrl: 'tiles.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], TilesComponent);

@@ -6,27 +6,20 @@ import { GridComponent } from './components/grid/grid.component';
 import { VarComponent } from './components/variables/var.component';
 import { HelpersComponent } from './components/helpers/helpers.component';
 
-import {
-  ElementsComponent,
-  ButtonComponent,
-  ComponentsComponent
-} from './components';
-
 import { Ng2Component } from './NG2';
 
-import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+import { ElementRouting } from './components/elements/elements.routes';
+import { ComponentsRouting } from './components/components/components.routes';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'elements', component: ElementsComponent },
-  { path: 'buttons', component: ButtonComponent },
   { path: 'grid', component: GridComponent },
-  { path: 'components', component: ComponentsComponent },
   { path: 'variable', component: VarComponent },
   { path: 'helpers', component: HelpersComponent },
   { path: 'ng2', component: Ng2Component},
-  { path: 'firebase-game', component: FirebaseGameComponent}
+  ...ElementRouting,
+  ...ComponentsRouting
 ];
 
 @NgModule({

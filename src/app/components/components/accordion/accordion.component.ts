@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-accordion',
-  templateUrl: 'app/components/components/accordion/accordion.component.html'
+  templateUrl: 'accordion.component.html'
 })
 
 export class AccordionComponent {

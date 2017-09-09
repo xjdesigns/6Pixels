@@ -30,8 +30,9 @@ var AlertComponent = (function () {
 }());
 AlertComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'alert',
-        templateUrl: 'app/services/alert/alert.html'
+        templateUrl: 'alert.html'
     }),
     __metadata("design:paramtypes", [alert_service_1.AlertService])
 ], AlertComponent);

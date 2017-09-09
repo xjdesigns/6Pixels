@@ -23,8 +23,8 @@ var components_1 = require("./components");
 var NG2_1 = require("./NG2");
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
-var firebase_game_component_1 = require("./firebase-game/firebase-game.component");
-var angular_module_starter_1 = require("angular-module-starter");
+// import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+var angular_module_starter_1 = require("angular-module-starter"); // from node repo
 var AppModule = (function () {
     function AppModule() {
     }
@@ -47,8 +47,7 @@ AppModule = __decorate([
             var_component_1.VarComponent,
             code_display_directive_1.CodeDisplayDirective,
             code_table_component_1.CodeTableComponent,
-            alert_1.AlertComponent,
-            firebase_game_component_1.FirebaseGameComponent
+            alert_1.AlertComponent
         ].concat(components_1.SixPixelsProvider, NG2_1.Ng2Provider),
         providers: [
             alert_service_1.AlertService

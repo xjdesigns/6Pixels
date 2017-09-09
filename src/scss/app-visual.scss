@@ -46,7 +46,7 @@ $header: 72px;
 
 .app-view {
   max-width: 70vw;
-  // height: calc(100vh - 10vh - #{$header});
+  min-height: calc(100vh - 160px - #{$header} - 24px - #{$header} - 48px);
   margin: calc(24px + #{$header}) auto 48px;
   padding-bottom: 48px;
 }

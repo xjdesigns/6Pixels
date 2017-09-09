@@ -55,10 +55,13 @@
             </ul>
           </div>
         </li>
+        <li [routerLink]="['/helpers']" [routerLinkActive]="['is-active']">Helpers</li>
+        <li [routerLink]="['/ng2']" [routerLinkActive]="['is-active']">NG2</li>
       </ul>
     </nav>
   </div>
-  <div class="sg-hero">
+
+  <!-- <div class="sg-hero">
     <div class="sg-hero__elem">
       <div class="spx-logo">
         <div class="spx-logo__px"></div>
@@ -68,11 +71,9 @@
         <div class="spx-logo__px"></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="app-vie">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
 
   <footer class="app-footer">
     <p>SIX PIXELS 2017</p>

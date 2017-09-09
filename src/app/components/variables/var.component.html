@@ -1,8 +1,9 @@
-<h1>Variables and Base</h1>
-<p>SIX PIXELS uses a single variable file for custom configurations.</p>
+<div class="app-view">
+  <h1>Variables and Base</h1>
+  <p>SIX PIXELS uses a single variable file for custom configurations.</p>
 
-<div class="sg-divider"></div>
-<h2>Base HTML</h2>
+  <div class="sg-divider"></div>
+  <h2>Base HTML</h2>
 <pre class="prettyprint">
   <code code-display>
     &lt;!DOCTYPE html>
@@ -22,39 +23,39 @@
   </code>
 </pre>
 
-<div class="sg-divider"></div>
-<h2>Color Palette</h2>
-<div class="sg-color-presentation">
+  <div class="sg-divider"></div>
+  <h2>Color Palette</h2>
+  <div class="sg-color-presentation">
 
-  <div
-    *ngFor="let grey of coloring"
-    [style.backgroundColor]="grey.color"
-    (mouseover)="mouseOverColor(grey.name, grey.color)"
-    (mouseout)="mouseOutColor()"
-    class="sg-color-drop"
-  >
+    <div
+      *ngFor="let grey of coloring"
+      [style.backgroundColor]="grey.color"
+      (mouseover)="mouseOverColor(grey.name, grey.color)"
+      (mouseout)="mouseOutColor()"
+      class="sg-color-drop"
+    >
+    </div>
+
   </div>
+  <div class="sg-color-presentation">
 
-</div>
-<div class="sg-color-presentation">
+    <div
+      *ngFor="let grey of greyscale"
+      [style.backgroundColor]="grey.color"
+      (mouseover)="mouseOverColor(grey.name, grey.color)"
+      (mouseout)="mouseOutColor()"
+      class="sg-color-drop"
+    >
+    </div>
 
-  <div
-    *ngFor="let grey of greyscale"
-    [style.backgroundColor]="grey.color"
-    (mouseover)="mouseOverColor(grey.name, grey.color)"
-    (mouseout)="mouseOutColor()"
-    class="sg-color-drop"
-  >
   </div>
+  <div class="sg-color-information">
+    {{ hoveredColor }}
+  </div>
+  <div class="sg-divider"></div>
 
-</div>
-<div class="sg-color-information">
-  {{ hoveredColor }}
-</div>
-<div class="sg-divider"></div>
-
-<div class="flex">
-  <div class="flex__i--xs-6">
+  <div class="flex">
+    <div class="flex__i--xs-6">
 <pre class="prettyprint">
   <code code-display>
     <h1>Headline 1</h1>
@@ -72,21 +73,23 @@
     </ul>
   </code>
 </pre>
+    </div>
+    <div class="flex__i--xs-6">
+      <h1>Headline 1</h1>
+      <h2>Headline 2</h2>
+      <h3>Headline 3</h3>
+      <h4>Headline 4</h4>
+      <h5>Headline 5</h5>
+      <h6>Headline 6</h6>
+      <a href="#" class="spx-link">Anchor Link</a>
+      <p>Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque dolorum excepturi repellat totam perferendis voluptatibus doloribus tempore maiores aliquid!</p>
+      <blockquote>Base blockquote, additional classes available</blockquote>
+      <ul class="spx-list">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+      </ul>
+    </div>
   </div>
-  <div class="flex__i--xs-6">
-    <h1>Headline 1</h1>
-    <h2>Headline 2</h2>
-    <h3>Headline 3</h3>
-    <h4>Headline 4</h4>
-    <h5>Headline 5</h5>
-    <h6>Headline 6</h6>
-    <a href="#" class="spx-link">Anchor Link</a>
-    <p>Paragraph - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloremque dolorum excepturi repellat totam perferendis voluptatibus doloribus tempore maiores aliquid!</p>
-    <blockquote>Base blockquote, additional classes available</blockquote>
-    <ul class="spx-list">
-      <li>01</li>
-      <li>02</li>
-      <li>03</li>
-    </ul>
-  </div>
+
 </div>

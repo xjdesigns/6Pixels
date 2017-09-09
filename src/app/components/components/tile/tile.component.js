@@ -60,8 +60,9 @@ __decorate([
 ], TileComponent.prototype, "onChange", void 0);
 TileComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'app-tile',
-        templateUrl: 'app/components/components/tile/tile.component.html'
+        templateUrl: 'tile.component.html'
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], TileComponent);
