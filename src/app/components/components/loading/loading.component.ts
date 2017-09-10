@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-loading',
-  templateUrl: 'loading.component.html'
+  templateUrl: 'app/components/components/loading/loading.component.html'
 })
 export class LoadingComponent {}

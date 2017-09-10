@@ -98,6 +98,8 @@ export class AppComponent {
         b.scrollTop = 0;
       }
     });
+
+    // opts.callback();
   }
 
   toggleMenu() {
@@ -108,4 +110,10 @@ export class AppComponent {
     console.warn(e);
     this.activeNav = this.activeNav === e ? '' : e;
   }
+}
+var opts = {
+  callback: jason
+}
+function jason(params) {
+  console.warn('jason', params);
 }

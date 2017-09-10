@@ -8,9 +8,8 @@ import {
 import { Router } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-tile',
-  templateUrl: 'tile.component.html'
+  templateUrl: 'app/components/components/tile/tile.component.html'
 })
 export class TileComponent {
   @Input() tileData = {

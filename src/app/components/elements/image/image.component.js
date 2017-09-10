@@ -33,9 +33,8 @@ var ImageComponent = (function () {
 }());
 ImageComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-image',
-        templateUrl: 'image.component.html',
+        templateUrl: 'app/components/elements/image/image.component.html',
         providers: [unsplash_service_1.UnsplashService]
     }),
     __metadata("design:paramtypes", [unsplash_service_1.UnsplashService])

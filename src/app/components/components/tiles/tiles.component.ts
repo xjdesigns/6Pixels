@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-tiles',
-  templateUrl: 'tiles.component.html'
+  templateUrl: 'app/components/components/tiles/tiles.component.html'
 })
 export class TilesComponent {
   description = [{

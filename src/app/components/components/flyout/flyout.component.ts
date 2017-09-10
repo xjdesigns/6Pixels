@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-flyout',
-  templateUrl: 'flyout.component.html'
+  templateUrl: 'app/components/components/flyout/flyout.component.html'
 })
 
 export class FlyoutComponent {

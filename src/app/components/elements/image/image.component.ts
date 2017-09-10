@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { UnsplashService } from '../../../services/unsplash.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-image',
-  templateUrl: 'image.component.html',
+  templateUrl: 'app/components/elements/image/image.component.html',
   providers: [ UnsplashService ]
 })
 

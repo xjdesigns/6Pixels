@@ -33,9 +33,8 @@ var SelectComponent = (function () {
 }());
 SelectComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-select',
-        templateUrl: 'select.component.html'
+        templateUrl: 'app/components/elements/select/select.component.html'
     })
 ], SelectComponent);
 exports.SelectComponent = SelectComponent;

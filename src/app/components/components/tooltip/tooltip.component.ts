@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-tooltip',
-  templateUrl: 'tooltip.component.html'
+  templateUrl: 'app/components/components/tooltip/tooltip.component.html'
 })
 
 export class TooltipComponent {}

@@ -14,9 +14,8 @@ var RadioComponent = (function () {
 }());
 RadioComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-radio',
-        templateUrl: 'radio.component.html'
+        templateUrl: 'app/components/elements/radio/radio.component.html'
     })
 ], RadioComponent);
 exports.RadioComponent = RadioComponent;

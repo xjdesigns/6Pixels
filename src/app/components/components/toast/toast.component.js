@@ -18,9 +18,8 @@ var ToastComponent = (function () {
 }());
 ToastComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-toast',
-        templateUrl: 'toast.component.html'
+        templateUrl: 'app/components/components/toast/toast.component.html'
     })
 ], ToastComponent);
 exports.ToastComponent = ToastComponent;

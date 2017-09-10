@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-forms',
-  templateUrl: 'forms.component.html'
+  templateUrl: 'app/components/elements/forms/forms.component.html'
 })
 
 export class FormsComponent {

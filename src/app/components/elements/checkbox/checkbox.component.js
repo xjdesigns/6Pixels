@@ -14,9 +14,8 @@ var CheckboxComponent = (function () {
 }());
 CheckboxComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-checkbox',
-        templateUrl: 'checkbox.component.html'
+        templateUrl: 'app/components/elements/checkbox/checkbox.component.html'
     })
 ], CheckboxComponent);
 exports.CheckboxComponent = CheckboxComponent;

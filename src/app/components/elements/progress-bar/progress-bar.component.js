@@ -22,9 +22,8 @@ var ProgressBarComponent = (function () {
 }());
 ProgressBarComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-progress-bar',
-        templateUrl: 'progress-bar.component.html'
+        templateUrl: 'app/components/elements/progress-bar/progress-bar.component.html'
     }),
     __metadata("design:paramtypes", [])
 ], ProgressBarComponent);

@@ -14,9 +14,8 @@ var RangeSliderComponent = (function () {
 }());
 RangeSliderComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-range-slider',
-        templateUrl: 'range-slider.component.html'
+        templateUrl: 'app/components/elements/range-slider/range-slider.component.html'
     })
 ], RangeSliderComponent);
 exports.RangeSliderComponent = RangeSliderComponent;

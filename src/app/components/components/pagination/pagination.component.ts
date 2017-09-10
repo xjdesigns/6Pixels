@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-pagination',
-  templateUrl: 'pagination.component.html'
+  templateUrl: 'app/components/components/pagination/pagination.component.html'
 })
 
 export class PaginationComponent {}

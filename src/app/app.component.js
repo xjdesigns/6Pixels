@@ -104,6 +104,7 @@ var AppComponent = (function () {
                 b.scrollTop = 0;
             }
         });
+        // opts.callback();
     }
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;
@@ -122,3 +123,9 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [router_1.Router])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var opts = {
+    callback: jason
+};
+function jason(params) {
+    console.warn('jason', params);
+}

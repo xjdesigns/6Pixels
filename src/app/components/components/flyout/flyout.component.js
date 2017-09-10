@@ -24,9 +24,8 @@ var FlyoutComponent = (function () {
 }());
 FlyoutComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-flyout',
-        templateUrl: 'flyout.component.html'
+        templateUrl: 'app/components/components/flyout/flyout.component.html'
     })
 ], FlyoutComponent);
 exports.FlyoutComponent = FlyoutComponent;

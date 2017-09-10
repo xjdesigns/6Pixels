@@ -14,9 +14,8 @@ var VideoComponent = (function () {
 }());
 VideoComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-video',
-        templateUrl: 'video.component.html'
+        templateUrl: 'app/components/elements/video/video.component.html'
     })
 ], VideoComponent);
 exports.VideoComponent = VideoComponent;

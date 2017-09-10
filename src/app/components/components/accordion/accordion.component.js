@@ -22,9 +22,8 @@ var AccordionComponent = (function () {
 }());
 AccordionComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-accordion',
-        templateUrl: 'accordion.component.html'
+        templateUrl: 'app/components/components/accordion/accordion.component.html'
     })
 ], AccordionComponent);
 exports.AccordionComponent = AccordionComponent;

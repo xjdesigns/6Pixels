@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-select',
-  templateUrl: 'select.component.html'
+  templateUrl: 'app/components/elements/select/select.component.html'
 })
 export class SelectComponent {
   selection: Selection[] = [{

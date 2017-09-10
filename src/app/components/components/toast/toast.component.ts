@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-toast',
-  templateUrl: 'toast.component.html'
+  templateUrl: 'app/components/components/toast/toast.component.html'
 })
 
 export class ToastComponent {

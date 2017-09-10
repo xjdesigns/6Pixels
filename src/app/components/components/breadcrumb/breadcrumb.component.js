@@ -14,9 +14,8 @@ var BreadcrumbComponent = (function () {
 }());
 BreadcrumbComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-breadcrumb',
-        templateUrl: 'breadcrumb.component.html'
+        templateUrl: 'app/components/components/breadcrumb/breadcrumb.component.html'
     })
 ], BreadcrumbComponent);
 exports.BreadcrumbComponent = BreadcrumbComponent;

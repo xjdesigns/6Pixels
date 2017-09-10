@@ -14,9 +14,8 @@ var PillsComponent = (function () {
 }());
 PillsComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-pills',
-        templateUrl: 'pills.component.html'
+        templateUrl: 'app/components/elements/pills/pills.component.html'
     })
 ], PillsComponent);
 exports.PillsComponent = PillsComponent;

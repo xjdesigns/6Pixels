@@ -14,9 +14,8 @@ var CardComponent = (function () {
 }());
 CardComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-card',
-        templateUrl: 'card.component.html'
+        templateUrl: 'app/components/components/card/card.component.html'
     })
 ], CardComponent);
 exports.CardComponent = CardComponent;

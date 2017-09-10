@@ -18,9 +18,8 @@ var FormsComponent = (function () {
 }());
 FormsComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-forms',
-        templateUrl: 'forms.component.html'
+        templateUrl: 'app/components/elements/forms/forms.component.html'
     })
 ], FormsComponent);
 exports.FormsComponent = FormsComponent;

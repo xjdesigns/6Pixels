@@ -14,9 +14,8 @@ var ToggleComponent = (function () {
 }());
 ToggleComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-toggle',
-        templateUrl: 'toggle.component.html'
+        templateUrl: 'app/components/elements/toggle/toggle.component.html'
     })
 ], ToggleComponent);
 exports.ToggleComponent = ToggleComponent;

@@ -14,9 +14,8 @@ var TooltipComponent = (function () {
 }());
 TooltipComponent = __decorate([
     core_1.Component({
-        moduleId: module.id,
         selector: 'app-tooltip',
-        templateUrl: 'tooltip.component.html'
+        templateUrl: 'app/components/components/tooltip/tooltip.component.html'
     })
 ], TooltipComponent);
 exports.TooltipComponent = TooltipComponent;

@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../alert-service';
 
 @Component({
-  moduleId: module.id
   selector: 'alert',
-  templateUrl: 'alert.html'
+  templateUrl: 'app/services/alert/alert.html'
 })
 
 export class AlertComponent {
