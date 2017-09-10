@@ -11,9 +11,10 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { GridComponent } from './components/grid/grid.component';
 import { VarComponent } from './components/variables/var.component';
 import { HelpersComponent } from './components/helpers/helpers.component';
-
-import { CodeDisplayDirective } from './shared/code-display.directive';
 import { CodeTableComponent } from './shared/code-table.component';
+
+// DIRECTIVES
+import { CodeDisplayDirective } from './shared/code-display.directive';
 
 // PROVIDERS
 import {
@@ -21,11 +22,13 @@ import {
 } from './components'
 import { Ng2Component, Ng2Provider } from './NG2';
 
+// ALERTS
 import { AlertComponent } from './services/alert/alert';
 import { AlertService } from './services/alert-service';
 
 // import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
 
+// EXTERNAL MODULES
 import { AngularModuleStarterModule } from 'angular-module-starter'; // from node repo
 
 @NgModule({

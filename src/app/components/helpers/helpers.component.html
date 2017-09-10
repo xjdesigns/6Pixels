@@ -1,14 +1,17 @@
-<div class="app-menu-nav">
-  <div
-    *ngFor="let elem of elements"
-    data-id="spx-{{ elem.name }}"
-  >{{ elem.name }}</div>
-</div>
+<div class="app-view">
+  <div class="app-menu-nav">
+    <div
+      *ngFor="let elem of elements"
+      data-id="spx-{{ elem.name }}"
+    >{{ elem.name }}</div>
+  </div>
 
-<div class="app-menu-title">
-  <h1>Helpers</h1>
-  <p>Helper classes are for rapid development. As a UI specialist I always suggest writing custom implementations but as we grow we need to be flexible. So this keeps you aligned with a better practice and avoids the creation of so many extra classes.</p>
-  <p>Notice how by using these be import a small base CSS file yet write it once. Maintaining should be extremely easy.</p>
-</div>
+  <div class="app-menu-title">
+    <h1>Helpers</h1>
+    <p>Helper classes are for rapid development. As a UI specialist I always suggest writing custom implementations but as we grow we need to be flexible. So this keeps you aligned with a better practice and avoids the creation of so many extra classes.</p>
+    <p>Notice how by using these be import a small base CSS file yet write it once. Maintaining should be extremely easy.</p>
+  </div>
 
-<app-code-table [isOpen]="true" [data]='description'></app-code-table>
+  <app-code-table [isOpen]="true" [data]='description'></app-code-table>
+
+</div>

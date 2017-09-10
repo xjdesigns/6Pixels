@@ -3,6 +3,7 @@
   display: flex;
   flex-flow: nowrap column;
   position: relative;
+  background: $white;
   @include elevation-2;
 
   // for testing

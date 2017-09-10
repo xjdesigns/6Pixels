@@ -1,3 +1,13 @@
+<div class="sg-hero">
+  <div class="sg-hero__elem sg-hero__elem--min">
+    <div class="spx-select">
+      <select id="jason">
+        <option *ngFor="let s of selection" [value]="s.value">{{ s.name }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
 <div class="app-view">
   <div class="flex">
     <div class="flex__i--xs-6">

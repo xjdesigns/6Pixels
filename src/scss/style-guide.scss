@@ -47,14 +47,19 @@ code.#{$nssg}code-block {
 .#{$nssg}hero {
   display: flex;
   align-items: center;
-  min-height: 160px;
-  background: $grey-l1;
+  justify-content: center;
+  min-height: 260px;
   margin-top: 72px;
-  overflow: hidden;
+  background: #ededed;
 
   &__elem {
-    flex: 1;
-    text-align: center;
+    flex: 0 0 auto;
+    margin: 48px auto;
+
+    &--min {
+      min-width: 40vw;
+      max-width: 60vw;
+    }
   }
 }
 

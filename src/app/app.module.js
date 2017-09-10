@@ -16,14 +16,17 @@ var welcome_component_1 = require("./components/welcome/welcome.component");
 var grid_component_1 = require("./components/grid/grid.component");
 var var_component_1 = require("./components/variables/var.component");
 var helpers_component_1 = require("./components/helpers/helpers.component");
-var code_display_directive_1 = require("./shared/code-display.directive");
 var code_table_component_1 = require("./shared/code-table.component");
+// DIRECTIVES
+var code_display_directive_1 = require("./shared/code-display.directive");
 // PROVIDERS
 var components_1 = require("./components");
 var NG2_1 = require("./NG2");
+// ALERTS
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
 // import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+// EXTERNAL MODULES
 var angular_module_starter_1 = require("angular-module-starter"); // from node repo
 var AppModule = (function () {
     function AppModule() {

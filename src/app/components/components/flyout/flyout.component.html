@@ -1,3 +1,18 @@
+<div class="sg-hero">
+  <div class="sg-hero__elem sg-hero__elem--min">
+    <div class="spx-flyout spx-flyout--right" [class.is-open]="flyoutIsRightOpen">
+      <button class="spx-btn spx-btn--pr spx-btn--block" (click)="toggleFlyout('rt')">Toggle Flyout Right</button>
+      <div class="spx-flyout__menu">
+        <ul>
+          <li>01</li>
+          <li>02</li>
+          <li>03</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="app-view">
   <div class="flex">
     <div class="flex__i--xs-6">
