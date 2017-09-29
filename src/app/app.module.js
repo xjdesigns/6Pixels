@@ -27,7 +27,7 @@ var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
 // import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
 // EXTERNAL MODULES
-var angular_module_starter_1 = require("angular-module-starter"); // from node repo
+// import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,8 +39,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
-            app_routing_module_1.AppRoutingModule,
-            angular_module_starter_1.AngularModuleStarterModule
+            app_routing_module_1.AppRoutingModule
+            // AngularModuleStarterModule
         ],
         declarations: [
             app_component_1.AppComponent,
