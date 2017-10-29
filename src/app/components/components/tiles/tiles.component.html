@@ -1,29 +1,40 @@
-<div class="flex">
-  <div class="flex__i--xs-6">
-
-    <div class="spx-tiles">
-      <app-tile *ngFor="let d of theTiles" [tileData]="d" (onChange)="onChange($event)"></app-tile>
-    </div>
+<div class="sg-hero">
+  <div class="sg-hero__elem sg-hero__elem--min">
     <div class="spx-tiles">
       <app-tile [tileData]="theTiles[0]" class="app-tile--fave"></app-tile>
     </div>
+  </div>
+</div>
 
-<pre>
-  <code code-display>
-    <div class="spx-tiles">
-      &lt;app-tile [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
-      &lt;app-tile class="app-tile--fave" [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
+<div class="app-view">
+  <div class="flex">
+    <div class="flex__i--xs-6">
+
+      <div class="spx-tiles">
+        <app-tile *ngFor="let d of theTiles" [tileData]="d" (onChange)="onChange($event)"></app-tile>
+      </div>
+      <div class="spx-tiles">
+        <app-tile [tileData]="theTiles[0]" class="app-tile--fave"></app-tile>
+      </div>
+
+  <pre class="prettyprint">
+    <code code-display>
+      <div class="spx-tiles">
+        &lt;app-tile [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
+        &lt;app-tile class="app-tile--fave" [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
+      </div>
+    </code>
+  </pre>
     </div>
-  </code>
-</pre>
+    <div class="flex__i--xs-6">
+      <h2>Tiles</h2>
+      <p>
+        <span class="spx-pill spx-pill--g3">Angular 2</span>
+        <span class="spx-pill spx-pill--pr">Stable</span>
+      </p>
+      <p>Tiles offer a functional item for users to interact with. Can link to a route, pass link actions, and toggle a favorite status. Favorites emit and event which the data is passed back.</p>
+      <app-code-table [data]='description'></app-code-table>
+    </div>
   </div>
-  <div class="flex__i--xs-6">
-    <h2>Tiles</h2>
-    <p>
-      <span class="spx-pill spx-pill--g3">Angular 2</span>
-      <span class="spx-pill spx-pill--pr">Stable</span>
-    </p>
-    <p>Tiles offer a functional item for users to interact with. Can link to a route, pass link actions, and toggle a favorite status. Favorites emit and event which the data is passed back.</p>
-    <app-code-table [data]='description'></app-code-table>
-  </div>
+
 </div>

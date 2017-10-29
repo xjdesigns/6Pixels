@@ -12,15 +12,15 @@ $btn-padding: 12px; // we math with this number below
   font-size: .875rem;
   padding: $btn-padding $btn-padding * 2;
   border-radius: $btn-radius;
-  border: 1px solid $greyscale-11;
+  border: 1px solid $white;
   background-color: transparent;
-  color: $greyscale-11;
+  color: $white;
   text-align: center;
   text-decoration: none;
   transition: all .3s ease;
 
   &:hover {
-    color: $greyscale-11;
+    color: $white;
   }
 
   &:not(:last-child) {
@@ -111,8 +111,8 @@ $btn-padding: 12px; // we math with this number below
 // BUTTON MAP //
 ///////////////////
 $btn-map: (
-primary: $brand-primary,
-secondary: $brand-secondary
+pr: $brand-primary,
+sd: $brand-secondary
 );
 
 @each $button, $btn in $btn-map {

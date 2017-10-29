@@ -1,0 +1,44 @@
+<div class="sg-hero">
+  <div class="sg-hero__elem sg-hero__elem--min">
+    <button (click)="toggleToast()" class="spx-btn spx-btn--pr">Trigger Toast</button>
+  </div>
+</div>
+
+<div class="app-view">
+  <div class="flex">
+    <div class="flex__i--xs-6">
+
+      <button (click)="toggleToast()" class="spx-btn spx-btn--pr">Trigger Toast</button>
+
+      <div [class.is-open]="isOpen" class="spx-toaster">
+        <div class="spx-toast is-success">
+          <p>This was successful</p>
+        </div>
+        <div class="spx-toast is-error">
+          <p>This was an error</p>
+        </div>
+      </div>
+  <pre class="prettyprint">
+    <code code-display>
+      <div [class.is-open]="isOpen" class="spx-toaster">
+        <div class="spx-toast is-success">
+          <p>This was successful</p>
+        </div>
+        <div class="spx-toast is-error">
+          <p>This was an error</p>
+        </div>
+      </div>
+    </code>
+  </pre>
+    </div>
+    <div class="flex__i--xs-6">
+      <h2>Toasts</h2>
+      <p>
+        <span class="spx-pill spx-pill--sd">Working</span>
+      </p>
+      <p>Toasts are an easy way to display messages for users, giving them an option to discard or automatically disappear.</p>
+      <p><code>NOTE:</code> Toasts use fixed positioning with a z-index of 1001.</p>
+    </div>
+  </div>
+
+</div>

@@ -16,14 +16,18 @@ var welcome_component_1 = require("./components/welcome/welcome.component");
 var grid_component_1 = require("./components/grid/grid.component");
 var var_component_1 = require("./components/variables/var.component");
 var helpers_component_1 = require("./components/helpers/helpers.component");
-var code_display_directive_1 = require("./shared/code-display.directive");
 var code_table_component_1 = require("./shared/code-table.component");
+// DIRECTIVES
+var code_display_directive_1 = require("./shared/code-display.directive");
 // PROVIDERS
 var components_1 = require("./components");
 var NG2_1 = require("./NG2");
+// ALERTS
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
-var firebase_game_component_1 = require("./firebase-game/firebase-game.component");
+// import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
+// EXTERNAL MODULES
+// import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,6 +40,7 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             app_routing_module_1.AppRoutingModule
+            // AngularModuleStarterModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -45,8 +50,7 @@ AppModule = __decorate([
             var_component_1.VarComponent,
             code_display_directive_1.CodeDisplayDirective,
             code_table_component_1.CodeTableComponent,
-            alert_1.AlertComponent,
-            firebase_game_component_1.FirebaseGameComponent
+            alert_1.AlertComponent
         ].concat(components_1.SixPixelsProvider, NG2_1.Ng2Provider),
         providers: [
             alert_service_1.AlertService

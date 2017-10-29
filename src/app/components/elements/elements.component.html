@@ -1,95 +1,28 @@
-<!-- <div class="stacked">
-
-  <div class="flex">
-    <div class="flex__i--xs-10">
-
-      <div plane>
-        <div stage="front" class="flex" [class.front-active]="frontActive">
-          <div lift="20" class="flex__i--xs-12">
-            <div class="spx-vid">
-              <iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/zw47_q9wbBE" width="560"></iframe>
-            </div>
-          </div>
-          <div lift="20" class="flex__i--xs-12" [class.lift-active]="buttonActive">
-            <button class="spx-btn spx-btn--primary place-btn">Test</button>
-          </div>
-          <div lift="20" class="flex__i--xs-3">
-            <div class="spx-progress">
-              <div style="width: 30%;"></div>
-            </div>
-          </div>
-          <div lift="20" class="flex__i--xs-9">
-            <form class="spx-form">
-              <div class="flex">
-                <div class="flex__i--xs-12">
-                  <label class="spx-label">Input Label</label>
-                  <input class="spx-input" type="text" value="Input Value">
-                </div>
-                <div class="flex__i--xs-12">
-                  <label class="spx-label">Textarea Label</label>
-                  <textarea class="spx-textarea" cols="30" rows="10"></textarea>
-                </div>
-                <div class="flex__i--xs-12">
-                  <label class="spx-label">Search Label</label>
-                  <div class="spx-search">
-                    <input class="spx-input" type="search" value="search me">
-                    <button class="spx-btn spx-btn--primary spx-btn--circle" data-icon="search"></button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div lift="20" class="flex__i--xs-4">
-            <div class="sg-grid"></div>
-          </div>
-          <div lift="20" class="flex__i--xs-4">
-            <div class="sg-grid"></div>
-          </div>
-          <div lift="20" class="flex__i--xs-4">
-            <div class="sg-grid"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="flex__i--xs-2">
-      <button (click)="activate('button')" class="spx-btn spx-btn--sm spx-btn--primary spx-btn--icon" data-icon="pageview">Button</button>
-      <button (click)="activate('form')" class="spx-btn spx-btn--sm spx-btn--primary spx-btn--icon" data-icon="pageview">Form</button>
-    </div>
+<div class="app-view">
+  <div class="app-menu-title">
+    <h1>Elements</h1>
   </div>
 
-</div> -->
+  <app-button></app-button>
+  <div class="sg-divider"></div>
+  <app-forms></app-forms>
+  <div class="sg-divider"></div>
+  <app-select></app-select>
+  <div class="sg-divider"></div>
+  <app-progress-bar></app-progress-bar>
+  <div class="sg-divider"></div>
+  <app-range-slider></app-range-slider>
+  <div class="sg-divider"></div>
+  <app-radio></app-radio>
+  <div class="sg-divider"></div>
+  <app-checkbox></app-checkbox>
+  <div class="sg-divider"></div>
+  <app-toggle></app-toggle>
+  <div class="sg-divider"></div>
+  <app-image></app-image>
+  <div class="sg-divider"></div>
+  <app-video></app-video>
+  <div class="sg-divider"></div>
+  <app-pills></app-pills>
 
-
-<!-- <div class="app-menu-nav">
-  <div
-    *ngFor="let elem of elements"
-    data-id="spx-{{ elem.name }}"
-  >{{ elem.name }}</div>
-</div> -->
-
-<div class="app-menu-title">
-  <h1>Elements</h1>
 </div>
-
-<app-button></app-button>
-<div class="sg-divider"></div>
-<app-forms></app-forms>
-<div class="sg-divider"></div>
-<app-select></app-select>
-<div class="sg-divider"></div>
-<app-progress-bar></app-progress-bar>
-<div class="sg-divider"></div>
-<app-range-slider></app-range-slider>
-<div class="sg-divider"></div>
-<app-radio></app-radio>
-<div class="sg-divider"></div>
-<app-checkbox></app-checkbox>
-<div class="sg-divider"></div>
-<app-toggle></app-toggle>
-<div class="sg-divider"></div>
-<app-image></app-image>
-<div class="sg-divider"></div>
-<app-video></app-video>
-<div class="sg-divider"></div>
-<app-pills></app-pills>

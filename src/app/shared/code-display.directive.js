@@ -20,6 +20,9 @@ var CodeDisplayDirective = (function () {
         var text = this.el.nativeElement.innerHTML;
         var snippet = text.replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace(/\t/g, '&nbsp;&nbsp;');
         this.renderer.setElementProperty(this.el.nativeElement, 'innerHTML', snippet);
+        setTimeout(function () {
+            PR.prettyPrint();
+        }, 100);
     };
     return CodeDisplayDirective;
 }());

@@ -17,6 +17,81 @@ var AppComponent = (function () {
         this.router = router;
         this.appMenuOpen = false;
         this.heroWelcome = true;
+        this.isOffset = false;
+        this.innerIsOpen = false;
+        this.activeNav = 'welcome';
+        // TODO: add routes and a loop, need nesting of menus as we break it out
+        this.routes = [{
+                name: 'Elements',
+                routes: [{
+                        name: 'Buttons',
+                        path: '/buttons'
+                    }, {
+                        name: 'Forms',
+                        path: '/forms'
+                    }, {
+                        name: 'Checkbox',
+                        path: '/checkbox'
+                    }, {
+                        name: 'Image',
+                        path: '/image'
+                    }, {
+                        name: 'Pills',
+                        path: '/pills'
+                    }, {
+                        name: 'Progress Bar',
+                        path: '/progress-bar'
+                    }, {
+                        name: 'Radio',
+                        path: '/radio'
+                    }, {
+                        name: 'Range Slider',
+                        path: '/range-slider'
+                    }, {
+                        name: 'Select',
+                        path: '/select'
+                    }, {
+                        name: 'Toggle',
+                        path: '/toggle'
+                    }, {
+                        name: 'Video',
+                        path: '/video'
+                    }]
+            }, {
+                name: 'Components',
+                routes: [{
+                        name: 'Accordion',
+                        path: '/accordion'
+                    }, {
+                        name: 'Breadcrumb',
+                        path: '/breadcrumb'
+                    }, {
+                        name: 'Card',
+                        path: '/card'
+                    }, {
+                        name: 'Flyout',
+                        path: '/flyout'
+                    }, {
+                        name: 'Loading',
+                        path: '/loading'
+                    }, {
+                        name: 'Media Obj',
+                        path: '/media-obj'
+                    }, {
+                        name: 'Pagination',
+                        path: '/pagination'
+                    }, {
+                        name: 'Tiles',
+                        path: '/tiles'
+                    }, {
+                        name: 'Toast',
+                        path: '/toast'
+                    }, {
+                        name: 'Tooltip',
+                        path: '/tooltip'
+                    }]
+            }];
+        var b = document.querySelector('body');
         this.router.events.subscribe(function (e) {
             if (e instanceof router_1.NavigationStart) {
                 if (e.url === '/welcome') {
@@ -25,14 +100,18 @@ var AppComponent = (function () {
                 else {
                     _this.heroWelcome = false;
                 }
+                _this.appMenuOpen = false;
+                b.scrollTop = 0;
             }
         });
+        // opts.callback();
     }
-    AppComponent.prototype.goToRoute = function (route) {
-        this.router.navigate(["" + route]);
-    };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;
+    };
+    AppComponent.prototype.toggleNav = function (e) {
+        console.warn(e);
+        this.activeNav = this.activeNav === e ? '' : e;
     };
     return AppComponent;
 }());
@@ -44,3 +123,9 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [router_1.Router])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var opts = {
+    callback: jason
+};
+function jason(params) {
+    console.warn('jason', params);
+}

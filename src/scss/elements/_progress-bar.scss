@@ -8,13 +8,14 @@ $prog-radius: 24px; // change to value wanted globally
 .#{$ns}progress {
 	margin: 32px 0;
 	border-radius: ($prog-radius);
-	background-color: $greyscale-10;
-	border: 2px solid $greyscale-10;
+	background-color: $grey-l1;
+	border: 2px solid $grey-l1;
 
 	> div {
 		background-color: $primary;
 		min-height: 6px;
 		border-radius: ($prog-radius);
+    transition: width .3s ease;
 	}
 
 	// data-title
@@ -30,8 +31,8 @@ $prog-radius: 24px; // change to value wanted globally
 			min-width: 24px;
 			min-height: 24px;
 			background-color: $brand-primary;
-			box-shadow: 0px 0px 0px 1px $greyscale-11, 0px 0px 0px 3px $brand-primary;
-			color: $greyscale-11;
+			box-shadow: 0px 0px 0px 1px $white, 0px 0px 0px 3px $brand-primary;
+			color: $white;
 			font-size: .65rem;
 			font-weight: 800;
 			line-height: 2.5;

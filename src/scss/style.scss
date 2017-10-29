@@ -15,9 +15,11 @@
 @import "base/typography"; // base typography
 @import "base/forms"; // base typography
 @import "base/flexgrid"; // base flexgrid
+@import "base/flexgridv2"; // base flexgrid
 
 // MIXIN
 @import "mixin/mixins"; // mixins for writing dry code
+@import "mixin/elevation"; // material elevation
 
 // ELEMENTS
 @import "elements/button"; // buttons
@@ -44,7 +46,10 @@
 @import "components/pagination"; // paginator
 @import "components/carousel"; // image carousel
 @import 'components/loading'; // Loading Dots
+@import 'components/accordion'; // Accordion pane
 @import "components/tiles"; // APP Tiles
+@import "components/flyout"; // flyout menu
+@import "components/card"; // card
 
 // HELPERS
 @import "helpers/helpers"; // Helper snippets

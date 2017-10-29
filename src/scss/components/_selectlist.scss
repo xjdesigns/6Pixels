@@ -5,7 +5,7 @@
     cursor: pointer;
     position: relative;
     padding: 12px;
-    border: 1px solid $greyscale-09;
+    border: 1px solid $grey-l1;
     border-radius: 2px;
     white-space: nowrap;
     overflow-x: hidden;
@@ -23,7 +23,7 @@
   &__listing {
     display: none;
     margin-top: -1px;
-    border: 1px solid $greyscale-09;
+    border: 1px solid $grey-l1;
 
     // OPEN STATE
     &.is-open {
@@ -43,7 +43,7 @@
       padding: 6px;
 
       &:hover {
-        background: $greyscale-08;
+        background: $grey-l1;
       }
     }
   }
@@ -51,8 +51,8 @@
 .#{$ns}list-select {
   max-height: 180px;
   overflow-y: auto;
-  border-top: 1px solid $greyscale-08;
-  border-bottom: 1px solid $greyscale-08;
+  border-top: 1px solid $grey-l1;
+  border-bottom: 1px solid $grey-l1;
 
   li {
     &.is-selected {

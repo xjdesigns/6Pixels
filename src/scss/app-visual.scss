@@ -1,3 +1,6 @@
+@import "base/var";
+@import "mixin/elevation";
+
 // 6PIXEL APP CODE
 $header: 72px;
 
@@ -22,6 +25,12 @@ $header: 72px;
   padding: 12px 24px;
   background: white;
   box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+  transition: padding .3s ease, height .5s ease;
+
+  &.top-offset {
+    padding: 6px 24px;
+    height: 24px;
+  }
 
   &__logo {
     flex: 1;
@@ -37,7 +46,7 @@ $header: 72px;
 
 .app-view {
   max-width: 70vw;
-  // height: calc(100vh - 10vh - #{$header});
+  min-height: calc(100vh - 160px - #{$header} - 24px - #{$header} - 48px);
   margin: calc(24px + #{$header}) auto 48px;
   padding-bottom: 48px;
 }
@@ -50,7 +59,6 @@ $header: 72px;
   z-index: 1;
 
   width: 240px;
-  padding: 24px;
   background: rgba(0,0,0,0.8);
   transform: translateX(-100%);
   transition: transform .3s ease;
@@ -61,7 +69,7 @@ $header: 72px;
 
   // OPEN
   &__open {
-    background: blue;
+    background: red;
     color: white;
     max-width: 36px;
     max-height: 36px;
@@ -73,6 +81,7 @@ $header: 72px;
     position: absolute;
     top: 12px;
     right: -48px;
+    z-index: 2;
 
     transform: rotate(0deg);
     transition: right .3s ease, box-shadow .3s ease, transform .3s ease;
@@ -92,8 +101,88 @@ $header: 72px;
     color: white;
 
     li {
-      margin: 12px 0;
+      position: relative;
       cursor: pointer;
+      padding: 9px 12px;
+      z-index: 1;
+      outline: 0;
+
+      &:not(.app-nav__nav) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: -1;
+          width: 0%;
+          background: $white;
+          opacity: .3;
+          transition: width .5s ease, background .5s ease;
+        }
+
+        &:focus,
+        &:active,
+        &:hover,
+        &.is-active {
+          &::after {
+            width: 100%;
+          }
+        }
+        &.is-active {
+          &::after {
+            background: $primary;
+          }
+        }
+      }
+
+      &.app-nav__nav {
+        font-size: 10px;
+        margin-top: 12px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+    }
+  }
+}
+.app-nav-inner {
+  display: none;
+  margin-top: 12px;
+
+  li {
+    left: -12px;
+    padding-left: 24px;
+  }
+}
+
+.app-nav {
+  & > li {
+    position: relative;
+
+    &.has-menu {
+      &::before {
+        content: 'keyboard_arrow_down';
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 1;
+        color: white;
+        font-family: $liga-font-family;
+        transform: rotate(0deg);
+        transition: transform .3s ease-in-out;
+      }
+    }
+
+    &.is-active {
+      &.has-menu {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
+
+      .app-nav-inner {
+        display: block;
+      }
     }
   }
 }
@@ -111,25 +200,6 @@ $header: 72px;
 .app-menu-title {
   margin: 24px 0 56px;
   border-bottom: 1px solid gray;
-}
-
-
-// CARDS
-.app-card-comp {
-  width: 100%;
-  height: 200px;
-  padding: 24px;
-  box-shadow: 1px 8px 6px -4px rgba(0,0,0,0.3);
-  border: 1px solid lightgray;
-  border-radius: 2px;
-  text-align: center;
-  margin-bottom: 48px;
-
-  .material-icons {
-    font-size: 4rem;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-    margin-bottom: 24px;
-  }
 }
 
 // TABLE DOCUMENTS
@@ -166,5 +236,62 @@ $header: 72px;
 
   .material-icons {
     vertical-align: middle;
+  }
+}
+
+.spx-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  margin: 24px;
+  background: $primary;
+  @include elevation-2;
+
+  &--sm {
+    transform: scale(.5);
+    margin: 6px;
+  }
+
+  &__px {
+    position: absolute;
+    background: $primary;
+    @include elevation-1;
+
+    &:nth-child(1) {
+      top: -30%;
+      left: -30%;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+      left: 70%;
+      width: 40px;
+      height: 40px;
+    }
+
+    &:nth-child(3) {
+      top: -3%;
+      left: 80%;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:nth-child(4) {
+      top: 80%;
+      left: -30%;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:nth-child(5) {
+      top: -20%;
+      left: 15%;
+      width: 12px;
+      height: 12px;
+    }
   }
 }

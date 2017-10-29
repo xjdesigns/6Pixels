@@ -3,7 +3,7 @@
 // for ligatures, but we handle with our classes which
 // :before or :after gets used
 [data-icon] {
-  &:before, &:after {
+  &::before, &::after {
     font-family: $liga-font-family;
     font-weight: normal;
     font-style: normal;

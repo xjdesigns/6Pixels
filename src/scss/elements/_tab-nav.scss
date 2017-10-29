@@ -5,7 +5,7 @@
   display: flex;
   align-items: flex-start;
   font-weight: 300;
-  color: $greyscale-09;
+  color: $grey-l1;
 
   a {
     text-decoration: none;
@@ -20,7 +20,7 @@
     padding-right: 24px;
 
     &:hover {
-      color: $greyscale-11;
+      color: $white;
 
       &:before {
         width: 100%;
@@ -49,12 +49,12 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: $greyscale-09;
+      background-color: $grey-l1;
     }
 
     &.is-active {
       font-weight: 400;
-      color: $greyscale-11;
+      color: $white;
 
       &:after {
         background-color: $brand-primary;

@@ -4,11 +4,11 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  padding-left: 18px;
+  padding-left: 24px;
   font-size: .875rem;
   line-height: 1.2;
   margin-right: 12px;
-  color: $greyscale-07;
+  color: $grey-l1;
   cursor: pointer;
 
   // RADIO
@@ -16,24 +16,19 @@
     display: none;
 
     &:checked + .#{$ns}radio__dot {
-      &:after {
-        background-color: $greyscale-07;
-        transform: scale(1);
-        transition: transform .3s;
-      }
-      &:before {
+      &::before {
         background-color: $primary;
         transform: scale(.5);
         z-index: 2;
-        transition: transform .3s;
       }
     }
   }
   .#{$ns}radio__dot {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background-color: $greyscale-07;
+    background-color: transparent;
+    border: 1px solid $grey-l1;
     position: absolute;
     top: 0;
     left: 0;
@@ -41,7 +36,7 @@
     z-index: 0;
     margin: auto;
 
-    &:before, &:after {
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -57,10 +52,10 @@
   }
 
   &:hover {
-    .#{$ns}radio__dot:before {
-      background-color: $primary;
+    .#{$ns}radio__dot::before {
+      background-color: $grey-d1;
       transform: scale(.5);
-      transition: transform .3s;
+      transition: transform .3s ease, color .3s ease;
     }
   }
 }

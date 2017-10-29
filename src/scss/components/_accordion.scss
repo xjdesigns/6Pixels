@@ -1,0 +1,84 @@
+// ACCORDION
+.#{$ns}ac {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid $grey-l1;
+  @include elevation-1;
+  transition: box-shadow .3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active {
+    @include elevation-2;
+  }
+
+  &.is-active {
+    .#{$ns}ac__content {
+      display: block;
+      animation: flyIn .5s ease-in-out .1s forwards;
+    }
+    .#{$ns}ac-action {
+      .#{$ns}btn {
+        &::before {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  &__pane {
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+
+    .#{$ns}ac-title {
+      flex: 0 1 auto;
+      margin-right: 12px;
+
+      & + .#{$ns}ac-secondary {
+        flex: 1 1 auto;
+        margin-right: 12px;
+      }
+    }
+    .#{$ns}ac-action {
+      flex: 0 0 auto;
+
+      .#{$ns}btn {
+        padding: 0;
+        min-width: 0px;
+        line-height: 0;
+
+        &::before {
+          content: attr(data-icon);
+          font-size: .875rem;
+          color: black;
+          transform: rotate(0deg);
+          transition: transform .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid $grey-l1;
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+@keyframes flyIn {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

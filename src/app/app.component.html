@@ -3,62 +3,77 @@
   <header class="app-header">
 
     <div class="app-header__logo">
-      SIX PIXELS
+      <div class="spx-logo spx-logo--sm">
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+      </div>
+      SIX-PIXELS
     </div>
     <div class="app-header__links">
-      <span (click)="goToRoute('/welcome')">v1:ALPHA</span>
+      <span [routerLink]="['/welcome']">v1:ALPHA</span>
     </div>
 
   </header>
 
+  <!-- These are from my test module -->
+  <!-- <angular-module-starter></angular-module-starter> -->
+  <!-- <jason-rocks></jason-rocks> -->
+
+  <div class="spx-click-shield" [class.is-open]="appMenuOpen" (click)="toggleMenu()"></div>
   <div class="app-sidebar" [class.is-open]="appMenuOpen">
     <div (click)="toggleMenu()" class="app-sidebar__open" [class.is-open]="appMenuOpen">
       <i class="material-icons">add</i>
     </div>
     <nav class="app-sidebar__nav">
       <ul class="app-nav">
-        <li (click)="goToRoute('/welcome')">Home</li>
-        <li (click)="goToRoute('/variable')">Vars / Base</li>
-        <li (click)="goToRoute('/grid')">Grid</li>
-        <li (click)="goToRoute('/elements')">Elements</li>
-        <li (click)="goToRoute('/components')">Components</li>
-        <li (click)="goToRoute('/helpers')">Helpers</li>
-        <li (click)="goToRoute('/ng2')">NG2</li>
-        <li (click)="goToRoute('/firebase-game')">firebase game</li>
+        <li class="app-nav__nav">Navigation</li>
+        <li [routerLink]="['/welcome']" [routerLinkActive]="['is-active']">Home</li>
+        <li [routerLink]="['/variable']" [routerLinkActive]="['is-active']">Vars / Base</li>
+        <li [routerLink]="['/grid']" [routerLinkActive]="['is-active']">Grid</li>
+        <li
+          *ngFor="let nav of routes"
+          (click)="toggleNav(nav.name)"
+          class="has-menu"
+          [class.is-active]="activeNav === nav.name"
+        >
+          {{nav.name}}
+          <div
+            class="app-nav-inner"
+            *ngIf="nav.routes && nav.routes.length > 0"
+          >
+            <ul>
+              <li
+                *ngFor="let sub of nav.routes"
+                [routerLink]="sub.path"
+                [routerLinkActive]="['is-active']"
+              >
+                {{sub.name}}
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li [routerLink]="['/helpers']" [routerLinkActive]="['is-active']">Helpers</li>
+        <li [routerLink]="['/ng2']" [routerLinkActive]="['is-active']">NG2</li>
       </ul>
     </nav>
   </div>
 
-  <div *ngIf="heroWelcome">
-    <div class="sg-hero-welcome">
-      <h1>Welcome to SIX PIXELS</h1>
-    </div>
-
-    <div class="sg-hero-welcome sg-hero-welcome--01">
-      <h1>A small CSS framework built for Evergreen support.</h1>
-    </div>
-
-    <div class="sg-hero-welcome sg-hero-welcome--02">
-      <h1>Start writing now and enjoy more time outside</h1>
-    </div>
-  </div>
-
-  <div *ngIf="!heroWelcome" class="sg-hero">
+  <!-- <div class="sg-hero">
     <div class="sg-hero__elem">
-      <div class="sg-pixel-parent">
-        <div class="sg-pixel sg-pixel--01"></div>
-        <div class="sg-pixel sg-pixel--02"></div>
-        <div class="sg-pixel sg-pixel--03"></div>
-        <div class="sg-pixel sg-pixel--04"></div>
-        <div class="sg-pixel sg-pixel--05"></div>
-        <div class="sg-pixel sg-pixel--06"></div>
+      <div class="spx-logo">
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
+        <div class="spx-logo__px"></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="app-view">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
 
   <footer class="app-footer">
     <p>SIX PIXELS 2017</p>

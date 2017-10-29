@@ -1,0 +1,66 @@
+<div class="sg-hero">
+  <div class="sg-hero__elem sg-hero__elem--min">
+    <div class="spx-flyout spx-flyout--right" [class.is-open]="flyoutIsRightOpen">
+      <button class="spx-btn spx-btn--pr spx-btn--block" (click)="toggleFlyout('rt')">Toggle Flyout Right</button>
+      <div class="spx-flyout__menu">
+        <ul>
+          <li>01</li>
+          <li>02</li>
+          <li>03</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-view">
+  <div class="flex">
+    <div class="flex__i--xs-6">
+
+      <div class="spx-flyout spx-flyout--right" [class.is-open]="flyoutIsRightOpen">
+        <button class="spx-btn spx-btn--pr spx-btn--block" (click)="toggleFlyout('rt')">Toggle Flyout Right</button>
+        <div class="spx-flyout__menu">
+          <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="spx-flyout" [class.is-open]="flyoutIsLeftOpen">
+        <button class="spx-btn spx-btn--pr spx-btn--block" (click)="toggleFlyout('lt')">Toggle Flyout Left</button>
+        <div class="spx-flyout__menu">
+          <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+          </ul>
+        </div>
+      </div>
+
+  <pre class="prettyprint">
+    <code code-display>
+      <div class="spx-flyout"> // is-open adds toggling
+        <button class="spx-btn spx-btn--pr">Toggle</button> // this can be any element to trigger
+        <div class="spx-flyout__menu">
+          <ul>
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+          </ul>
+        </div>
+      </div>
+    </code>
+  </pre>
+    </div>
+    <div class="flex__i--xs-6">
+      <h2>Flyout</h2>
+      <p>
+        <span class="spx-pill spx-pill--pr">Stable</span>
+      </p>
+      <p>Flyout menus add a toggle action with a selectable area. Default is list styling but you can apply anything.</p>
+    </div>
+  </div>
+
+</div>

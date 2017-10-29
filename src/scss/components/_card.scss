@@ -1,0 +1,51 @@
+// INFO CARD
+.#{$ns}card {
+  display: flex;
+  flex-flow: nowrap column;
+  position: relative;
+  background: $white;
+  @include elevation-2;
+
+  // for testing
+  // max-width: 300px;
+
+  &__img {
+    position: relative;
+
+    &[data-title] {
+      &::before {
+        content: attr(data-title);
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        font-size: 2.5rem;
+        font-weight: 100;
+        color: white;
+      }
+      &[data-desc] {
+        &::before {
+          bottom: 28px;
+        }
+      }
+    }
+    &[data-desc] {
+      &::after {
+        content: attr(data-desc);
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        color: white;
+      }
+    }
+  }
+
+  &__content {
+    padding: 12px;
+  }
+
+  .#{$ns}c-action {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid $grey-l1;
+  }
+}

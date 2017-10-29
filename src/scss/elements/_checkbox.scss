@@ -7,7 +7,7 @@
   font-size: .875rem;
   line-height: 1.2;
   margin-right: 12px;
-  color: $greyscale-07;
+  color: $grey-l1;
   cursor: pointer;
 
   // CHECKBOX
@@ -48,7 +48,7 @@
       z-index: 1;
     }
     &:after {
-      border: 2px solid $greyscale-07;
+      border: 2px solid $grey-l1;
     }
   }
 }

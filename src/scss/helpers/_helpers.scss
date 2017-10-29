@@ -30,3 +30,46 @@
     display: block;
   }
 }
+
+// MARGIN & PADDING
+.#{$ns}pd-reset {
+  padding: 0;
+}
+.#{$ns}mg-reset {
+  margin: 0;
+}
+@for $i from 1 through 24 {
+  @if $i % 6 == 0 {
+    .#{$ns}pd-#{$i} {
+      padding: #{$i}px;
+    }
+    .#{$ns}pd-lt-#{$i} {
+      padding-left: #{$i}px;
+    }
+    .#{$ns}pd-rt-#{$i} {
+      padding-right: #{$i}px;
+    }
+    .#{$ns}pd-tp-#{$i} {
+      padding-top: #{$i}px;
+    }
+    .#{$ns}pd-bt-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+
+    .#{$ns}mg-#{$i} {
+      margin: #{$i}px;
+    }
+    .#{$ns}mg-lt-#{$i} {
+      margin-left: #{$i}px;
+    }
+    .#{$ns}mg-rt-#{$i} {
+      margin-right: #{$i}px;
+    }
+    .#{$ns}mg-tp-#{$i} {
+      margin-top: #{$i}px;
+    }
+    .#{$ns}mg-bt-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+  }
+}
