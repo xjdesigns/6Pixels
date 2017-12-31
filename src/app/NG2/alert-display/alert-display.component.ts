@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertService } from '../../services/alert-service';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 
 @Component({
   selector: 'app-alert-display',
@@ -16,10 +14,14 @@ export class AlertDisplayComponent {
   constructor(private alertService: AlertService) {}
 
   addAlert() {
-    this.alertService.addAlert('Fail alert message', 'error');
+    this.alertService.addAlert('Fail alert message', 'error', this.jasonRocks);
   }
 
   clearAll() {
     this.alertService.clearSubject();
+  }
+
+  jasonRocks() {
+    console.warn('Did this work jasonRocks::');
   }
 }

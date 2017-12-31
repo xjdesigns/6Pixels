@@ -29,15 +29,15 @@ import { AlertService } from './services/alert-service';
 // import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
 
 // EXTERNAL MODULES
-// import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
+import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
 
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
-    // AngularModuleStarterModule
+    AppRoutingModule,
+    AngularModuleStarterModule
   ],
   declarations: [
     AppComponent,

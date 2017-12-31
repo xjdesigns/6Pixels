@@ -44,10 +44,10 @@ var AlertService = (function () {
     AlertService.prototype.getMessage = function () {
         return this.subject.asObservable();
     };
-    AlertService.prototype.addAlert = function (message, type) {
+    AlertService.prototype.addAlert = function (message, type, cb) {
         if (type === void 0) { type = 'success'; }
         this.keepAfterNavigationChange = true;
-        this.list.push({ type: type, text: message });
+        this.list.push({ type: type, text: message, callBack: cb });
         this.serviceNext(this.list);
     };
     AlertService.prototype.removeAlertByIndex = function (i) {

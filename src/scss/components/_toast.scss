@@ -18,9 +18,10 @@
   margin-bottom: 12px;
   color: white;
   background: transparentize(black, 0.3);
-  @include elevation-1;
   cursor: pointer;
+  @include elevation-1;
   transition: box-shadow .5s ease;
+  animation: toastIn .5s forwards;
 
   &:hover {
     @include elevation-2;
@@ -30,14 +31,15 @@
     content: '';
     z-index: 1;
     position: absolute;
-    top: 50%;
-    right: calc(100% + 6px);
+    top: -12px;
+    left: -12px;
     width: 24px;
     height: 24px;
-    transform: translateY(-50%);
+    border-radius: 50%;
     background: transparentize(black, 0.3);
     @include elevation-1;
-    border-radius: 50%;
+    transform: scale(0);
+    animation: toastIn .5s forwards .5s;
   }
 
   &.is-success {
@@ -60,5 +62,14 @@
 
   & > p {
     font-size: .875rem;
+  }
+}
+
+@keyframes toastIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }

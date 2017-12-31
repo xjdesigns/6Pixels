@@ -37,9 +37,9 @@ export class AlertService {
     return this.subject.asObservable();
   }
 
-  addAlert(message, type = 'success') {
+  addAlert(message, type = 'success', cb) {
     this.keepAfterNavigationChange = true;
-    this.list.push({type: type, text: message});
+    this.list.push({type: type, text: message, callBack: cb});
     this.serviceNext(this.list);
   }
 

@@ -104,6 +104,11 @@ $btn-padding: 12px; // we math with this number below
       line-height: 1.5;
     }
   }
+
+  &--sm {
+    min-width: 26px;
+    height: 26px;
+  }
 }
 
 
@@ -133,6 +138,7 @@ sd: $brand-secondary
 
       &:hover {
         background-color: $btn;
+        color: white;
       }
     }
   }

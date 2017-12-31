@@ -8,17 +8,17 @@
     position: absolute;
     bottom: calc(100% + 8px);
     left: -9999px;
-    transform: translateX(-50%) scale(0);
     padding: 12px 18px;
     width: 220px;
-    text-align: center;
-    border-radius: 12px;
-    font-size: .75rem;
-    line-height: 1.4;
     background-color: $b-01;
-    @include elevation-1;
     color: white;
+    font-size: .75rem;
+    text-align: center;
+    line-height: 1.4;
+    border-radius: 6px;
     opacity: 0;
+    transform: translateX(-50%) scale(0);
+    @include elevation-1;
     transition: opacity .2s ease-in .2s, left .1s .6s, transform .4s ease-in .2s;
 
     &::before {
@@ -40,6 +40,35 @@
       opacity: 1;
       transform: translateX(-50%) scale(1);
       transition: opacity .4s ease-out .2s, transform .4s ease-out .4s;
+    }
+  }
+
+  &--left,
+  &--right {
+    &:hover {
+      .#{$ns}adv-tip__content {
+        top: 50%;
+        bottom: auto;
+        transform: translate(0%, -50%) scale(1);
+      }
+    }
+  }
+
+  &--left {
+    &:hover {
+      .#{$ns}adv-tip__content {
+        left: auto;
+        right: calc(100% + 12px);
+      }
+    }
+  }
+
+  &--right {
+    &:hover {
+      .#{$ns}adv-tip__content {
+        left: calc(100% + 12px);
+        right: auto;
+      }
     }
   }
 }

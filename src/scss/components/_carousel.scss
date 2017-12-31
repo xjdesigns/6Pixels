@@ -50,6 +50,7 @@ $imgWidth: 63;
 $imgHeight: $imgWidth;
 .#{$ns}picker-wrap {
   display: inline-block;
+  vertical-align: middle;
   min-width: $imgWidth + 0px;
   max-width: $imgWidth * 3 + 0px;
   height: $imgHeight + 0px;

@@ -1,13 +1,13 @@
 <div class="sg-hero">
   <div class="sg-hero__elem sg-hero__elem--min">
     <ul class="spx-pagination">
-      <li class="spx-pagination__btn">prev</li>
+      <li class="spx-pagination__btn" (click)="decrementPage()">prev</li>
       <li class="spx-pagination__btn spx-is-disabled">&hellip;</li>
       <li class="spx-pagination__btn">1</li>
       <li class="spx-pagination__btn">2</li>
       <li class="spx-pagination__btn">3</li>
       <li class="spx-pagination__btn">&hellip;</li>
-      <li class="spx-pagination__btn">next</li>
+      <li class="spx-pagination__btn" (click)="incrementPage()">next</li>
     </ul>
   </div>
 </div>

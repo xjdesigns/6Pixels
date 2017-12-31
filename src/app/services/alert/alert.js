@@ -20,8 +20,12 @@ var AlertComponent = (function () {
         var _this = this;
         this.alertService.getMessage()
             .subscribe(function (message) {
+            console.warn('message', message);
             _this.message = message;
         });
+    };
+    AlertComponent.prototype.primaryAction = function (i) {
+        this.message[i].callBack();
     };
     AlertComponent.prototype.removeAlert = function (i) {
         this.alertService.removeAlertByIndex(i);

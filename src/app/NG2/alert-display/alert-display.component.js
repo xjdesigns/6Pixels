@@ -20,10 +20,13 @@ var AlertDisplayComponent = (function () {
             }];
     }
     AlertDisplayComponent.prototype.addAlert = function () {
-        this.alertService.addAlert('Fail alert message', 'error');
+        this.alertService.addAlert('Fail alert message', 'error', this.jasonRocks);
     };
     AlertDisplayComponent.prototype.clearAll = function () {
         this.alertService.clearSubject();
+    };
+    AlertDisplayComponent.prototype.jasonRocks = function () {
+        console.warn('Did this work jasonRocks::');
     };
     return AlertDisplayComponent;
 }());
