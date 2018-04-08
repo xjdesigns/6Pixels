@@ -57,4 +57,4 @@ import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
   ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

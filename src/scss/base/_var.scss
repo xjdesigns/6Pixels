@@ -23,11 +23,11 @@ $break-md: 48em; // 768
 $break-sm: 20em; // 320
 
 // BRAND COLORS //
-$brand-primary: #004280;
-$brand-secondary: darken(#004280, 20%);
-$brand-tertiary: green;
+$brand-primary: #0C1C8F;
+$brand-secondary: #0543A6;
+$brand-tertiary: #05679C;
 $brand-info: #04a3ff;
-$brand-success: green;
+$brand-success: #0CE85A;
 $brand-warning: gold;
 $brand-error: red;
 
@@ -53,3 +53,9 @@ $b-02: rgba(0,0,0,0.5);
 
 // LIGATURES -- ICONS //
 $liga-font-family: 'Material Icons';
+
+$pr: #00FF12;
+$pr-l1: #45E80C;
+$pr-l2: #A1FF0D;
+$pr-d1: #0CE85A;
+$pr-d2: #0DFFA7;
