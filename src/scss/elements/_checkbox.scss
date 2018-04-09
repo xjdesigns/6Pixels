@@ -10,9 +10,20 @@
   color: $grey-l1;
   cursor: pointer;
 
+  &:focus {
+    outline: 0;
+  }
+
   // CHECKBOX
   input[type="checkbox"] {
-    display: none;
+    opacity: 0;
+    position: absolute;
+
+    &:focus + .#{$ns}checkbox__box {
+      &:after {
+        border-color: $primary;
+      }
+    }
 
     &:checked + .#{$ns}checkbox__box {
       &:before {
