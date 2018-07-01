@@ -26,18 +26,12 @@ import { Ng2Component, Ng2Provider } from './NG2';
 import { AlertComponent } from './services/alert/alert';
 import { AlertService } from './services/alert-service';
 
-// import { FirebaseGameComponent } from './firebase-game/firebase-game.component';
-
-// EXTERNAL MODULES
-import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
-
 @NgModule({
   imports:      [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    AngularModuleStarterModule
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -48,7 +42,6 @@ import { AngularModuleStarterModule } from '6-comp-test'; // from node repo
     CodeDisplayDirective,
     CodeTableComponent,
     AlertComponent,
-    // FirebaseGameComponent,
     ...SixPixelsProvider,
     ...Ng2Provider
   ],
