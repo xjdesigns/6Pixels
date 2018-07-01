@@ -20,8 +20,37 @@
   <pre class="prettyprint">
     <code code-display>
       <div class="spx-tiles">
-        &lt;app-tile [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
-        &lt;app-tile class="app-tile--fave" [tileData]="object" (onChange)="methodToCall($event)">&lt;/app-tile>
+        <div
+          class="spx-tiles__tile"
+        >
+          <div class="spx-contents">
+            <p>Tile Title</p>
+            <p class="spx-contents__desc">Tile description</p>
+
+            <div class="spx-tile-actions">
+              <a
+                href="href/"
+              >Anchor Text</a>
+            </div>
+          </div>
+          <div
+            class="spx-fave is-favorited"
+          >
+            <i class="material-icons">loyalty</i>
+          </div>
+        </div>
+
+        // Icon Tile
+        <div
+          class="spx-tiles__tile spx-tiles__tile--icon"
+          data-icon="icon ligature"
+        >
+          <div
+            class="spx-fave is-favorited"
+          >
+            <i class="material-icons">loyalty</i>
+          </div>
+        </div>
       </div>
     </code>
   </pre>
@@ -29,11 +58,11 @@
     <div class="flex__i--xs-6">
       <h2>Tiles</h2>
       <p>
-        <span class="spx-pill spx-pill--g3">Angular 2</span>
+        <!-- <span class="spx-pill spx-pill--g3">Angular 2</span> -->
         <span class="spx-pill spx-pill--pr">Stable</span>
       </p>
       <p>Tiles offer a functional item for users to interact with. Can link to a route, pass link actions, and toggle a favorite status. Favorites emit and event which the data is passed back.</p>
-      <app-code-table [data]='description'></app-code-table>
+      <!-- <app-code-table [data]='description'></app-code-table> -->
     </div>
   </div>
 

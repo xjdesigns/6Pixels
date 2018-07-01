@@ -19,7 +19,8 @@
     "copy-dist-files": "node ./copy-dist-files.js",
     "i18n": "ng-xi18n",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "sass": "gulp watch"
+    "sass": "gulp watch",
+    "sixpixels": "gulp prod"
   },
   "licenses": [
     {
